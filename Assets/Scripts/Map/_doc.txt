@@ -1,0 +1,39 @@
+﻿MAP
+
+EVERYTHING SUBJECT TO CHANGE
+
+TileType
+	The type of tile
+	Currently only 2 types, more can be added
+	May remove this in favor of something else
+
+MapBehaviour
+	Base class for all maps
+	Scene needs exactly one of these to Function
+
+	Static Members:
+		Other classes will interact with the map via these functions
+		If you need something not available, ask whoever is in charge of this and he/she will implement a static method for it
+
+	Abstract Methods:
+		BuildMap() - Construct map. Called once at start of a scene
+		GetPathForCreep() - a path for a creep to follow. 
+							Will be called once for each creep, so try to be efficient
+							This allows for multiple paths.
+							Each step in path must be horizontal or vertical (no diagonal) and have a distance of 1
+
+MapGizmoDrawer
+	Draws the map in scene view.
+	Will not show up in gameplay
+	Requires map to have ExecuteInEditModeAttribute if you want to see it without entering play mode
+
+
+
+To create a new map, derive from MapBehavior.
+	Include attributes:
+		AddComponentMenu("Map/{name}") - groups all map behaviours together for easier navigation
+		ExecuteInEditMode - If you want map to be updated in editor.  Useful with MapGizmoDrawer
+
+	Implement:
+		BuildMap() - This can be a predetermined map, or a randomly generated one.
+		GetPathForCreep() - Do not generate new path every time. Cache it.
