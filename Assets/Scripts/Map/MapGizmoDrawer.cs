@@ -9,6 +9,7 @@ public class MapGizmoDrawer : MonoBehaviour {
             return;
         }
 
+        // draw tiles.
         for (int x = 0; x < MapBehaviour.width; x++) {
             for (int y = 0; y < MapBehaviour.height; y++) {
                 switch (MapBehaviour.GetTileType(x,y)) {
@@ -25,6 +26,8 @@ public class MapGizmoDrawer : MonoBehaviour {
                 Gizmos.DrawCube(new Vector3(x, y), Vector3.one);
             }
         }
+
+        // color start and end tiles
         var path = MapBehaviour.GetCreepPath();
         Gizmos.color = Color.green;
         Gizmos.DrawCube(new Vector3(path[0].x, path[0].y), Vector3.one);
