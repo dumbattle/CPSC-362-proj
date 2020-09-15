@@ -29,11 +29,15 @@ MapGizmoDrawer
 
 
 
-To create a new map, derive from MapBehavior.
-	Include attributes:
+To create a new map/algorithm, derive from MapBehavior.
+	Include attributes (optional, but highly recomended):
 		AddComponentMenu("Map/{name}") - groups all map behaviours together for easier navigation
 		ExecuteInEditMode - If you want map to be updated in editor.  Useful with MapGizmoDrawer
 
 	Implement:
+<<<<<<< HEAD
+		BuildMap() - This can be a predetermined map, or a randomly generated one. No need to be super efficient.
+=======
 		BuildMap() - This can be a predetermined map, or a randomly generated one.
-		GetPathForCreep() - Do not generate new path every time. Cache it.
+>>>>>>> 2cfe0a573bde5e6d03ce4b69637261f89a1b9d93
+		GetPathForCreep() - Do not generate new path every time. Cache it. Will be called frequently.
