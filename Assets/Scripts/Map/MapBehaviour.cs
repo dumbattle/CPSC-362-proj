@@ -5,11 +5,7 @@ public abstract class MapBehaviour : MonoBehaviour {
     static MapBehaviour _main;
 
     public static bool isAvailable => _main != null;
-<<<<<<< HEAD
-    public static TileType GetTileType(int x, int y) => _main._tileTypes[x, y]; // I do not like this b/c it returns an enum
-=======
     public static TileType GetTileType(int x, int y) => _main._tileTypes[x, y];  // I do not like this b/c it returns an enum
->>>>>>> 2cfe0a573bde5e6d03ce4b69637261f89a1b9d93
     public static int width => _main._width;
     public static int height => _main._height;
 

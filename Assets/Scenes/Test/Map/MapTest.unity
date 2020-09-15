@@ -339,11 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65e93964483c594b8e1644502385398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  seed: 196
-=======
   seed: 211
->>>>>>> 2cfe0a573bde5e6d03ce4b69637261f89a1b9d93
   _mapWidth: 32
   _mapHeight: 32
   length: 2
