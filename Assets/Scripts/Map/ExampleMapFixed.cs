@@ -14,6 +14,7 @@ using System.Collections.Generic;
 
 
 [ExecuteInEditMode]
+<<<<<<< HEAD
 [AddComponentMenu("Map1")]
 public class ExampleMapFixed : MapBehaviour {
     // fixed path
@@ -36,6 +37,23 @@ public class ExampleMapFixed : MapBehaviour {
         new Vector2Int(13, 5),
         new Vector2Int(14, 5),
         new Vector2Int(15, 5),
+=======
+[AddComponentMenu("Map/Example/Map Example Fixed")]
+public class ExampleMapFixed : MapBehaviour {
+    // fixed path
+    List<Vector2Int> _path = new List<Vector2Int>() {
+        new Vector2Int(3, 3),
+        new Vector2Int(3, 4),
+        new Vector2Int(3, 5),
+        new Vector2Int(3, 6),
+        new Vector2Int(4, 6),
+        new Vector2Int(5, 6),
+        new Vector2Int(5, 5),
+        new Vector2Int(5, 4),
+        new Vector2Int(6, 4),
+        new Vector2Int(7, 4),
+        new Vector2Int(8, 4)
+>>>>>>> 12ae5fc49d469d14db2c4e5a748d86c2c7fb17c0
     };
 
     protected override TileType[,] BuildMap() {
