@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 
 [ExecuteInEditMode]
-[AddComponentMenu("Map/Map1")]
+[AddComponentMenu("Map1")]
 public class ExampleMapFixed : MapBehaviour {
     // fixed path
     List<Vector2Int> _path = new List<Vector2Int>() {
