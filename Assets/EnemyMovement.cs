@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        if(Vector3.Distance(transform.position, target.position) <= 0.2f)
+        if(Vector3.Distance(transform.position, target.position) <= 0.01f)
         {
             GetNextWaypoint();
         }
@@ -25,12 +25,16 @@ public class EnemyMovement : MonoBehaviour
 
     void GetNextWaypoint()
     {
-        if(wavepointIndex >= Waypoints.points.Length - 1)
+        wavepointIndex++;
+
+        if(wavepointIndex >= Waypoints.points.Length)
         {
             Destroy(gameObject);
+            return;
         }
 
-        wavepointIndex++;
+        
+
         target = Waypoints.points[wavepointIndex];
     }
 }
