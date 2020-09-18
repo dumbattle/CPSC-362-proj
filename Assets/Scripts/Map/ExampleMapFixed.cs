@@ -14,11 +14,11 @@ using System.Collections.Generic;
 
 
 [ExecuteInEditMode]
-[AddComponentMenu("Map1")]
+[AddComponentMenu("Map/Example/Map Example Fixed")]
 public class ExampleMapFixed : MapBehaviour {
     // fixed path
     List<Vector2Int> _path = new List<Vector2Int>() {
-        new Vector2Int(0, 3),
+         new Vector2Int(0, 3),
         new Vector2Int(1, 3),
         new Vector2Int(2, 3),
         new Vector2Int(3, 3),
