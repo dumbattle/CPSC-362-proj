@@ -10,8 +10,6 @@ public class EnemySpawner : MonoBehaviour
      private float timer = 0;
      public GameObject enemy;
      Vector2 whereToSpawn;
-     public float spawnRate = 2f;
-     float nextSpawn = 2f;
      int spawnMax = 5;
      int enemyCounter = 0;
      // Start is called before the first frame update
