@@ -8,5 +8,9 @@
  - Use git
  - Organization
     - Folders
-    - Names
-   
+    - Names   
+ - Check Version
+ - Unity Stuff
+    - Only one scene
+ - Terminology
+    - Creep/Enemy
