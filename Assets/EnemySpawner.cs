@@ -29,7 +29,6 @@ public class EnemySpawner : MonoBehaviour
                if (enemyCounter < spawnMax)
                {
                     timer = 0;
-                  //nextSpawn = Time.time + spawnRate;
                     whereToSpawn = new Vector2(transform.position.x, transform.position.y);
                     Instantiate(enemy, whereToSpawn, Quaternion.identity);
                     enemyCounter++;
