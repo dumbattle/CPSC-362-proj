@@ -3,6 +3,7 @@
 
 
 ## To Talk About
+ - Good Progress so far
  - how to develop. 
     - DON'T edit existing scenes or scripts. Create new ones or duplicate existing ones
  - Use git
