@@ -14,3 +14,6 @@
     - Only one scene
  - Terminology
     - Creep/Enemy
+ - Documentation
+    - Scripts
+    - Scenes
