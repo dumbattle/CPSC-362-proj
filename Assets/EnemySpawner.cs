@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-
+     private float timer = 0;
      public GameObject enemy;
      Vector2 whereToSpawn;
      public float spawnRate = 2f;
@@ -23,12 +23,13 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          if (Time.time > nextSpawn)
+          timer += Time.deltaTime; 
+          if (timer > 5f)
           {
                if (enemyCounter < spawnMax)
                {
-                    nextSpawn = Time.time + spawnRate;
-                    //randX = UnityEngine.Random.Range(-8.4f, 8.4f);
+                    timer = 0;
+                  //nextSpawn = Time.time + spawnRate;
                     whereToSpawn = new Vector2(transform.position.x, transform.position.y);
                     Instantiate(enemy, whereToSpawn, Quaternion.identity);
                     enemyCounter++;
