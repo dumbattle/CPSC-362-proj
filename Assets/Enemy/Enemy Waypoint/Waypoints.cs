@@ -4,6 +4,11 @@ public class Waypoints : MonoBehaviour
 {
     public static Transform[] points;
 
+    // TODO - Use this instead
+    public static Vector2[] GetWayPoints() {
+        throw new System.NotImplementedException();
+    }
+
     void Awake()
     {
         points = new Transform[transform.childCount];

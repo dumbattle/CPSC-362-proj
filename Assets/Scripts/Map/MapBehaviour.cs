@@ -12,6 +12,15 @@ public abstract class MapBehaviour : MonoBehaviour {
     public static IReadOnlyList<Vector2Int> GetCreepPath() => _main.GetPathForCreep();
 
 
+    // TODO - These 2 functions are opposites of each other
+    public static Vector3 GetWorldPosition(int x, int y) {
+        throw new System.NotImplementedException();
+    }
+
+    public static Vector2Int GetTileIndex(Vector2 worldPosition) {
+        throw new System.NotImplementedException();
+    }
+
 
     TileType[,] _tileTypes; // I do not like this. This is highly specific and likely to change, therefore should not be in base class
     int _width;
