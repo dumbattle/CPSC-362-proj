@@ -10,7 +10,6 @@ public class PlaceTower : MonoBehaviour {
     public Tile highlightTile;
     public Tile pathTile;
  
-    //private Ray ray;
     private Vector3Int newMousePos;
     private Vector3Int oldMousePos;
 
@@ -21,7 +20,6 @@ public class PlaceTower : MonoBehaviour {
  
  
     private void OnMouseOver() {
- 
         if (oldMousePos != newMousePos) {
             if (tilemap.GetTile<Tile>(oldMousePos) == highlightTile) {
                 tilemap.SetTile(oldMousePos, normalTile);
@@ -31,6 +29,12 @@ public class PlaceTower : MonoBehaviour {
  
         if (tilemap.GetTile<Tile>(newMousePos) == normalTile && tilemap.HasTile(newMousePos)) {
             tilemap.SetTile(newMousePos, highlightTile);
+        }
+    }
+
+    private void OnMouseExit() {
+        if (tilemap.GetTile<Tile>(oldMousePos) == highlightTile) {
+            tilemap.SetTile(oldMousePos, normalTile);
         }
     }
 
@@ -63,8 +67,6 @@ public class PlaceTower : MonoBehaviour {
     }
  
     private void Update() {
-        //ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //Vector3 worldPoint = ray.GetPoint(-ray.origin.z / ray.direction.z);
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         newMousePos = tilemap.WorldToCell(worldPoint);
     }
