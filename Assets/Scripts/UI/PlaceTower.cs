@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using System;
  
-public class SelectTile : MonoBehaviour {
+public class PlaceTower : MonoBehaviour {
     private Tilemap tilemap;
     public Tile normalTile;
     public Tile highlightTile;
@@ -35,11 +35,14 @@ public class SelectTile : MonoBehaviour {
     }
 
     private void OnMouseDown() {
-        int tileIndex = (newMousePos[0] + 1) + (16 * (newMousePos[1] + 1));
+        int relativeX = newMousePos[0] - tilemap.cellBounds.xMin;
+        int relativeY = newMousePos[1] - tilemap.cellBounds.yMin;
+        int tileIndex = relativeX + (tilemap.cellBounds.size[0] * relativeY);
         
         if (validTiles[tileIndex]) {
-            Instantiate(tower, newMousePos, Quaternion.identity);
-        }    
+            Instantiate(tower, new Vector3Int(relativeX, relativeY, 0) , Quaternion.identity);
+            validTiles[tileIndex] = false;
+        }
     }
 
     private void Start() {
