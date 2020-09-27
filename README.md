@@ -6,7 +6,7 @@
  - Refactor Waypoints
  - UI
  - Combine Tower and CreepSpawner Scenes into new scene
-   - Add in UI when completes
+   - Add in UI when complete
 
 
 ## Main Menu Documentation
