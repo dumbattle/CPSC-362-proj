@@ -15,7 +15,7 @@
  - Pause Button:               Cody
 
 
-## Discussion Topics
+## Next Discussion Topics
  - Good progress
    - No more features need
  - Documentation
