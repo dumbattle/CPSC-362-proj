@@ -14,19 +14,6 @@
  - Targeting varition toggle:  Cody
  - Pause Button:               Cody
 
-
-## Next Discussion Topics
- - Good progress
-   - No more features need
-   - Create a Scene that will be used for demo
- - Documentation
-   - Do it
- - Trello
-   - Is it being updated?
- - Rubric - Do we have everything ready to turn in?
-   - Backlog/Scrum notes
-   - Demo - Rubric says everyone needs to speak, ask for clarification?
-   - We may have to reuse our previous assignments
    
  ## LINKS
  - Trello
