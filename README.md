@@ -18,6 +18,7 @@
 ## Next Discussion Topics
  - Good progress
    - No more features need
+   - Create a Scene that will be used for demo
  - Documentation
    - Do it
  - Trello
