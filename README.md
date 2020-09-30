@@ -27,3 +27,7 @@
    - Backlog/Scrum notes
    - Demo - Rubric says everyone needs to speak, ask for clarification?
    - We may have to reuse our previous assignments
+   
+ ## LINKS
+ - Trello
+   - https://trello.com/b/HWrV0k1E/kanban-template
