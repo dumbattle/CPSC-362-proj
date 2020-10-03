@@ -1,0 +1,4 @@
+File: 10-2-2020
+
+- added documentation to PlaceTower.cs
+- pushed changes to master branch because only comments were added
