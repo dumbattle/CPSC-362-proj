@@ -1,0 +1,19 @@
+Agenda:
+ - Good Progress so far	
+ - how to develop. 		
+    - DON'T edit existing scenes or scripts. Create new ones or duplicate existing ones		
+ - Use git		
+ - Organization	
+    - Folders	
+    - Names   	
+ - Check Version	
+ - Unity Stuff	
+    - Only one scene	
+ - Terminology	
+    - Creep/Enemy	
+ - Documentation	
+    - Scripts	
+    - Scenes
+
+Notes: 
+https://docs.google.com/document/d/1WAC9vjg9jXAfQpAgR9TH6JSL2HP70vGqlY4FVSvcaKA/edit
