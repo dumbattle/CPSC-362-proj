@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TowerMovement : MonoBehaviour
 {
-
+    public LineRenderer line;
     public Transform target;
     public float range = 2f;
 
@@ -41,6 +41,12 @@ public class TowerMovement : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+            line = GetComponent<LineRenderer>();
+            line.enabled = true;
+            line.SetPosition(0, transform.position);
+            line.SetPosition(1, target.position);
+
+            Debug.Log("Targeting Enemy");
         }
         else
         {
@@ -52,8 +58,10 @@ public class TowerMovement : MonoBehaviour
     void Update()
     {
         if (target == null)
+        {
+            line.enabled = false;
             return;
-
+        }
         /* For tower rotation; Not yet sure if necessary
          
         Vector3 dir = target.position - transform.position;
