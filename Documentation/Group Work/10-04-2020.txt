@@ -1,0 +1,6 @@
+Members present: Elizabeth and Alejandro
+
+- The TowerMovement script was modified to include code for a line renderer.
+- A line renderer component was added to the towers so that the towers would indicate visually that they are locking onto targets and following them until they go out of range.
+
+These changes were applied to the scene Map with Towers.

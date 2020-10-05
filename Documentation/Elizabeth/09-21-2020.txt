@@ -1,0 +1,7 @@
+I, Elizabeth, duplicated the MapTest scene and added towers to it. I named this modified duplicate scene Map with Towers.
+
+I added 3 towers to the scene.
+
+I added a script called TowerMovement and added a tag called Enemy. The towers lock onto targets that fall into their range. Targets are game objects with the Enemy tag.
+
+After the towers lock onto a target, they follow the target until the target goes outside of their range. Then, the tower will lock onto the next closest target.
