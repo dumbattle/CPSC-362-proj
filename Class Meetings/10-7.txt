@@ -1,0 +1,14 @@
+Agenda:
+
+Iteration 1:
+ - Finish!!!
+   - Hopefully
+ - Create new branch for final Iteration 1?
+   
+Iteration 2:
+ - Prefabs
+   - Don't use prefabs directly
+   - Instead, create a copy in the scene, disable it, and use that instead
+ - Error Pause
+   - Enable it
+   - Don't let errors go unchecked
