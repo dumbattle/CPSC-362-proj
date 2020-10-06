@@ -1,0 +1,3 @@
+- Working on waypoints for creeps.
+- was able to set waypoints but was having trouble coding.
+- Stopped when another group member completed it.

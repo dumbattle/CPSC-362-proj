@@ -1,0 +1,3 @@
+- group planned on working on the project on the 26th, but I came late.
+- Everyone was so far ahead so I deceided to work on a main menu. 
+- I completed a main menu, but there was one created already.
