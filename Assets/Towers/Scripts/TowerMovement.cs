@@ -6,26 +6,31 @@ public class TowerMovement : MonoBehaviour
 {
     public LineRenderer line;
     public Transform target;
-    public float range = 2f;
+    public float range = 2f;                // the shooting range of the towers
 
-    public string enemyTag = "Enemy";
+    public string enemyTag = "Enemy";       // towers will target objects tagged "Enemy"
+
+    // curently unused variable; included as a precaution in case there is a need for 
+    // rotations in the future
     public Transform partToRotate;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Checks for targets in range
+        // Continuously checks for targets in range
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
+
     void UpdateTarget()
     {
-        // Finds GameObjects that have been tagged as enemies
+        // Finds GameObjects that have been tagged as enemies and stores them
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
 
         float shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
+        GameObject nearestEnemy = null;                     // the closest enemy is null by default
 
+        // searches through all enemies to find the nearest one
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
@@ -37,20 +42,23 @@ public class TowerMovement : MonoBehaviour
             }
         }
 
-        // If the closest enemy is in range, that enemy becomes the target, else no target
+        // If the closest enemy is in range, that enemy becomes the target
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+
+            // the line renderer is enabled when a target is detected within range
             line = GetComponent<LineRenderer>();
             line.enabled = true;
             line.SetPosition(0, transform.position);
             line.SetPosition(1, target.position);
 
+            // prints "Targeting Enemy" to the console
             Debug.Log("Targeting Enemy");
         }
         else
         {
-            target = null;
+            target = null;      // no target
         }
     }
 
@@ -59,9 +67,11 @@ public class TowerMovement : MonoBehaviour
     {
         if (target == null)
         {
+            // the line renderer is disabled when the there is no target in range
             line.enabled = false;
             return;
         }
+        
         /* For tower rotation; Not yet sure if necessary
          
         Vector3 dir = target.position - transform.position;
