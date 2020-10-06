@@ -2,8 +2,8 @@
 
 
 ## Important Folders
-### Documentation
-Contains the work that each member has done. Does not contain documentation for the actual project. Probably should rename this folder
+### Work Logs
+Contains a brief description of the work each member has done.
 
 ### Class Meetings
 Contains the agendas and notes for each in class meeting. 

@@ -1,0 +1,15 @@
+File: 9-25-20
+
+- I created:
+  - folder /Assets/Scripts/UI/
+  - folder /Assets/Scenes/Test/
+  - folder /Assets/Sprites/Tilemap/
+  - folder /Assets/Towers/TowerTypes/
+  - script /Assets/Scripts/UI/PlaceTower.cs
+  - scene /Assets/Scenes/Test/TowerPlacement
+- Documentation not yet included
+- added tile assets ("grass1", "ground1", "highlight") to /Assets/Sprites/Tilemap/
+- added tower1 prefab to /Assets/Towers/TowerTypes/
+_______________________________________________
+UDPATE
+- added OnMouseExit function to PlaceTower.cs
