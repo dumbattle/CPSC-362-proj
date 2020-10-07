@@ -1,0 +1,3 @@
+I worked with Alejandro to add a line renderer component to the towers. The work was applied to the Map with Towers scene.
+
+Most of the time was spent looking through many tutorials.

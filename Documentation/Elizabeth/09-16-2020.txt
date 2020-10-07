@@ -1,0 +1,3 @@
+I was present at the meeting and participated in the discussion.
+
+Calvin and I started looking into designing the tile map but we went with Calvin's map because his was easier to generate.
