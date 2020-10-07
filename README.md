@@ -1,4 +1,12 @@
-# CPSC-362-proj
+# CPSC-362-proj Iteration 1
+
+## Goals
+ - Our overall goal is to get familiar with Unity3D and Github
+ - Therefore, we will have a small amount of planned features
+ - Features:
+   - A map
+   - Creeps that will follow a path
+   - Towers that can be placed on the map and target creeps
 
 
 ## Important Folders
