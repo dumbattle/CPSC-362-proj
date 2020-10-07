@@ -1,0 +1,12 @@
+File: 10-7-2020
+
+- created folder /Assets/Scenes/Iteration1/
+- created scene /Assets/Scenes/Iteration1/Menu
+- created scene /Assets/Scenes/Iteration1/Stage1
+- created folder /Assets/Enemy/EnemyTypes/
+- created prefab /Assets/Enemy/EnemyTypes/enemy1
+- set "Scenes in Build" in File>Build Settings to Menu and Stage1 from Iteration1 folder
+- duplicated /Assets/Scripts/UI/PlaceTower.cs
+  - old script renamed PlaceTowerOLD.cs
+  - new script named PlaceTower.cs
+  - fixed higlight issue when hovering over placed tower
