@@ -1,0 +1,5 @@
+9-24-20
+
+-Created simple Creep Spawner
+-Can control number of creeps spawning, frequency and speed.
+-Worked on it by self.
