@@ -17,49 +17,86 @@ public class PlaceTower : MonoBehaviour {
 
     public GameObject tower;
     private TowerMovement towerScript;
-    
+
+    private bool ToggleState = true;                    // indicator for building toggle
+
+   
     // Method for when mouse hovers over Tilemap GameObject
-    private void OnMouseOver() {  
-        if (oldMousePos != newMousePos) {
-            // When the mouse is over a new tile and if the previous tile was highlighted, 
-            // revert it to a normal tile
-            if (tilemap.GetTile<Tile>(oldMousePos) == highlightTile) {
-                tilemap.SetTile(oldMousePos, normalTile);
+    private void OnMouseOver() {
+        if (!ToggleState)   
+        {
+            if (oldMousePos != newMousePos)
+            {
+                // When the mouse is over a new tile and if the previous tile was highlighted, 
+                // revert it to a normal tile
+                if (tilemap.GetTile<Tile>(oldMousePos) == highlightTile)
+                {
+                    tilemap.SetTile(oldMousePos, normalTile);
+                }
+                // Update previous mouse location to current location
+                oldMousePos = newMousePos;
             }
-            // Update previous mouse location to current location
-            oldMousePos = newMousePos;
-        }
-        // When the mouse hovers over a new valid tile for tower placement, highlight it
-        if (tilemap.GetTile<Tile>(newMousePos) == normalTile && tilemap.HasTile(newMousePos)) {
-            tilemap.SetTile(newMousePos, highlightTile);
+            // When the mouse hovers over a new valid tile for tower placement, highlight it
+            if (tilemap.GetTile<Tile>(newMousePos) == normalTile && tilemap.HasTile(newMousePos) && validTiles[getTileIndex()])
+            {
+                tilemap.SetTile(newMousePos, highlightTile);
+            }
         }
     }
 
     // Method for when mouse is not hovering over Tilemap Gameobject
     private void OnMouseExit() {
-        // If the previous tile was highlighted, revert it to a normal tile
-        if (tilemap.GetTile<Tile>(oldMousePos) == highlightTile) {
-            tilemap.SetTile(oldMousePos, normalTile);
+        if (!ToggleState)   
+        {
+            // If the previous tile was highlighted, revert it to a normal tile
+            if (tilemap.GetTile<Tile>(oldMousePos) == highlightTile)
+            {
+                tilemap.SetTile(oldMousePos, normalTile);
+            }
         }
     }
     
     // Method for when left mouse button is pressed
     private void OnMouseDown() {
-        // Get the x,y coordinates of the grid as if the bottom left cell is (0,0)
-        int relativeX = newMousePos[0] - tilemap.cellBounds.xMin;
-        int relativeY = newMousePos[1] - tilemap.cellBounds.yMin;
-        
-        // Get the index of a tile as if it were a 1D array
-        int tileIndex = relativeX + (tilemap.cellBounds.size[0] * relativeY);
-        
-        // If the current location is a valid tile, create a tower at that location and set
-        // the location to no longer be valid for additional tower placement
-        if (validTiles[tileIndex]) {
-            Instantiate(tower, new Vector3Int(relativeX, relativeY, 0) , Quaternion.identity);
-            validTiles[tileIndex] = false;
+        if (!ToggleState)
+        {   
+            (int, int) relativeXY = getRelativeXY();          
+            int tileIndex = getTileIndex();
+
+            // If the current location is a valid tile, create a tower at that location and set
+            // the location to no longer be valid for additional tower placement
+            if (validTiles[tileIndex])
+            {
+                Instantiate(tower, new Vector3Int(relativeXY.Item1, relativeXY.Item2, 0), Quaternion.identity);
+                validTiles[tileIndex] = false;
+            }
         }
     }
 
+    // return the x,y coordinates (as a tuple) of the grid as if the bottom left cell is (0,0) 
+    private (int, int) getRelativeXY() {
+        if (!ToggleState)
+        { 
+            int relativeX = newMousePos[0] - tilemap.cellBounds.xMin;
+            int relativeY = newMousePos[1] - tilemap.cellBounds.yMin;
+    
+            return (relativeX, relativeY);
+        }
+        return (-1, -1);
+    }
+
+    // return the index of a tile as if it were a 1D array based on the relative x, y coordinates
+    private int getTileIndex() {
+        if (!ToggleState)
+        { 
+            // get relative coordinates of x, y
+            (int, int) relativeXY = getRelativeXY();
+
+            return relativeXY.Item1 + (tilemap.cellBounds.size[0] * relativeXY.Item2);
+        }
+        return -1;
+    }
+   
     private void Start() {
         tilemap = gameObject.GetComponent<Tilemap>();
 
@@ -81,10 +118,16 @@ public class PlaceTower : MonoBehaviour {
 
         towerScript = tower.GetComponent<TowerMovement>();
     }
- 
+
+
     private void Update() {
         // When the game advances one frame, update location of mouse
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         newMousePos = tilemap.WorldToCell(worldPoint);
+    }
+
+    public void ToggleBuild()
+    {
+        ToggleState = !ToggleState;
     }
 }
