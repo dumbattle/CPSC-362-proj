@@ -18,7 +18,7 @@ Contains the agendas and notes for each in class meeting.
 This could technically be placed in documentation, but it is important enough to be placed in its own folder.
 
 ### Assets
-Most of our actual work will be found in this folder.
+Most of our actual work will be found in this folder. Subfolders will also have documentation on the actual scene itself.
 
 ### Others
 Other folders are used by Unity3D.
