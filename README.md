@@ -23,13 +23,7 @@ Most of our actual work will be found in this folder.
 ### Others
 Other folders are used by Unity3D.
 We will likely not be opening these files at all.
-
-
-## Meeting Topics
- - Targeting varition toggle:  Cody
- - Pause Button:               Cody
-
-   
+  
  ## LINKS
  - Trello
    - https://trello.com/b/HWrV0k1E/kanban-template
