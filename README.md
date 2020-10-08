@@ -2,12 +2,18 @@
 Each iteration will be in its own branch
 
 ## Goals
- - Our overall goal is to get familiar with Unity3D and Github
- - Therefore, we will have a small amount of planned features
- - Features:
-   - A map
-   - Creeps that will follow a path
-   - Towers that can be placed on the map and target creeps
+ - Create a fully functional level.
+   - Waves
+   - Economy
+   - Lives
+   - At least 2 towers which can be purchased
+     - Updgrades - not yet
+   - At least 2 creeps
+ - Have a well written code base
+   - Much of the code in iteration 1 will be refactored
+   - Overall structure of code
+     - https://drive.google.com/file/d/1E7HqMjY-GW3jF-4Ot4glHy28J3zv1yfI/view?usp=sharing
+ - This will probably be the most difficult iteration, we may not complete this in time, if so, we will extended it to iteration 3
 
 
 ## Important Folders
