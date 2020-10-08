@@ -1,0 +1,7 @@
+I worked on fixes to the line renderer:
+- fixed errors detected by Unity
+- added a material to the line to fix issues with layering
+
+I added documentation to:
+- the Map with Towers scene
+- the TowerMovement script

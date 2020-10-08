@@ -1,0 +1,19 @@
+Duplicated /Assets/Scenes/Test/UI Test/Menu (Renamed to Menu)
+- no changes made to scene
+
+Duplicated /Assets/Scenes/Test/ButtonTest/TowerPlacementWithButton (Renamed to Stage1)
+- removed Map Image from Hiearchy
+- replaced Tower object in Grid>map1>PlaceTower1Test (Script) with new tower prefab updated
+  to reflect added line rendering
+  - new tower prefab located in /Assets/Towers/TowerTypes/Tower1.1
+- created folder /Assets/Enemy/EnemyTypes/
+- created created enemy prefab /Assets/Enemy/EnemyTypes/Enemy1
+- added EnemySpawner object to Hiearchy
+  - attached /Assets/Scenes/TowerPlacement/Enemy/EnemySpawner.cs to EnemySpawner object
+    - attached /Assets/Enemy/EnemyTypes/Enemy1 prefab to script
+- attached button to script /Assets/Scripts/UI/PlaceTower.cs 
+
+In File>Build Settings
+- set Scenes In Build to
+  - Scenes/Iteration1/Menu
+  - Scenes/Iteration1/Stage1
