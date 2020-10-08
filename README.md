@@ -1,4 +1,5 @@
-# CPSC-362-proj Iteration 1
+# CPSC-362-proj
+Each iteration will be in its own branch
 
 ## Goals
  - Our overall goal is to get familiar with Unity3D and Github
