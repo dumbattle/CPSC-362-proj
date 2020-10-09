@@ -1,0 +1,9 @@
+Create example UIManager 
+
+Folder: Assets/Examples/UIManager
+Scripts: ButtonUIManager.cs
+Scripts: ButtonUITester.cs
+Scripts: UIManager.cs
+Scene: UI Example Scene
+
+Documentation included
