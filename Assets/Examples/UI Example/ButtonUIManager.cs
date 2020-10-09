@@ -14,7 +14,7 @@ namespace AustinsExamples.UI {
             // if we try to assign via the inspector, we would get no error if we forgot to assign
             redButton.onClick.AddListener(() => Register.Color(Color.red));
             greenButton.onClick.AddListener(() => Register.Color(Color.green));
-            // I used lamba functions for this. If you are unfamiliar with them, you can use google or ask me in discord
+            // I used lambda functions for this. If you are unfamiliar with them, you can use google or ask me in discord
         }
 
         void Update() {
