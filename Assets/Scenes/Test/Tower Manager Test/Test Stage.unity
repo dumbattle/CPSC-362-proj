@@ -998,6 +998,8 @@ MonoBehaviour:
   highlightTile: {fileID: 11400000, guid: 2fce243caab07034c91f7e5401e436dc, type: 2}
   pathTile: {fileID: 11400000, guid: 3ed719d31adfbaf40975f6543ad9864e, type: 2}
   tower: {fileID: 3513808476025795817, guid: 2d9dbadc1152c064c94d685dc6acd658, type: 3}
+  towerManagerObj: {fileID: 0}
+  towerManagerScript: {fileID: 1950351117}
 --- !u!19719996 &1876762956
 TilemapCollider2D:
   m_ObjectHideFlags: 0
