@@ -11,7 +11,7 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-          Transform bar = transform.find("Bar");
+          Transform bar = transform.Find("Bar");
     }
 
      public void SetSize(float sizeNormal)
