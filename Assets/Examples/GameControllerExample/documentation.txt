@@ -1,0 +1,158 @@
+﻿This scene builds upon the UI example scene
+
+Comes with:
+	An extended UIManager
+	A GameController Example
+	A GameManager Example
+
+These examples are simple, but you should try to follow the basic format of these examples
+
+Script: Dummy
+	Dummy script
+	A GameManager needs somthing to manage
+	This is it
+	
+	Init()
+		- Substitute for Start()
+
+	GameplayUpdate()
+		- Substitute for Update()
+
+	We don't use us built in Unity methods
+	This gives us more control over these scripts
+
+Script: DummyManager
+	Example GameManager
+
+	SpawnDummy(source)
+		- The source dummy is passed in as a parameter, and not stored in this script itself
+		- This allows us to spawn any kind of dummy, without having to modify this script
+
+		- We pass the Dummy component, and not the gameobject to ensure we have a valid Dummy
+
+		- We also return the new Dummy for convienence, if the caller wants to do something special with it
+
+	GameplayUpdate()
+		- Substitute for Update()
+		- Dummies need to be updated, so we that here
+
+	AllDummies()
+	RemoveDummy()
+		- Example Methods
+		- Not used
+		- Not Tested
+		- Just examples
+
+	On its own, this script will do absolutely nothing
+	This is intended, and how it should work
+
+Script: GameStateUIManager
+	This script extends the UImanager in the other example
+	This derives from the base class, not the implementation
+
+	User Input:
+		- Color (base)
+		- Tile  (base)
+		- Play  (new)
+		- Pause (new)
+		- Click (new)
+	
+	SetPlayState()
+	SetPauseState()
+		- These will be called by a GameController to set the correct UI elements
+
+	ShowPlayUI()
+	ShowPausedUI()
+		- The implementation of SetPlayState() and SetPauseState
+
+	Register:
+		Since this script inherits for UIManager, it comes with its Register class
+		This class also defines its Register class
+
+		=> We have 2 Register classes
+		If we want to use the new Register class, we can simply use Register
+		If we want to use the base Register class, we use UIManager.Register
+
+
+Script: ExampleGSUIManager
+	Example implementation of the new UIManager
+
+	Color:
+		We have an array of buttons
+		Each button corrosponds to a color, which is set in the inspecter
+
+		This is registered when a button is pressed
+
+	Tile:
+		We use the mouse position
+
+		This is registered in Update()
+
+	Play:
+		We have 2 buttons
+		 - A dedicated play button which will register whenever it is clicked
+		 - a playpause button which will register when clicked if the correct listener is subscribed
+		The space button can be pressed as an alternative to the playpause button
+		 - This is registered in Update()
+
+	Pause:
+		Same as play
+
+	Click:
+		When the mouse button 0 is released
+		If a button was presssed on the same frame, a click will not be registered
+
+		Registered in Update();
+
+
+
+	Color menu:
+		Example of a menu implementation
+		A button controls opening/closing the menu
+
+		When opened, the color buttons are displayed
+
+
+	ShowPlayUI()
+	ShowPausedUI()
+		Enable the correct set of UI elements
+		The Color menu will be closed when either function is called
+			This is not neccessary, but I inclulded it as a demonstration
+		
+Script: ExampleGameController
+	Example of a GameController
+	
+	This will show how to use UIManager and GameManagers to create a working scene
+
+
+
+	The game state is tracked as a delegate, GameState
+	the gamestate is called and updated every frame
+
+	SceneStartState:
+		The initial gameState
+
+		Uses the DummyManager to spawn 1 dummy
+		Then it moves to PlayState
+
+	PlayState:
+		Update the DummyManager, which in turn updates all the Dummy's
+
+		Check the UIManager for a click
+			if there is, spawn a dummy
+			use UIManager.tile for position to spawn dummy
+			use UImanager.color to set the dummies color
+
+		Use UIManaers color and tile input to update tile
+
+		Check for pause input to move to pause state
+
+	PauseState:
+		Pausing is accomplished by NOT calling functions that we want paused
+		i.e. do not call GameplayUpdate
+
+		
+		Use UIManaers color and tile input to update tile
+
+		Check for play input to move to play state
+

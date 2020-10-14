@@ -6,7 +6,7 @@ using UnityEngine;
 namespace AustinsExamples.UI {
     public abstract class UIManager : MonoBehaviour {
         // input data
-        public static Color color { get; protected set; }
+        public static Color color { get; protected set; } = new Color(1, 1, 1, 1);
         public static Vector2Int tile { get; protected set; }
 
         // we need to know if the input is in use
