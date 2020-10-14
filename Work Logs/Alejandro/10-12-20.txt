@@ -1,0 +1,4 @@
+Alejandro Harrison
+
+-Worked on a functional health bar that lowers and raises with damage.
+-Worked on a creep manager that will monitor creep's health, damage, and destruction.
