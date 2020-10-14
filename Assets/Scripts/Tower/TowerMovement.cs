@@ -24,7 +24,8 @@ public class TowerMovement : MonoBehaviour
 
     void UpdateTarget()
     {
-        // Finds GameObjects that have been tagged as enemies and stores them
+          // Finds GameObjects that have been tagged as enemies and stores them
+         // var creeps = creepManager.AllCreeps();
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
 
         float shortestDistance = Mathf.Infinity;
