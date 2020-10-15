@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace AustinsExamples.Tower {
     public class TowerManagerA : MonoBehaviour {
-        ITower[,] _towers;
+        ITower[,] _towers = null;
 
 
         public bool TileOccupied(int x, int y) {
