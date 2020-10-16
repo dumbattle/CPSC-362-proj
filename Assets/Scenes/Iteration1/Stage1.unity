@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2506891baed6d847b569ace31041d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 45876600812971358, guid: f99978b035b189b44b1af5a6a724963b, type: 3}
+  enemy: {fileID: 2856503472133738962, guid: b5a06987e8ff6bd4abe603f5a9987b4d, type: 3}
 --- !u!4 &912418325
 Transform:
   m_ObjectHideFlags: 0

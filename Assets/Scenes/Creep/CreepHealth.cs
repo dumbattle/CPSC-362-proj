@@ -10,17 +10,14 @@ public class CreepHealth : MonoBehaviour {
         max = current = maxHP;
     }
 
-
-     void Update()
+     
+     public void damage(int amount)
      {
-          current--;
+          current-=amount;
           OnHealthChange?.Invoke();
      }
 
-     void Start()
-     {
-          Init(100);    
-     }   
+      
 
 
      // TODO - add functionality
