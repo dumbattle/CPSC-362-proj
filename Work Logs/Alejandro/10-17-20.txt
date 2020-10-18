@@ -1,0 +1,6 @@
+10-17-20
+Alejandro Harrison
+
+-Worked with Austin to finalize effective destruction of creeps.
+-Fixed the error messages that we were receiving when a creep was desstroyed.
+-Made an effective array to add and remove enemies.
