@@ -49,5 +49,11 @@ public class EnemySpawner : MonoBehaviour
                }
           }
 
-     }
+          foreach (var c in toRemove)
+          {
+               creeps.Remove(c);
+          }
+
+
+          }
 }
