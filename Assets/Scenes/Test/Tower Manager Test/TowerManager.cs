@@ -1,7 +1,13 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+=======
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Security.Cryptography;
+>>>>>>> Stashed changes
 =======
 ﻿using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -24,6 +30,7 @@ public class ActionFailedException : Exception
 public class TowerManager : MonoBehaviour, ITower
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     // Data members
     Tower[,] towerTracker;                          // 2D array of Towers
     public GameObject tower;                        // Only one tower for testing purposes
@@ -37,6 +44,8 @@ public class TowerManager : MonoBehaviour, ITower
 
     Tower[] AllTowers()
 =======
+=======
+>>>>>>> Stashed changes
     ITower[,] _towers;
     private Vector2Int index;
     public Vector2Int mapIndex { get { return index; } }
@@ -57,11 +66,15 @@ public class TowerManager : MonoBehaviour, ITower
     }
 
     public bool TileOccupied(int x, int y)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     {
         return _towers[x, y] != null;
     }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     GameObject GetTower(int x, int y)
     {
@@ -95,6 +108,18 @@ public class TowerManager : MonoBehaviour, ITower
             tower = GetTower(x, y);                          // Get tower reference
             Destroy(tower);                                 // Destroy tower
             towerTracker[x, y].available = true;            // Tile is now available
+=======
+    public ITower CreateTower(GameObject src, int x, int y)
+    {
+        ITower tt = src;
+        GameObject clone = null;
+        if (!TileOccupied(x, y))
+        {
+            index = new Vector2Int(x, y);
+            clone = Instantiate(src, new Vector3Int(x, y, 0), Quaternion.identity);                           // Create tower object
+            clone.transform.name = transform.name.Replace("TowerManager", "Tower1." + ++numOfTowers).Trim();    // Rename tower to Tower1.numOfTower
+            _towers[x, y] = tt;                                                                                 // Add src to _towers
+            return tt;
 =======
     public ITower CreateTower(GameObject src, int x, int y)
     {
@@ -147,6 +172,43 @@ public class TowerManager : MonoBehaviour, ITower
         foreach (var t in AllTowers())
         {
 <<<<<<< Updated upstream
+            throw new ActionFailedException("TowerManager::PlaceTower - Tile occupied at (" + x + ", " + y + ")");   // Tile is already occupied
+        }
+    }
+
+    public ITower GetTower(int x, int y)
+    {
+        if (TileOccupied(x, y))
+        {
+            return _towers[x, y];
+        }
+        else
+        {
+            throw new ActionFailedException("TowerManager::GetTower - Tile unoccupied at (" + x + ", " + y + ")");
+        }
+    }
+
+     public IEnumerable<ITower> AllTowers()
+     {
+        for (int x = 0; x < _towers.GetLength(0); x++)
+        {
+            for (int y = 0; y < _towers.GetLength(1); y++)
+            {
+                var t = _towers[x, y];
+                if (t != null)
+                {
+                    yield return t;
+                }
+            }
+>>>>>>> Stashed changes
+        }
+    }
+
+    public void GameplayUpdate()
+    {
+        foreach (var t in AllTowers())
+        {
+<<<<<<< Updated upstream
             UnityEngine.Debug.Log("Nothing to destroy");    // Nothing was on the tile
         }
     }
@@ -162,6 +224,14 @@ public class TowerManager : MonoBehaviour, ITower
 
     public void RemoveTower(int x, int y)
     {
+=======
+            t.GameplayUpdate();
+        }
+    }
+
+    public void RemoveTower(int x, int y)
+    {
+>>>>>>> Stashed changes
         GameObject towerToDestroy;
         if (TileOccupied(x, y))
         {
