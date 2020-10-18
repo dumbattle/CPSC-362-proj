@@ -4,16 +4,10 @@ using System.Security.Cryptography;
 using UnityEngine;
 using System;
 
-
-
-
-
 public class ActionFailedException : Exception
 {
     public ActionFailedException(string msg) : base(msg) { }
 }
-
-
 
 public class TowerManager : MonoBehaviour, ITower
 {
@@ -22,6 +16,18 @@ public class TowerManager : MonoBehaviour, ITower
     public Vector2Int mapIndex { get { return index; } }
     private int numOfTowers = 0;
 
+
+    void Awake()
+    {
+        _towers = new ITower[15, 15];
+        for (int i = 0; i < 15; i++)
+        {
+            for (int j = 0; j < 15; j++)
+            {
+                _towers[i, j] = null;
+            }
+        }
+    }
 
     public bool TileOccupied(int x, int y)
     {
