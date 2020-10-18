@@ -20,7 +20,7 @@ public class CreepBehaviour : MonoBehaviour {
 
      private void Die()
      {
-          Destroy(gameObject);
+              Destroy(gameObject);
      }
     //this script does nothing on its own, the components will are what dictates what this creep will do
     public void GameplayUpdate() {

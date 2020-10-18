@@ -34,7 +34,8 @@ public class TestCreepMovement : CreepMovement {
 
           if (wavepointIndex >= Waypoints.points.Length)
           {
-               Destroy(gameObject);
+               
+                  Destroy(gameObject);
                return;
           }
 

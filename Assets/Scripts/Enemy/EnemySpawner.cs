@@ -35,10 +35,19 @@ public class EnemySpawner : MonoBehaviour
 
           }
 
-       
+                 List<CreepBehaviour> toRemove = new List<CreepBehaviour>();
+
           foreach (var creep in creeps)
-          { 
-               creep.GameplayUpdate(); 
+          {
+               if (creep == null)
+               {
+                    toRemove.Add(creep);
+               }
+               else
+               {
+                    creep.GameplayUpdate();
+               }
           }
-    }
+
+     }
 }
