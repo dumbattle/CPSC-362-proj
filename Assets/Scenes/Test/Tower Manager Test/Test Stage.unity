@@ -884,7 +884,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1876762955}
         m_MethodName: ToggleBuild
         m_Mode: 1
         m_Arguments:
@@ -1021,15 +1021,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1876762954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87f7941ccec0bd148b90c5178135a4ca, type: 3}
+  m_Script: {fileID: 11500000, guid: d49dc8a4a9e07f24f9dc22087c87d6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   normalTile: {fileID: 11400000, guid: 59c9fee1b079c9346a0a3e55f756cdb4, type: 2}
   highlightTile: {fileID: 11400000, guid: 2fce243caab07034c91f7e5401e436dc, type: 2}
   pathTile: {fileID: 11400000, guid: 3ed719d31adfbaf40975f6543ad9864e, type: 2}
   tower: {fileID: 3513808476025795817, guid: 2d9dbadc1152c064c94d685dc6acd658, type: 3}
-  towerManagerObj: {fileID: 0}
-  towerManagerScript: {fileID: 1950351117}
 --- !u!19719996 &1876762956
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -3508,50 +3506,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1492983440}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1950351116
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1950351118}
-  - component: {fileID: 1950351117}
-  m_Layer: 0
-  m_Name: TowerManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1950351117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950351116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334577fe32b46524bb57a51a17748dbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tower: {fileID: 3513808476025795817, guid: 2d9dbadc1152c064c94d685dc6acd658, type: 3}
---- !u!4 &1950351118
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950351116}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 743.72656, y: 421.68216, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1960200761
 GameObject:
