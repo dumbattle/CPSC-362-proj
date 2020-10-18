@@ -56,6 +56,7 @@ public class TowerManager : MonoBehaviour, ITower
     {
         if (TileOccupied(x, y))
         {
+            index = new Vector2Int(x, y);
             return _towers[x, y];
         }
         else
