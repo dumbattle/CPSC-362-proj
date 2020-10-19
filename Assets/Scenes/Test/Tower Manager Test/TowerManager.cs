@@ -14,8 +14,9 @@ public class TowerManager : MonoBehaviour, ITower
     ITower[,] _towers;
     private Vector2Int index;
     public Vector2Int mapIndex { get { return index; } }
+    private GameObject obj;
+    public GameObject reference {  get { return obj; } }
     private int numOfTowers = 0;
-
 
     void Awake()
     {
@@ -36,13 +37,14 @@ public class TowerManager : MonoBehaviour, ITower
 
     public ITower CreateTower(GameObject src, int x, int y)
     {
-        ITower tt = src;
-        GameObject clone = null;
         if (!TileOccupied(x, y))
         {
-            index = new Vector2Int(x, y);
-            clone = Instantiate(src, new Vector3Int(x, y, 0), Quaternion.identity);                           // Create tower object
+            GameObject clone = null;                                                                            // Create null GameObject for reference to cloned object
+            clone = Instantiate(src, new Vector3Int(x, y, 0), Quaternion.identity);                             // Create tower object
             clone.transform.name = transform.name.Replace("TowerManager", "Tower1." + ++numOfTowers).Trim();    // Rename tower to Tower1.numOfTower
+            obj = clone;                                                                                        // Set obj for ITower.GamObject reference get
+            index = new Vector2Int(x, y);                                                                       // Set index for ITower.MapIndex get
+            ITower tt;                                                                                          // Create ITower -- Not sure if this is working how I think it is
             _towers[x, y] = tt;                                                                                 // Add src to _towers
             return tt;
         }
@@ -56,7 +58,7 @@ public class TowerManager : MonoBehaviour, ITower
     {
         if (TileOccupied(x, y))
         {
-            index = new Vector2Int(x, y);
+            index = new Vector2Int(x, y);                                                                       // Set index for ITower.MapIndex get
             return _towers[x, y];
         }
         else
@@ -90,11 +92,11 @@ public class TowerManager : MonoBehaviour, ITower
 
     public void RemoveTower(int x, int y)
     {
-        GameObject towerToDestroy;
+        ITower towerToDestroy;
         if (TileOccupied(x, y))
         {
-            towerToDestroy = GetTower(x, y);                                        // Get tower reference
-            Destroy(towerToDestroy);                                                // Destroy tower
+            towerToDestroy = GetTower(x, y);                                                                    // Get tower reference
+            Destroy(towerToDestroy.reference);                                                                  // Destroy tower
             _towers[x, y] = null;
         }
         else
