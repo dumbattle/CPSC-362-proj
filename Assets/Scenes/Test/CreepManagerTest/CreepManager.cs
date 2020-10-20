@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class CreepManager : MonoBehaviour
 {
-     CreepBehaviour cr;
      List<CreepBehaviour> creepList = new List<CreepBehaviour>();  // list of creeps
      
     public IEnumerable<CreepBehaviour> AllCreeps()
