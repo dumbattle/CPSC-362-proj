@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class CreepManager : MonoBehaviour
 {
-    List<CreepBehavior> creepList;  // list of creeps
- 
-    public IEnumerable<CreepBehavior> AllCreeps()
+     CreepBehaviour cr;
+     List<CreepBehaviour> creepList = new List<CreepBehaviour>();  // list of creeps
+     
+    public IEnumerable<CreepBehaviour> AllCreeps()
     {
        /* for (int i = 0; i < creepList.Count; i++)
         {
@@ -20,12 +21,12 @@ public class CreepManager : MonoBehaviour
        return creepList;   // return all creeps
     }
 
-    public CreepBehavior SpawnCreep(CreepBehavior src)
+    public CreepBehaviour SpawnCreep(CreepBehaviour src)
     {
         return src;
     }
 
-    public void RemoveCreep(CreepBehavior creep)
+    public void RemoveCreep(CreepBehaviour creep)
     {
         creepList.Remove(creep);
     }
@@ -41,6 +42,7 @@ public class CreepManager : MonoBehaviour
             t.GameplayUpdate();
     }
 }
+
 
 public struct CreepBehavior
 {
