@@ -22,7 +22,10 @@ public class CreepManager : MonoBehaviour
 
     public CreepBehaviour SpawnCreep(CreepBehaviour src)
     {
-        return src;
+        var spawn = Instantiate(src);
+        spawn.gameObject.SetActive(true);
+        creepList.Add(spawn);
+        return spawn;
     }
 
     public void RemoveCreep(CreepBehaviour creep)
@@ -43,12 +46,3 @@ public class CreepManager : MonoBehaviour
 }
 
 
-public struct CreepBehavior
-{
-    public GameObject refr;
-
-    public CreepBehavior(GameObject obj)
-    {
-        this.refr = obj;
-    }
-}
