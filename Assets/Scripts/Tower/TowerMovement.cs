@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class TowerMovement : MonoBehaviour
 {
+    public CreepHealth creepyBar;
     public LineRenderer line;
     public Transform target;
     public float range = 2f;                // the shooting range of the towers
 
     public string enemyTag = "Enemy";       // towers will target objects tagged "Enemy"
-
+    [Min(1)]public int damageDone = 1;
     // curently unused variable; included as a precaution in case there is a need for 
     // rotations in the future
     public Transform partToRotate;
@@ -24,7 +25,8 @@ public class TowerMovement : MonoBehaviour
 
     void UpdateTarget()
     {
-        // Finds GameObjects that have been tagged as enemies and stores them
+          // Finds GameObjects that have been tagged as enemies and stores them
+         // var creeps = creepManager.AllCreeps();
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
 
         float shortestDistance = Mathf.Infinity;
@@ -52,7 +54,8 @@ public class TowerMovement : MonoBehaviour
             line.enabled = true;
             line.SetPosition(0, transform.position);
             line.SetPosition(1, target.position);
-
+            creepyBar = target.GetComponent<CreepHealth>();
+            creepyBar.damage(damageDone);
             // prints "Targeting Enemy" to the console
             Debug.Log("Targeting Enemy");
         }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3513808476025795814}
   - component: {fileID: 3513808476025795813}
   m_Layer: 0
-  m_Name: Tower (1)
+  m_Name: Tower1.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,10 +95,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7610b53006fc8b4daec0b845b0caf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creepyBar: {fileID: 0}
   line: {fileID: 3513808476025795813}
-  target: {fileID: 0}
+  target: {fileID: 1258855969551775072, guid: b5a06987e8ff6bd4abe603f5a9987b4d, type: 3}
   range: 2
   enemyTag: Enemy
+  damageDone: 20
   partToRotate: {fileID: 0}
 --- !u!120 &3513808476025795813
 LineRenderer:

@@ -12,11 +12,9 @@ public class EnemySpawner : MonoBehaviour
      Vector2 whereToSpawn;
      int spawnMax = 5;
      int enemyCounter = 0;
+     List<CreepBehaviour> creeps = new List<CreepBehaviour>();
      // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   
 
     // Update is called once per frame
     void Update()
@@ -28,10 +26,34 @@ public class EnemySpawner : MonoBehaviour
                {
                     timer = 0;
                     whereToSpawn = new Vector2(transform.position.x, transform.position.y);
-                    Instantiate(enemy, whereToSpawn, Quaternion.identity);
+                    var go = Instantiate(enemy, whereToSpawn, Quaternion.identity);
                     enemyCounter++;
+                    var cb = go.GetComponent<CreepBehaviour>();
+                    creeps.Add(cb);
+                    cb.Init();
+               }
+
+          }
+
+                 List<CreepBehaviour> toRemove = new List<CreepBehaviour>();
+
+          foreach (var creep in creeps)
+          {
+               if (creep == null)
+               {
+                    toRemove.Add(creep);
+               }
+               else
+               {
+                    creep.GameplayUpdate();
                }
           }
 
-    }
+          foreach (var c in toRemove)
+          {
+               creeps.Remove(c);
+          }
+
+
+          }
 }
