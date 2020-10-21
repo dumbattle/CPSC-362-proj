@@ -1,0 +1,28 @@
+Test for UI Manager
+
+scene duplicated from /Assets/Scenes/Iteration1/Stage1
+- removed "Waypoints (1)"
+- removed "Canvas->Button"
+- removed "EnemySpawner"
+- added "Towers"
+  - added "Towers->Tower1.1"
+- added "Canvas->Tower1" Button
+- added "UIManager"
+  - attached /Assets/Scripts/UI/Test/TestUIManager.cs script
+    - set "Tilemap" field to "Grid->map1"
+    - set "Tower 1" field to "Towers->Tower1.1"
+    - set "Tower 1 Button" to "Canvas->Tower1"
+  - attached /Assets/Scripts/UI/Test/UITester.cs script
+    - set "Field Tile" field to /Assets/Sprites/Tilemap/grass1
+    - set "Path Tile" field to /Assets/Sprites/Tilemap/ground1
+    - set "Highlight Tile" field to /Assets/Sprites/Tilemap/highlight 
+
+How to use:
+- clicking the "Tower1" button allows the user to place a single tower
+- to place a tower, the user clicks on a tile
+  - if the tile is a valid tile for tower placement, a tower will be instantiated at that tile
+  - if the tile is not valid, no tower will be placed
+    - there is currently no indicator of whether a tile is valid or not
+    - tiles are invalid if it is a "Path Tile" or a tile with a tower already on it
+- clicking anywhere (regardless if a tower was placed or not) after clicking the "Tower1" button will
+  result in the loss in ability to place towers until the "Tower1" button is clicked again
