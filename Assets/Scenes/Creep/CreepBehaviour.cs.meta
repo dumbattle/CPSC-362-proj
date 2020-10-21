@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 4cb479cf85cc8c448b47a43d01cc59d1
+=======
 guid: 7ffa08bb52950f348a9d834085acc69c
+>>>>>>> 0498fd17049de8d4b9d860fe19b47a9f3e339dea
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
