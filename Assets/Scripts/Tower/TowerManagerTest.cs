@@ -17,8 +17,7 @@ public class TowerManagerTest : MonoBehaviour
     public TowerManager tm;
 
     // dummy towers for testing
-    public GameObject tower;
-
+    public TowerBehaviour src;
 
     void Start()
     {
@@ -28,16 +27,16 @@ public class TowerManagerTest : MonoBehaviour
         {
             throw new FailedTestException("TowerManager is not assigned to TowerManagerTest");
         }
-        if (tower == null)
+        if (src == null)
         {
             throw new FailedTestException("tower1 is not assigned to TowerManagerTest");
         }
 
         print("Creating 3 copies of tower1 at (0, 0), (3, 3), and (5, 5)");
 
-        ITower t1_1 = tm.CreateTower(tower, 0, 0);
-        ITower t1_2 = tm.CreateTower(tower, 3, 3);
-        ITower t1_3 = tm.CreateTower(tower, 5, 5);
+        ITower t1_1 = tm.CreateTower(src, 0, 0);
+        ITower t1_2 = tm.CreateTower(src, 3, 3);
+        ITower t1_3 = tm.CreateTower(src, 5, 5);
 
         print("Checking those tiles are now occupied");
         if (!tm.TileOccupied(0, 0))

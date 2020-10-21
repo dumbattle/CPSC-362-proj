@@ -17,7 +17,7 @@ public class UIInput : MonoBehaviour
 
     bool[] validTiles;                                  // 1D represenation of valid placement tiles in Tilemap
 
-    public GameObject tower;
+    public TowerBehaviour tower;
     private TowerMovement towerScript;
     public TowerManager towerManagerScript;
 
