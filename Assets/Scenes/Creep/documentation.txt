@@ -1,0 +1,83 @@
+﻿This contains a basic skeleton for creeps.
+
+
+TODO
+	- Familiarize yourself with this settup
+	- implement an actual movement script. 
+		- Have the script derive from CreepMovement
+		- If you want to use the waypoints, add the waypoints ONLY to the scene
+			- Don't add towers, UI, or the map
+			- The Creep should still be able to function without all of those
+		- implement any neccessary functionality in other components
+			- in CreepBehaviour, something like:
+				- void ReachedEndOfPath() { ... };
+	- once you are done, move the scripts to the appropriate folder and update this file
+
+
+Script: CreepBehaviour
+	The main script for creeps.
+	All interactions from the outside will be throught this class.
+	 
+
+	Health
+	 - The health component of the creep. Not much to say here
+
+	Movement
+	 - The movement component of the creep. Not much to say here
+
+	Components
+	 - other optional components of the creep
+	 - don't worry about this for now, but keep this in
+
+	Init()
+	 - Called externally by either a CreepManager or a GameController
+	 - Initializes components
+	 - Don't use start because of timing issues (potential bugs)
+
+	GameplayUpdate()
+	 - Replacement for built-in Update(). Offers us more control.
+	 - Performs what we would normally do in Update(), for now
+	 
+Script: CreepHealth
+	Creep health component, nothing spectacular
+
+Script: CreepMovement
+	Creep movement component
+	Base class for actual movement
+
+	GameplayUpdate()
+	 - Movement goes in here
+
+Script: TestCreepMovement
+	Sample creep movement
+
+	speed
+	 - speed
+
+	dest
+	 - in order to move we need to move somewhere. 
+	 - this is random for testing purposes
+
+	GameplayUpdate()
+	 - Movement here
+	 - If creep is close to dest, choose new dest
+
+Script: CreepComponent
+	Base script for optional components
+	This exists mainly as a placeholder
+	Don't worry about this too much
+
+Script: CreepRotatorComponent
+	Sample CreepComponent
+	If you want spinning creeps, just add this on
+
+Script: CreepTester
+	Script to test creeps
+	Creates creeps in Awake()
+	Updates creep in Update();
+
+	Awake() functions as a GameContoller, since it spawns creeps 
+		- The spawning funtion itself is a manager function, but the decision to spawn is a GameController function
+	Update() functions as a GameManager, since it manages the creeps update
+	This design should not be utilized. It is better to create 2 scripts and seperate the tasks apart.
+		But this is just an example, so it is fine here.

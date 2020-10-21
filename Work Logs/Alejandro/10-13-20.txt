@@ -1,0 +1,6 @@
+10-13-20
+Alejandro Harrison
+
+-Worked together with Austin to make a working health bar.
+-Health bar decreases up until 0 health, and then creep gets destroyed
+-Created starting creep health
