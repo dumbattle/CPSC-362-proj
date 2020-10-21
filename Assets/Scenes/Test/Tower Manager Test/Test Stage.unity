@@ -960,7 +960,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1851215287
 GameObject:
@@ -1021,13 +1021,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1876762954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d49dc8a4a9e07f24f9dc22087c87d6ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 87f7941ccec0bd148b90c5178135a4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalTile: {fileID: 11400000, guid: 59c9fee1b079c9346a0a3e55f756cdb4, type: 2}
-  highlightTile: {fileID: 11400000, guid: 2fce243caab07034c91f7e5401e436dc, type: 2}
-  pathTile: {fileID: 11400000, guid: 3ed719d31adfbaf40975f6543ad9864e, type: 2}
-  tower: {fileID: 3513808476025795817, guid: 2d9dbadc1152c064c94d685dc6acd658, type: 3}
 --- !u!19719996 &1876762956
 TilemapCollider2D:
   m_ObjectHideFlags: 0
