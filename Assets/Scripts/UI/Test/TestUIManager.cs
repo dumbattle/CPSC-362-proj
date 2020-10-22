@@ -100,10 +100,8 @@ public class TestUIManager : MonoBehaviour
     protected virtual void Clear() {
         tileReceived = false;
 
-        if (clickReceived) {
-                towerReceived = false;
-                clickReceived = false;
-        }
+        towerReceived = false;
+        clickReceived = false;
         playReceived = false;
         pausedReceived = false;
         click = false;
@@ -171,7 +169,6 @@ public class TestUIManager : MonoBehaviour
         PlayButton.onClick.RemoveAllListeners();
         PlayButton.onClick.AddListener(() => Register.Play());
         PlayButton.onClick.AddListener(() => buttonClicked = true);
-        Debug.Log("Game is paused");
     }
 
     void PlayPause_Play()
@@ -179,8 +176,6 @@ public class TestUIManager : MonoBehaviour
         PauseButton.onClick.RemoveAllListeners();
         PauseButton.onClick.AddListener(() => Register.Pause());
         PauseButton.onClick.AddListener(() => buttonClicked = true);
-        Debug.Log("Game is playing");
-
     }
 
     protected static class Register {

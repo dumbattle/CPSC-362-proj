@@ -7,5 +7,6 @@ public abstract class CreepCommponent : MonoBehaviour {
         creep = GetComponent<CreepBehaviour>();
     }
 
+    public virtual void Init(CreepBehaviour cb) { }
     public virtual void GameplayUpdate() { } // empty by default
 }

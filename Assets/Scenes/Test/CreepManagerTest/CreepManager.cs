@@ -7,6 +7,7 @@ using UnityEngine;
 public class CreepManager : MonoBehaviour
 {
     List<CreepBehaviour> creepList = new List<CreepBehaviour>();  // list of creeps
+    List<CreepBehaviour> creepToRemove = new List<CreepBehaviour>();
     public int creepCount => creepList.Count; 
 
     public IEnumerable<CreepBehaviour> AllCreeps()
@@ -27,12 +28,13 @@ public class CreepManager : MonoBehaviour
         spawn.gameObject.SetActive(true);
         creepList.Add(spawn);
         spawn.Init();
+        spawn.OnReachedEnd += () => RemoveCreep(spawn);
         return spawn;
     }
 
     public void RemoveCreep(CreepBehaviour creep)
     {
-        creepList.Remove(creep);
+        creepToRemove.Add(creep);
     }
     
     public void ClearAll()
@@ -42,12 +44,19 @@ public class CreepManager : MonoBehaviour
 
     public void GameplayUpdate()
     {
-        //Extremely inefficient way to clear null(dead) creeps
-        //TODO: replace with a better method
-        creepList = (from x in creepList where x != null select x).ToList();
+        foreach (var c in creepToRemove) {
+            creepList.Remove(c);
+        }
 
         foreach (var t in creepList) {
+            if (t == null) {
+                continue;
+            }
             t.GameplayUpdate();
+        }
+
+        foreach (var c in creepToRemove) {
+            creepList.Remove(c);
         }
     }
 }

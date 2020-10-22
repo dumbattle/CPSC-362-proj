@@ -3,7 +3,7 @@
 public interface ITower
 {
     Vector2Int mapIndex { get; }
-
+    int cost { get; }
     void Init(Vector2Int name);
 
     void GameplayUpdate();

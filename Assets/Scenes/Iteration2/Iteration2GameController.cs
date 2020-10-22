@@ -6,12 +6,17 @@ public class Iteration2GameController : MonoBehaviour{
     public WaveSpawner ws;
     public CreepManager cm;
     public TowerManager tm;
+    public SimpleEconomyManager em;
+    public GameObject tileHighlight;
 
     GameState gameState;
     int currentWave = 0;
 
 
     void Start() {
+        tileHighlight.SetActive(false);
+        ws.Init(cm);
+        em.Init(100, 100);
     }
 
     private void Awake() {
@@ -28,8 +33,10 @@ public class Iteration2GameController : MonoBehaviour{
     void GameplayUpdate() {
         cm.GameplayUpdate();
     }
+
     void PurchaseTower() {
         var (x, y) = TestUIManager.tilePosition;
+
         if (TestUIManager.clickReceived && TestUIManager.towerReceived && tm.TileInRange(x,y) && !tm.TileOccupied(x, y)) {
             var tower = tm.CreateTower(TestUIManager.towerSelected, x, y);
         }
@@ -38,17 +45,47 @@ public class Iteration2GameController : MonoBehaviour{
 
 
     GameState SceneStartState() {
-        ws.Init(cm);
         TestUIManager.SetPauseState();
-        return WavePrepState; // next state
+        return WavePrepState; 
     }
 
     GameState WavePrepState() {
-        PurchaseTower();
+        if (TestUIManager.towerReceived) {
+            return TowerPurchaseSubState;
+        }
         if (TestUIManager.playReceived) {
+            TestUIManager.SetPlayState();
             return WaveStartState;
         }
+
         return null;
+
+        GameState TowerPurchaseSubState() {
+            var (x, y) = TestUIManager.tilePosition;
+
+            if (tm.TileInRange(x, y) && !tm.TileOccupied(x, y)) {
+                tileHighlight.SetActive(true);
+                tileHighlight.transform.position = new Vector3(x, y, 0);
+                if (TestUIManager.clickReceived && em.TrySpend(TestUIManager.towerSelected.cost)) {
+                    var tower = tm.CreateTower(TestUIManager.towerSelected, x, y);
+                    tileHighlight.SetActive(false);
+                    return WavePrepState;
+                }
+            }
+            else {
+                tileHighlight.SetActive(false);
+                if (TestUIManager.clickReceived) {
+                    return WavePrepState;
+                }
+            }
+
+            if (TestUIManager.playReceived) {
+                tileHighlight.SetActive(false);
+                return WaveStartState;
+            }
+
+            return null;
+        }
     }
 
     GameState WaveStartState() {
@@ -58,12 +95,13 @@ public class Iteration2GameController : MonoBehaviour{
 
 
 
+
+
     GameState WaveSpawnState() {
         ws.SpawnUpdate();
         GameplayUpdate();
 
         if (TestUIManager.pausedReceived) {
-            //Debug.Log("error");
             TestUIManager.SetPauseState();
             return WaveSpawnPauseState;
         }
@@ -88,14 +126,14 @@ public class Iteration2GameController : MonoBehaviour{
 
 
 
-
     GameState PlayState() {
         GameplayUpdate();
+
         if (TestUIManager.pausedReceived) {
-            //Debug.Log("error");
             TestUIManager.SetPauseState();
             return PausedState;
         }
+
         if (cm.creepCount == 0) {
             TestUIManager.SetPlayState();
             return WaveEndState;
