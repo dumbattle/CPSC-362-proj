@@ -64,10 +64,11 @@ public class MMGameController : MonoBehaviour{
             // replaced `var (x, y) = TestUIManager.tilePosition`
             var (x, y) = mm.GetTilePosition(TestUI.mousePosition);
 
+            // added condition `mm.GetTile(TestUI.mousePosition) != mm.GetPathTile()`
             if (tm.TileInRange(x, y) && !tm.TileOccupied(x, y) && mm.GetTile(TestUI.mousePosition) != mm.GetPathTile()) {
                 tileHighlight.SetActive(true);
                 tileHighlight.transform.position = new Vector3(x, y, 0);
-                // added condition `mm.GetTile(TestUI.mousePosition) != mm.GetPathTile()`
+                
                 if (TestUI.clickReceived && em.TrySpend(TestUI.towerSelected.cost)) {
                     var tower = tm.CreateTower(TestUI.towerSelected, x, y);
                     tileHighlight.SetActive(false);
