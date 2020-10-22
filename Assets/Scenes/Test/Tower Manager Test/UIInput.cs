@@ -18,7 +18,7 @@ public class UIInput : MonoBehaviour
     bool[] validTiles;                                  // 1D represenation of valid placement tiles in Tilemap
 
     public TowerBehaviour tower;
-    private TowerMovement towerScript;
+    private TowerBehaviour towerScript;
     public TowerManager towerManagerScript;
 
     private bool ToggleState = true;                    // indicator for building toggle
@@ -129,7 +129,7 @@ public class UIInput : MonoBehaviour
             }
         }
 
-        towerScript = tower.GetComponent<TowerMovement>();
+        towerScript = tower.GetComponent<TowerBehaviour>();
     }
 
 

@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 public abstract class WaveSpawner : MonoBehaviour {
+    CreepManager creepManager;
 
     IEnumerator spawnLoop;
     bool _done;
@@ -14,9 +15,11 @@ public abstract class WaveSpawner : MonoBehaviour {
         spawnLoop = SpawnWave(GetWaveContents(waveNum));
     }
 
+    public void Init(CreepManager cm) {
+        creepManager = cm;
+    }
 
-
-    public void GameplayUpdate() {
+    public void SpawnUpdate() {
         _done = !spawnLoop.MoveNext();
     }
 
@@ -27,16 +30,16 @@ public abstract class WaveSpawner : MonoBehaviour {
         wc.Reset();
 
 
-        EnemyMovement em;
+        CreepBehaviour cb;
         float delay;
-        (em, delay) = wc.Next();
+        (cb, delay) = wc.Next();
 
         float timer = 0;
-        while (em != null) {
+        while (cb != null) {
             timer -= .01f;
 
             int safety = 0;
-            while (timer < 0 && em != null) {
+            while (timer < 0 && cb != null) {
                 safety++;
                 if (safety > 1000) {
                     // infinite loops in Unity3D are traumatizing
@@ -44,10 +47,10 @@ public abstract class WaveSpawner : MonoBehaviour {
                     throw new OverflowException("Safety reached");
                 }
 
-
-                var newCreep = Instantiate(em, transform.position, Quaternion.identity);
-                newCreep.gameObject.SetActive(true);
-                (em, delay) = wc.Next();
+                creepManager.SpawnCreep(cb);
+                //var newCreep = Instantiate(em, transform.position, Quaternion.identity);
+                //newCreep.gameObject.SetActive(true);
+                (cb, delay) = wc.Next();
                 timer += delay;
             }
 

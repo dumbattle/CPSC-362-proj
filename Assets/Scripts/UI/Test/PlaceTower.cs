@@ -16,7 +16,7 @@ public class PlaceTower : MonoBehaviour {
     bool[] validTiles;                                  // 1D represenation of valid placement tiles in Tilemap
 
     public GameObject tower;
-    private TowerMovement towerScript;
+    private TowerBehaviour towerScript;
 
     private bool ToggleState = true;                    // indicator for building toggle
 
@@ -116,7 +116,7 @@ public class PlaceTower : MonoBehaviour {
             }
         }
 
-        towerScript = tower.GetComponent<TowerMovement>();
+        towerScript = tower.GetComponent<TowerBehaviour>();
     }
 
 

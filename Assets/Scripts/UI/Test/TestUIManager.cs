@@ -16,9 +16,9 @@ public class TestUIManager : MonoBehaviour
     private Vector3Int mousePosition;
     // tower objects for each type of tower                
     [SerializeField]
-    private TowerMovement tower1 = null;
+    private TowerBehaviour tower1 = null;
      [SerializeField]
-    private TowerMovement tower2 = null; 
+    private TowerBehaviour tower2 = null; 
     // button for each type of tower
     public Button tower1Button;
     public Button tower2Button;
@@ -195,7 +195,7 @@ public class TestUIManager : MonoBehaviour
             tileIndex = GetTileIndex(map, position);
         }
 
-        public static void Tower(TowerMovement tower) {
+        public static void Tower(TowerBehaviour tower) {
             towerReceived = true;
             towerSelected = tower.gameObject;
         }

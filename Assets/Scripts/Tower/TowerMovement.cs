@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
+[System.Obsolete("TowerMovement is obselete. Use TowerBehaviour instead")]
 public class TowerMovement : MonoBehaviour
 {
     public CreepHealth creepyBar;

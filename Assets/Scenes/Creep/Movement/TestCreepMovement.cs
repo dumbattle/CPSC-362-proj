@@ -9,12 +9,10 @@ public class TestCreepMovement : CreepMovement {
      public void Init()
      {
           target = Waypoints.points[0];
+          transform.position = target.position;
      }
 
      public override void GameplayUpdate()
-     
-
-
      {
 
           Vector3 dir = target.position - transform.position;

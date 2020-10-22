@@ -3,7 +3,7 @@ using UnityEngine;
 
 [Serializable]
 public abstract class WaveContents {
-    public abstract (EnemyMovement creep, float delay) Next();
+    public abstract (CreepBehaviour creep, float delay) Next();
     public abstract void Reset();
     public abstract bool Done();
 }
@@ -16,7 +16,7 @@ public class PresetWaveContents : WaveContents {
 
     int current = 0;
 
-    public override (EnemyMovement creep, float delay) Next() {
+    public override (CreepBehaviour creep, float delay) Next() {
         if (Done()) {
             return (null, 1);
         }
@@ -37,10 +37,10 @@ public class PresetWaveContents : WaveContents {
 
     [Serializable]
     struct Entry {
-        public EnemyMovement creep;
+        public CreepBehaviour creep;
         public float delay;
 
-        public Entry(EnemyMovement creep, float delay) {
+        public Entry(CreepBehaviour creep, float delay) {
             this.creep = creep;
             this.delay = delay;
         }

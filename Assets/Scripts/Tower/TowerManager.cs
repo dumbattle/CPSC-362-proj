@@ -41,10 +41,9 @@ public class TowerManager : MonoBehaviour
             clone.transform.name = transform.name.Replace("TowerManager", "Tower1." + ++numOfTowers).Trim();    // Rename tower to Tower1.numOfTower
 
             index = new Vector2Int(x, y);                                                                       // Set index for ITower.MapIndex get
-            ITower tt = clone;                                                                                  // Create ITower -- Not sure if this is working how I think it is
-            _towers[x, y] = tt;                                                                                 // Add src to _towers
-            tt.Init(index);
-            return tt;
+            _towers[x, y] = clone;                                                                              
+            clone.Init(index);
+            return clone;
         }
         else
         {
