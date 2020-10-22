@@ -26,7 +26,7 @@ public class UITester : MonoBehaviour
             //highlight.transform.position = new Vector3(TestUIManager.tilePosition.Item1, TestUIManager.tilePosition.Item2);
 
             if (TestUIManager.clickReceived && validTiles[TestUIManager.tileIndex]){
-                GameObject tower = Instantiate(TestUIManager.towerSelected,
+                GameObject tower = Instantiate(TestUIManager.towerSelected.gameObject,
                                                new Vector3Int(TestUIManager.tilePosition.Item1, TestUIManager.tilePosition.Item2, 0),
                                                Quaternion.identity
                                                );

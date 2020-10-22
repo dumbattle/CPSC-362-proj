@@ -45,7 +45,7 @@ public class TestUIManager : MonoBehaviour
     // index of currently selected tile based on "tiles" array
     public static int tileIndex { get; private set; }
     // currently selected tower
-    public static GameObject towerSelected { get; private set; }
+    public static TowerBehaviour towerSelected { get; private set; }
 
     // signals if user input for tile is active
     public static bool tileReceived { get; private set; }
@@ -197,7 +197,7 @@ public class TestUIManager : MonoBehaviour
 
         public static void Tower(TowerBehaviour tower) {
             towerReceived = true;
-            towerSelected = tower.gameObject;
+            towerSelected = tower;
         }
 
         public static void Play()
