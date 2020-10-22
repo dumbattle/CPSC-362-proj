@@ -1,0 +1,7 @@
+10-16-20
+Alejandro Harrison
+
+-Worked some more on tower damage and finalizing creep health bars
+-Finished tower damage
+-Need to work on error message when creeps get destroyed.
+-Working on Creep manager
