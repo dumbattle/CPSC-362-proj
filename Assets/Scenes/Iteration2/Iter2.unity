@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16b069ac3d4b654f955e689b2a8ea4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
 --- !u!114 &167368493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,7 +1281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 500588985}
-  - component: {fileID: 500588986}
+  - component: {fileID: 500588984}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -1289,6 +1289,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &500588984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500588983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 195560caf371ab94f8dae75df16fcdb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower1: {fileID: 884469389}
+  tower2: {fileID: 1974393937}
+  tower1Button: {fileID: 170594085}
+  tower2Button: {fileID: 1553001208}
+  PlayButton: {fileID: 270910103}
+  PauseButton: {fileID: 1057126556}
+  playPauseText: {fileID: 1951312898}
 --- !u!4 &500588985
 Transform:
   m_ObjectHideFlags: 0
@@ -1305,26 +1324,6 @@ Transform:
   m_Father: {fileID: 719725109}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &500588986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500588983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3254abfd55fc9145b53adeac48a6e77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilemap: {fileID: 1113125032}
-  tower1: {fileID: 884469389}
-  tower2: {fileID: 1974393937}
-  tower1Button: {fileID: 170594085}
-  tower2Button: {fileID: 1553001208}
-  PlayButton: {fileID: 270910103}
-  PauseButton: {fileID: 1057126556}
-  playPauseText: {fileID: 1951312898}
 --- !u!1 &589279681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,6 +1595,7 @@ Transform:
   - {fileID: 2108872239}
   - {fileID: 347602839}
   - {fileID: 1204027131}
+  - {fileID: 898098853}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1726,6 +1726,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 10
+--- !u!1 &898098852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 898098853}
+  - component: {fileID: 898098854}
+  m_Layer: 0
+  m_Name: MapManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &898098853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898098852}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 74.841385, y: -206.88335, z: -16.9375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 719725109}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &898098854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898098852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d920e8f5cb6d2140b6aabb4af33379a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1113125032}
+  fieldTile: {fileID: 11400000, guid: 59c9fee1b079c9346a0a3e55f756cdb4, type: 2}
+  pathTile: {fileID: 11400000, guid: 3ed719d31adfbaf40975f6543ad9864e, type: 2}
+  highlightTile: {fileID: 11400000, guid: 2fce243caab07034c91f7e5401e436dc, type: 2}
 --- !u!1 &912418323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,7 +1784,7 @@ GameObject:
   - component: {fileID: 912418325}
   - component: {fileID: 912418324}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: WaveSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2070,9 +2117,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 997086260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 215dd698cbe25ec4fa8904faaf762b50, type: 3}
+  m_Script: {fileID: 11500000, guid: e32f41b6b5fe64e4e9cd465f564c7660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mm: {fileID: 898098854}
   ws: {fileID: 912418324}
   cm: {fileID: 2108872238}
   tm: {fileID: 347602838}
