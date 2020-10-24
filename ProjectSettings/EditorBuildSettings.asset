@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Iteration1/Menu.unity
     guid: f8e8b28177d26a84bac4bb4d66a0fa2b
   - enabled: 1
-    path: Assets/Scenes/Iteration1/Stage1.unity
-    guid: 137da44c1b6abbf48bda3675a4d2403a
+    path: Assets/Scenes/Iteration2/Iter2.unity
+    guid: 6ebd027ec597fe840ae759f55d13228a
+  - enabled: 1
+    path: Assets/Scenes/Test/LearnToPlay/LearnToPlayScene.unity
+    guid: 1b90d477377aa1a4492caafaa3e1ed62
   m_configObjects: {}

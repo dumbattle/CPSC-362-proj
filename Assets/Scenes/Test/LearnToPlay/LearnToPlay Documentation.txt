@@ -1,0 +1,44 @@
+##LearnToPlay Documentation
+
+**IMPORTANT** To run the scene as it would be seen by a player, run the Menu scene located at Assests/Scenes/Iteration1/Menu.
+		Build order has been changed.
+
+---------------------------------------------------------------------------------------------
+Scenes used:
+LearnToPlay 	-	Modified copy of MainMenu scene
+MainMenu 	-	Modified the original MainMenu scene in Assests/Iteration1
+Iter2		-	Unchanged main game scene from branch Iteration2
+
+---------------------------------------------------------------------------------------------
+Scriptss used:
+	MainMenu.cs
+
+---------------------------------------------------------------------------------------------
+LearnToPlay:
+	Back Button:
+		- Returns the player to the Main Menu via ReturnToMainMenu()
+	ScrollTextArea:
+		- Scrolling area tahtt encompasses the text container and scroll bar
+
+---------------------------------------------------------------------------------------------
+Changes:
+MainMenu scene:
+	Additions:
+		- Added a "LEARN TO PLAY" button between "PLAY" and "QUIT" buttons.
+
+	Nothing removed.
+
+MainMenu.cs
+	Additions:	(Code documentation is in the script)
+		- LearnToPlay()
+		- ReturnToMainMenu()
+
+	Nothing removed.
+
+---------------------------------------------------------------------------------------------
+         * Current scene build order:
+         * Scene            Index
+         * ______________________
+         * Menu             0
+         * Iter2	    1
+         * LearnToPlay      2
