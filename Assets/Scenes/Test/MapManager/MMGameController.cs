@@ -33,6 +33,7 @@ public class MMGameController : MonoBehaviour{
 
     void GameplayUpdate() {
         cm.GameplayUpdate();
+        tm.GameplayUpdate();
     }
 
     void PurchaseTower() {
@@ -50,6 +51,7 @@ public class MMGameController : MonoBehaviour{
     }
 
     GameState WavePrepState() {
+        tm.WaitUpdate();
         if (TestUI.towerReceived) {
             return TowerPurchaseSubState;
         }
@@ -61,9 +63,10 @@ public class MMGameController : MonoBehaviour{
         return null;
 
         GameState TowerPurchaseSubState() {
-            // replaced `var (x, y) = TestUIManager.tilePosition`
+              tm.WaitUpdate();
+              // replaced `var (x, y) = TestUIManager.tilePosition`
             var (x, y) = mm.GetTilePosition(TestUI.mousePosition);
-
+           
             // added condition `mm.GetTile(TestUI.mousePosition) != mm.GetPathTile()`
             if (tm.TileInRange(x, y) && !tm.TileOccupied(x, y) && mm.GetTile(TestUI.mousePosition) != mm.GetPathTile()) {
                 tileHighlight.SetActive(true);
