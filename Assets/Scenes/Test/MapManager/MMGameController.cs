@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class MMGameController : MonoBehaviour{
     delegate GameState GameState();
@@ -9,6 +10,10 @@ public class MMGameController : MonoBehaviour{
     public TowerManager tm;
     public SimpleEconomyManager em;
     public GameObject tileHighlight;
+
+    [Space]
+    public Text winText;
+    public Text loseText;
 
     GameState gameState;
     int currentWave = 0;
@@ -46,6 +51,9 @@ public class MMGameController : MonoBehaviour{
     }
 
     GameState SceneStartState() {
+        winText.gameObject.SetActive(false);
+        loseText.gameObject.SetActive(false);
+
         TestUI.SetPauseState();
         return WavePrepState; 
     }
@@ -107,6 +115,10 @@ public class MMGameController : MonoBehaviour{
         ws.SpawnUpdate();
         GameplayUpdate();
 
+        if (em.health <= 0) {
+            loseText.gameObject.SetActive(true);
+            return GameEndState;
+        }
         if (TestUI.pausedReceived) {
             TestUI.SetPauseState();
             return WaveSpawnPauseState;
@@ -134,6 +146,10 @@ public class MMGameController : MonoBehaviour{
 
     GameState PlayState() {
         GameplayUpdate();
+        if (em.health <= 0) {
+            loseText.gameObject.SetActive(true);
+            return GameEndState;
+        }
 
         if (TestUI.pausedReceived) {
             TestUI.SetPauseState();
@@ -159,9 +175,18 @@ public class MMGameController : MonoBehaviour{
         currentWave++;
         TestUI.SetPauseState();
 
+        if (currentWave > ws.MaxWave) {
+            winText.gameObject.SetActive(true);
+            return GameEndState;
+        }
         return WavePrepState;
     }
 
+    GameState GameEndState() {
+        tm.WaitUpdate();
+        // do nothing :)
+        return null;
+    }
 
     // utility state
     GameState WaitState(float time, GameState next) {

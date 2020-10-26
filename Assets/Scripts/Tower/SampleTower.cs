@@ -64,7 +64,6 @@ public class SampleTower : TowerBehaviour
                var creepyBar = nearestEnemy.GetComponent<CreepHealth>();
                creepyBar.damage(damageDone);
                // prints "Targeting Enemy" to the console
-               Debug.Log("Targeting Enemy");
                StartLaser();
           }
         
