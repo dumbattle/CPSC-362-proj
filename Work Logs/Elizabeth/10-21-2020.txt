@@ -1,1 +1,4 @@
-I finally managed to finish the TowerManager with Austin's help. I made some progress on it in the morning before class, but I still had some errors I couldn't figure out. Part of the class meeting was spent with me sharing my screen and Austin helping me with fixes.
+I finally managed to finish the TowerManager with Austin's help. 
+I made some progress on it in the morning before class, 
+but I still had some errors I couldn't figure out. 
+Part of the class meeting was spent with me sharing my screen and Austin helping me with fixes.
