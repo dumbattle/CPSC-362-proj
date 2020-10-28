@@ -41,15 +41,6 @@ public class MMGameController : MonoBehaviour{
         tm.GameplayUpdate();
     }
 
-    void PurchaseTower() {
-        // replaced `var (x, y) = TestUIManager.tilePosition`
-        var (x, y) = mm.GetTilePosition(TestUI.mousePosition);
-
-        if (TestUI.clickReceived && TestUI.towerReceived && tm.TileInRange(x,y) && !tm.TileOccupied(x, y)) {
-            var tower = tm.CreateTower(TestUI.towerSelected, x, y);
-        }
-    }
-
     GameState SceneStartState() {
         winText.gameObject.SetActive(false);
         loseText.gameObject.SetActive(false);
