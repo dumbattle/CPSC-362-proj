@@ -1,38 +1,49 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CreepBehaviour : MonoBehaviour {
     public CreepHealth health;
-    TestCreepMovement movement;
+
+    public event Action OnKilled;
+    public event Action OnReachedEnd {
+        add { movement.OnReachedEnd += value; }
+        remove { movement.OnReachedEnd -= value; }
+    }
+    CreepMovement movement;
     CreepCommponent[] components;
 
     public void Init() {
-      
         health = GetComponent<CreepHealth>();
-        movement = GetComponent<TestCreepMovement>();
-       
+        movement = GetComponent<CreepMovement>();
+
         components = GetComponents<CreepCommponent>();
         movement.Init();
-        health.Init(100);
-        // TODO - check health and movement are not null. If they are, throw an exception.
+        health.Init();
+
+        OnReachedEnd += () => {
+            Destroy(gameObject);
+        };
+        foreach (var c in components) {
+            c.Init(this);
+        }
     }
 
-     private void Die()
-     {
-              Destroy(gameObject);
-     }
+    private void Die() {
+        OnKilled?.Invoke();
+        Destroy(gameObject);
+    }
+
     //this script does nothing on its own, the components will are what dictates what this creep will do
     public void GameplayUpdate() {
         // health has no GameplayUpdate
         movement.GameplayUpdate();
-          
+
         foreach (var c in components) {
             c.GameplayUpdate();
         }
-          if (health.current <= 0)
-          {
-               Die();
-          }
-     }
+        if (health.current <= 0) {
+            Die();
+        }
+    }
 }

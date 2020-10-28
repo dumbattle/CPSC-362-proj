@@ -6,20 +6,21 @@ using UnityEngine;
 
 public class CreepManager : MonoBehaviour
 {
+     public static CreepManager main;
     List<CreepBehaviour> creepList = new List<CreepBehaviour>();  // list of creeps
+    List<CreepBehaviour> creepToRemove = new List<CreepBehaviour>();
     public int creepCount => creepList.Count; 
+
+     private void Awake()
+     {
+          main = this;
+     }
 
     public IEnumerable<CreepBehaviour> AllCreeps()
     {
-       /* for (int i = 0; i < creepList.Count; i++)
-        {
-            var t = creepList[i];
-            if (creepList != null)
-                yield return t;
-        }
-        */
        return creepList;   // return all creeps
     }
+
 
     public CreepBehaviour SpawnCreep(CreepBehaviour src)
     {
@@ -27,12 +28,14 @@ public class CreepManager : MonoBehaviour
         spawn.gameObject.SetActive(true);
         creepList.Add(spawn);
         spawn.Init();
-        return spawn;
+        spawn.OnReachedEnd += () => RemoveCreep(spawn);
+        spawn.OnKilled += () => RemoveCreep(spawn);
+          return spawn;
     }
 
     public void RemoveCreep(CreepBehaviour creep)
     {
-        creepList.Remove(creep);
+        creepToRemove.Add(creep);
     }
     
     public void ClearAll()
@@ -42,12 +45,19 @@ public class CreepManager : MonoBehaviour
 
     public void GameplayUpdate()
     {
-        //Extremely inefficient way to clear null(dead) creeps
-        //TODO: replace with a better method
-        creepList = (from x in creepList where x != null select x).ToList();
+        foreach (var c in creepToRemove) {
+            creepList.Remove(c);
+        }
 
         foreach (var t in creepList) {
+            if (t == null) {
+                continue;
+            }
             t.GameplayUpdate();
+        }
+
+        foreach (var c in creepToRemove) {
+            creepList.Remove(c);
         }
     }
 }

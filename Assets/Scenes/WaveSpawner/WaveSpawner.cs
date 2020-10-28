@@ -60,4 +60,5 @@ public abstract class WaveSpawner : MonoBehaviour {
     }
 
     protected abstract WaveContents GetWaveContents(int w);
+    public abstract int MaxWave { get; }
 }

@@ -43,11 +43,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1247637759420204543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c7ff3887c5d92d4ebfa58cdd02c787f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bf768a71db6e204683980003cdc798f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 6406381475252172955}
-  bar: {fileID: 6849750147106531245}
+  health: {fileID: 0}
+  bar: {fileID: 0}
 --- !u!1 &2103627988552009168
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2856503472133738962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ffa08bb52950f348a9d834085acc69c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cb479cf85cc8c448b47a43d01cc59d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 0}
@@ -236,9 +236,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2856503472133738962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8710bb93e2ef5840b9505877eaa9541, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b842485bd7a33447a4cae9bb83731a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creep: {fileID: 0}
+  count: 1
 --- !u!114 &-3525156601781804591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,10 +250,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2856503472133738962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c6cceda324e7f84c9b19e11a3f8fa47, type: 3}
+  m_Script: {fileID: 11500000, guid: 5adaac07b4304fa469495c807554e587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  startingHealth: 1
 --- !u!1 &7875506229975810651
 GameObject:
   m_ObjectHideFlags: 0

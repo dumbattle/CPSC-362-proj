@@ -31,14 +31,16 @@ public class WaveSpawnerTest : MonoBehaviour {
         ws.SetWave(currentWave);
         return WaveSpawnState;
     }
+
     GameState WaveSpawnState() {
         ws.SpawnUpdate();
         GameplayUpdate();
         if (ws.spawningDone) {
-            return WaitForCreepsToEndState();
+            return WaitForCreepsToEndState;
         }
         return null;
     }
+
     GameState WaveEndState() {
         currentWave++;
         return WaveStartState;
@@ -48,11 +50,12 @@ public class WaveSpawnerTest : MonoBehaviour {
         if (cm.creepCount == 0) {
             return WaitState(10, WaveEndState);
         }
+
         return null;
     }
     GameState WaitState (float time, GameState next) {
         return () => {
-        GameplayUpdate();
+            GameplayUpdate();
             if (time <= 0) {
                 return next;
             }
