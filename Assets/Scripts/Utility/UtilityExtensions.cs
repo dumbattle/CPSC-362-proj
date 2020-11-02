@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 
 // General purpose extensions
 public static class UtilityExtensions {
@@ -11,12 +10,5 @@ public static class UtilityExtensions {
         }
 
         return result;
-    }
-}
-
-public class ArrayLabelAttribute : PropertyAttribute {
-    public string label;
-    public ArrayLabelAttribute(string label) {
-        this.label = label;
     }
 }

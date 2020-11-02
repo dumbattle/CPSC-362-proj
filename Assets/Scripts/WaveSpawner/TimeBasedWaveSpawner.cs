@@ -22,7 +22,7 @@ public class TimeBasedWaveSpawner : WaveSpawner {
     [System.Serializable]
     public class Content : WaveContents {
         [SerializeField]
-        [ArrayLabel("Entry")]
+        [ArrayLabel("Entry", false)]
         Entry[] entries = null;
 
         IEnumerator<(CreepBehaviour c, float d)> currentContents;
@@ -79,7 +79,7 @@ public class TimeBasedWaveSpawner : WaveSpawner {
         [System.Serializable]
         struct Entry {
             public CreepBehaviour creep;
-            [ArrayLabel("T")]
+            [ArrayLabel("T", false)]
             public float[] time;
 
             public Entry(CreepBehaviour creep, float[] time) {
