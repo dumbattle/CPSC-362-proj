@@ -48,7 +48,7 @@ public class WaveSpawnerTest : MonoBehaviour {
     GameState WaitForCreepsToEndState() {
         GameplayUpdate();
         if (cm.creepCount == 0) {
-            return WaitState(10, WaveEndState);
+            return WaitState(3, WaveEndState);
         }
 
         return null;

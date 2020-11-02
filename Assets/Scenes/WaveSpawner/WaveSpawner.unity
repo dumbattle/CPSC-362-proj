@@ -207,6 +207,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 172208034}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &167368490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1504216861525593974, guid: f99978b035b189b44b1af5a6a724963b,
+    type: 3}
+  m_PrefabInstance: {fileID: 172208034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167368489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb479cf85cc8c448b47a43d01cc59d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &167368492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,31 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
---- !u!114 &167368493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167368489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5adaac07b4304fa469495c807554e587, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &167368494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167368489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cb479cf85cc8c448b47a43d01cc59d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 0}
 --- !u!1001 &172208034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -319,6 +306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 45876600812971359, guid: f99978b035b189b44b1af5a6a724963b, type: 3}
+    - {fileID: 6172095852652662845, guid: f99978b035b189b44b1af5a6a724963b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f99978b035b189b44b1af5a6a724963b, type: 3}
 --- !u!1 &201899641
 GameObject:
@@ -381,6 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5adaac07b4304fa469495c807554e587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 1
 --- !u!114 &284136657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,6 +454,7 @@ GameObject:
   - component: {fileID: 912418325}
   - component: {fileID: 912418324}
   - component: {fileID: 912418326}
+  - component: {fileID: 912418327}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -486,76 +476,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - creeps:
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 1
   - creeps:
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0.1
   - creeps:
     - creep: {fileID: 284136657}
@@ -592,43 +582,43 @@ MonoBehaviour:
   - creeps:
     - creep: {fileID: 284136657}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0
     - creep: {fileID: 284136657}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0
     - creep: {fileID: 284136657}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0
     - creep: {fileID: 284136657}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0
     - creep: {fileID: 284136657}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0
     - creep: {fileID: 284136657}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0
     - creep: {fileID: 284136657}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0
     - creep: {fileID: 284136657}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0
     - creep: {fileID: 284136657}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0
     - creep: {fileID: 284136657}
       delay: 1
-    - creep: {fileID: 167368494}
+    - creep: {fileID: 0}
       delay: 0
 --- !u!4 &912418325
 Transform:
@@ -656,8 +646,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0837bf3085ba567438c45d3a625c4525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ws: {fileID: 912418324}
+  ws: {fileID: 912418327}
   cm: {fileID: 1269652118}
+--- !u!114 &912418327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912418323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cbd4818eb63ff44b3ef9e87a7d4475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - entries:
+    - creep: {fileID: 167368490}
+      time:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+  - entries:
+    - creep: {fileID: 167368490}
+      time:
+      - 0
+      - 0.1
+      - 0.2
+      - 0.3
+      - 0.4
+    - creep: {fileID: 284136657}
+      time:
+      - 0.5
+      - 1
+      - 1.5
+      - 2
+      - 2.5
+    - creep: {fileID: 167368490}
+      time:
+      - 2.6
+      - 2.7
+      - 2.8
+      - 2.9
+      - 3
 --- !u!1 &920755807
 GameObject:
   m_ObjectHideFlags: 0
@@ -3439,13 +3477,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1113125029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d49dc8a4a9e07f24f9dc22087c87d6ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d920e8f5cb6d2140b6aabb4af33379a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalTile: {fileID: 11400000, guid: 59c9fee1b079c9346a0a3e55f756cdb4, type: 2}
-  highlightTile: {fileID: 11400000, guid: 2fce243caab07034c91f7e5401e436dc, type: 2}
-  pathTile: {fileID: 11400000, guid: 3ed719d31adfbaf40975f6543ad9864e, type: 2}
-  tower: {fileID: 3513808476025795817, guid: 2d9dbadc1152c064c94d685dc6acd658, type: 3}
+  tilemap: {fileID: 0}
+  fieldTile: {fileID: 0}
+  pathTile: {fileID: 0}
+  highlightTile: {fileID: 0}
 --- !u!1 &1269652117
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public abstract class WaveSpawner : MonoBehaviour {
     }
 
     IEnumerator SpawnWave(WaveContents wc) {
-        if (wc == null) {
+        if (wc == null || _done) {
             yield break;
         }
         wc.Reset();
@@ -48,8 +48,6 @@ public abstract class WaveSpawner : MonoBehaviour {
                 }
 
                 creepManager.SpawnCreep(cb);
-                //var newCreep = Instantiate(em, transform.position, Quaternion.identity);
-                //newCreep.gameObject.SetActive(true);
                 (cb, delay) = wc.Next();
                 timer += delay;
             }
