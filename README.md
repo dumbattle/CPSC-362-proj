@@ -1,6 +1,12 @@
 # CPSC-362-proj
 Each iteration will be in its own branch
 
+Add Global Scope  
+How would we describe this game to some with no understanding
+
+- Survival
+- Wave based
+
 ## Goals
  - Create a fully functional level.
    - Waves
