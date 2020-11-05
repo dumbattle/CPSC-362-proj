@@ -1,30 +1,40 @@
 # CPSC-362-proj
 Each iteration will be in its own branch
 
-Add Global Scope  
-How would we describe this game to some with no understanding
-
-- Survival
-- Wave based
-
 ## Goals
- - Create a fully functional level.
-   - Waves
-   - Economy
-   - Lives
-   - At least 2 towers which can be purchased
-     - Updgrades - not yet
-   - At least 2 creeps
-   - WIN!!!!
-   - lose 
- - Have a well written code base
-   - Much of the code in iteration 1 will be refactored
-   - Overall structure of code
-     - https://drive.google.com/file/d/1E7HqMjY-GW3jF-4Ot4glHy28J3zv1yfI/view?usp=sharing
- - Instruction Page
-   - Add menu Entry  
-   
-This will probably be the most difficult iteration, we may not complete this in time, if so, we will extended it to iteration 3
+- Playtest
+- Sound
+  - Background music
+  - Towers
+  - Creeps
+  - UI
+- Creeps
+  - Sprites
+  - Special effects
+    - Passive Health regen
+    - Spawn Creeps on Death
+    - Movement speed modification
+  - Random waves - Maybe
+- Towers 
+  - Sprites
+  - New Types
+    - Splash
+    - Slow
+  - Projectiles - maybe
+- UI
+  - Refactor for Mobile
+  - Improve tower purchasing
+  - Display stage information
+  - Zoom/Drag screen
+  - Sprites
+ 
+- Other 
+  - Build for Android
+  - Playtest
+  - Organize notes
+    - Include Global scope
+  
+ 
 
 ## Important Folders
 ### Work Logs
