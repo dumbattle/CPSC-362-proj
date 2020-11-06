@@ -13,7 +13,15 @@ public class TestCreepMovement : CreepMovement {
 
     public override void GameplayUpdate() {
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        dir = dir.normalized * speed * Time.deltaTime;
+
+        if (dir.sqrMagnitude <= 0.01f * 0.01f) {
+            transform.position = target.position;
+            GetNextWaypoint();
+            return;
+        }
+
+        transform.Translate(dir, Space.World);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.01f) {
             GetNextWaypoint();
