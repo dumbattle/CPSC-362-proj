@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CreepBehaviour : MonoBehaviour {
     public CreepHealth health;
+    public CreepMovement movement;
 
     public event Action OnKilled;
     public event Action OnReachedEnd {
         add { movement.OnReachedEnd += value; }
         remove { movement.OnReachedEnd -= value; }
     }
-    CreepMovement movement;
     CreepCommponent[] components;
 
     public void Init() {
