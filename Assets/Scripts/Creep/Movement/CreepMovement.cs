@@ -10,4 +10,7 @@ public abstract class CreepMovement : MonoBehaviour {
     protected void CallOnReachedEnd() {
         OnReachedEnd?.Invoke();
     }
+
+    public abstract bool ModifySpeed(float amnt);
+
 }

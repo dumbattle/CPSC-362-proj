@@ -44,7 +44,7 @@ public class TowerManager : MonoBehaviour
             clone.gameObject.SetActive(true);
             index = new Vector2Int(x, y);                                                                       // Set index for ITower.MapIndex get
             _towers[x, y] = clone;                                                                              
-            clone.Init(index);
+            clone.Init(index, src);
             return clone;
         }
         else
