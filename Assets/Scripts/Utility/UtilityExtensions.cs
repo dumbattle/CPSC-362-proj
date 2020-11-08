@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
+
 
 // General purpose extensions
 public static class UtilityExtensions {
@@ -10,5 +12,10 @@ public static class UtilityExtensions {
         }
 
         return result;
+    }
+
+    public static Color SetAlpha(this Color c, float a) {
+        c.a = a;
+        return c;
     }
 }
