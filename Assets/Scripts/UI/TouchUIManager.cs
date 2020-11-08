@@ -3,26 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchInteraction : MonoBehaviour {   
-    Vector3 touchPosition;
+public class TouchUIManager : UIManager {   
+    private static Vector3 touchPosition;
 
     // camera boundaries
-    public float cameraTopLimit;
-    public float cameraBottomLimit;
-    public float cameraLeftLimit;
-    public float cameraRightLimit;
+    private static float cameraTopLimit;
+    private static float cameraBottomLimit;
+    private static float cameraLeftLimit;
+    private static float cameraRightLimit;
 
     // zooming limits
-    private float zoomInLimit;
-    private float zoomOutLimit;
+    private static float zoomInLimit;
+    private static float zoomOutLimit;
 
     // true if currently zooming
-    private bool zooming;
+    private static bool zooming;
 
-    Camera camera;
+    private static Camera camera;
     // world points of the camera viewport
-    private Vector3 cameraBottomLeftPosition;
-    private Vector3 cameraTopRightPosition;
+    private static Vector3 cameraBottomLeftPosition;
+    private static Vector3 cameraTopRightPosition;
 
     void Awake() {
         Screen.orientation = ScreenOrientation.LandscapeRight;
@@ -44,8 +44,18 @@ public class TouchInteraction : MonoBehaviour {
         cameraLeftLimit = cameraBottomLeftPosition.x;
     }
 
-    void Update() {   
-        // ZOOMING
+    public static new void CustomUpdate() {
+        Zoom();
+        Pan();
+        
+        // allows zooming with a mouse. Not important for final build on mobile
+        camera.orthographicSize = Mathf.Clamp(camera.orthographicSize - Input.GetAxis("Mouse ScrollWheel"), zoomInLimit, zoomOutLimit);
+        
+        BringCameraIntoBounds();
+    }
+
+    // zooms into the screen using "two-finger pinch"
+    private static void Zoom() {
         // touchCount is the number of simlutaneous touches on the screen
         if (Input.touchCount == 2) {
             zooming = true;
@@ -64,16 +74,20 @@ public class TouchInteraction : MonoBehaviour {
 
             float difference = curDistance - prevDistance;
             
+            // resizes camera based on 'difference'
             // 0.01f determines the zooming speed
-            Zoom(difference * 0.01f);     
+            // Clamp restricts the zoom to the limits set in Start()
+            camera.orthographicSize = Mathf.Clamp(camera.orthographicSize - (difference * 0.01f), zoomInLimit, zoomOutLimit);
         }
         // 'zooming' is set to false once both fingers are off the screen after zooming.
         // prevents panning during zooming when the user lets go of one finger but not both
         else if (Input.touchCount == 0) {
             zooming = false;
         }
+    }
 
-        // PANNING
+    // moves the screen by touching the screen and dragging (or by clicking and dragging with a mouse)
+    private static void Pan() {
         if (!zooming) {
             // GetMouseButtonDown(0) is equivalent to tapping the screen once on mobile
             if (Input.GetMouseButtonDown(0)) {
@@ -90,18 +104,10 @@ public class TouchInteraction : MonoBehaviour {
                 camera.transform.position += panDistance;
             }
         }
-
-        // allows zooming with a mouse. Not important for final build on mobile
-        Zoom(Input.GetAxis("Mouse ScrollWheel"));
-
-        BringCameraIntoBounds();
     }
 
-    private void Zoom(float increment) {
-        camera.orthographicSize = Mathf.Clamp(camera.orthographicSize - increment, zoomInLimit, zoomOutLimit);
-    }
-
-    private void BringCameraIntoBounds() {
+    // moves the camera into the bounds if it is currently outside the bounds
+    private static void BringCameraIntoBounds() {
         cameraBottomLeftPosition = camera.ViewportToWorldPoint(new Vector3(0, 0, 0));
         cameraTopRightPosition = camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
 

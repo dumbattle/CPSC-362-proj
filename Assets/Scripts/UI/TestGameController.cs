@@ -32,6 +32,7 @@ public class TestGameController : MonoBehaviour{
 
     private void Update() {
         gameState = gameState() ?? gameState;
+        TouchUIManager.CustomUpdate();
         UIManager.CustomUpdate(); // check UIManager Line 78
     }
 
@@ -95,10 +96,6 @@ public class TestGameController : MonoBehaviour{
         ws.SetWave(currentWave);
         return WaveSpawnState;
     }
-
-
-
-
 
     GameState WaveSpawnState() {
         ws.SpawnUpdate();
