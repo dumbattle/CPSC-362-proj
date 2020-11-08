@@ -1,0 +1,5 @@
+Implemented:
+	Creep Sprites
+	Creep Animations
+	Tower Sprites
+	Tower Target Rotation
