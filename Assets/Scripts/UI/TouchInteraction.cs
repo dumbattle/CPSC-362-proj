@@ -6,11 +6,11 @@ using UnityEngine;
 public class TouchInteraction : MonoBehaviour {   
     Vector3 touchPosition;
 
-    // panning limits
-    private float panUpLimit;
-    private float panDownLimit;
-    private float panLeftLimit;
-    private float panRightLimit;
+    // camera boundaries
+    public float cameraTopLimit;
+    public float cameraBottomLimit;
+    public float cameraLeftLimit;
+    public float cameraRightLimit;
 
     // zooming limits
     private float zoomInLimit;
@@ -19,6 +19,7 @@ public class TouchInteraction : MonoBehaviour {
     // true if currently zooming
     private bool zooming;
 
+    Camera camera;
     // world points of the camera viewport
     private Vector3 cameraBottomLeftPosition;
     private Vector3 cameraTopRightPosition;
@@ -28,17 +29,19 @@ public class TouchInteraction : MonoBehaviour {
     }
 
     void Start() {
-        zoomInLimit = Camera.main.orthographicSize / 2;
-        zoomOutLimit = Camera.main.orthographicSize;
+        camera = Camera.main;
+
+        zoomInLimit = camera.orthographicSize / 2;
+        zoomOutLimit = camera.orthographicSize;
         zooming = false;
 
-        cameraBottomLeftPosition = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
-        cameraTopRightPosition = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        cameraBottomLeftPosition = camera.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        cameraTopRightPosition = camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
 
-        panUpLimit = cameraTopRightPosition.y;
-        panDownLimit = cameraBottomLeftPosition.y;
-        panRightLimit = cameraTopRightPosition.x;
-        panLeftLimit = cameraBottomLeftPosition.x;
+        cameraTopLimit = cameraTopRightPosition.y;
+        cameraBottomLimit = cameraBottomLeftPosition.y;
+        cameraRightLimit = cameraTopRightPosition.x;
+        cameraLeftLimit = cameraBottomLeftPosition.x;
     }
 
     void Update() {   
@@ -74,40 +77,49 @@ public class TouchInteraction : MonoBehaviour {
         if (!zooming) {
             // GetMouseButtonDown(0) is equivalent to tapping the screen once on mobile
             if (Input.GetMouseButtonDown(0)) {
-                touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                touchPosition = camera.ScreenToWorldPoint(Input.mousePosition);
             }
 
             // GetMouseButton(0) is true as long as the screen touch (or left mouse button) is being held
             if (Input.GetMouseButton(0)) {
-                Vector3 panDistance = touchPosition - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 panDistance = touchPosition - camera.ScreenToWorldPoint(Input.mousePosition);
 
-                cameraBottomLeftPosition = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
-                cameraTopRightPosition = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+                cameraBottomLeftPosition = camera.ViewportToWorldPoint(new Vector3(0, 0, 0));
+                cameraTopRightPosition = camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
                 
-                // if the panDistance brings the camera farther than the limit, set it so 
-                //  the panDistance brings the camera exactly to the limit
-                if (cameraTopRightPosition.y + panDistance.y > panUpLimit) {
-                    panDistance.y = panUpLimit - cameraTopRightPosition.y;
-                }
-                else if (cameraBottomLeftPosition.y + panDistance.y < panDownLimit) {
-                    panDistance.y = panDownLimit - cameraBottomLeftPosition.y;
-                }
-                if (cameraTopRightPosition.x + panDistance.x > panRightLimit) {
-                    panDistance.x = panRightLimit - cameraTopRightPosition.x;
-                }
-                else if (cameraBottomLeftPosition.x + panDistance.x < panLeftLimit) {
-                    panDistance.x = panLeftLimit - cameraBottomLeftPosition.x;
-                }
-
-                Camera.main.transform.position += panDistance;
+                camera.transform.position += panDistance;
             }
         }
 
         // allows zooming with a mouse. Not important for final build on mobile
         Zoom(Input.GetAxis("Mouse ScrollWheel"));
+
+        BringCameraIntoBounds();
     }
 
     private void Zoom(float increment) {
-        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - increment, zoomInLimit, zoomOutLimit);
+        camera.orthographicSize = Mathf.Clamp(camera.orthographicSize - increment, zoomInLimit, zoomOutLimit);
+    }
+
+    private void BringCameraIntoBounds() {
+        cameraBottomLeftPosition = camera.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        cameraTopRightPosition = camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
+
+        Vector3 moveDistance = new Vector3(0, 0, 0);
+
+        if (cameraTopRightPosition.y > cameraTopLimit) {
+            moveDistance.y = cameraTopLimit - cameraTopRightPosition.y;
+        }
+        else if (cameraBottomLeftPosition.y < cameraBottomLimit) {
+            moveDistance.y = cameraBottomLimit - cameraBottomLeftPosition.y;
+        }
+        if (cameraTopRightPosition.x > cameraRightLimit) {
+            moveDistance.x = cameraRightLimit - cameraTopRightPosition.x;
+        }
+        else if (cameraBottomLeftPosition.x < cameraLeftLimit) {
+            moveDistance.x = cameraLeftLimit - cameraBottomLeftPosition.x;
+        }
+
+        camera.transform.position += moveDistance;
     }
 }
