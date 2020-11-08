@@ -47,7 +47,7 @@ public class SimpleCannonTower : ProjectileTower {
 
         obj.transform.position = cb.transform.position;
         obj.transform.localScale = new Vector3(0, 0, 1);
-
+        FaceTarget(cb);
         while (timer < visualLifetime) {
             timer += Time.deltaTime;
 

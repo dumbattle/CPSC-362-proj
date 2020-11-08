@@ -31,7 +31,7 @@ public class SlowProjectileTower : ProjectileTower {
 
     IEnumerator SlowTimer(CreepBehaviour cb, float amnt) {
         float timer = slowTime;
-
+        FaceTarget(cb);
         while (timer > 0) {
             timer -= Time.deltaTime;
             yield return null;
