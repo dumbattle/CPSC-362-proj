@@ -13,6 +13,7 @@ public class SlowTowerGameController : MonoBehaviour{
     public GameObject tileHighlight;
 
     [Space]
+    public RectTransform SummaryPanel;
     public Text winText;
     public Text loseText;
 
@@ -53,6 +54,7 @@ public class SlowTowerGameController : MonoBehaviour{
     GameState SceneStartState() {
         winText.gameObject.SetActive(false);
         loseText.gameObject.SetActive(false);
+        SummaryPanel.gameObject.SetActive(false);
 
         TestUI.SetPauseState();
         return WavePrepState; 
@@ -116,6 +118,7 @@ public class SlowTowerGameController : MonoBehaviour{
         GameplayUpdate();
 
         if (em.health <= 0) {
+            SummaryPanel.gameObject.SetActive(true);
             loseText.gameObject.SetActive(true);
             return GameEndState;
         }
@@ -147,6 +150,7 @@ public class SlowTowerGameController : MonoBehaviour{
     GameState PlayState() {
         GameplayUpdate();
         if (em.health <= 0) {
+            SummaryPanel.gameObject.SetActive(true);
             loseText.gameObject.SetActive(true);
             return GameEndState;
         }
@@ -176,6 +180,7 @@ public class SlowTowerGameController : MonoBehaviour{
         TestUI.SetPauseState();
 
         if (currentWave > ws.MaxWave) {
+            SummaryPanel.gameObject.SetActive(true);
             winText.gameObject.SetActive(true);
             return GameEndState;
         }

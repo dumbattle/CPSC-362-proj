@@ -82,7 +82,6 @@ public class TestUI : MonoBehaviour
 
     protected void ShowPausedUI()
     {
-        //playPauseText.text = "PLAY";
         PlayPause_Pause();
         PlayButton.gameObject.SetActive(true);
         PauseButton.gameObject.SetActive(false);
@@ -91,7 +90,6 @@ public class TestUI : MonoBehaviour
 
     protected void ShowPlayUI()
     {
-        //playPauseText.text = "PAUSE";
         PlayPause_Play();
         PauseButton.gameObject.SetActive(true);
         PlayButton.gameObject.SetActive(false);
