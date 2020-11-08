@@ -1,0 +1,39 @@
+﻿Author: Austin
+
+
+Created a Tower that shoots projectiles that slows creeps.
+
+The scene was duplicated from the Iteration 2 scene.
+ - A new gamecontroller was made
+ - Slow tower script was added to tower 2 (removed other tower script)
+
+
+In addition to creating this tower, I also created:
+ - GlobalGameplayUpdate
+   A static class that acts as a GameManager for special effects
+
+   AddGameplayUpdate(update)
+     Adds a function that will be called every gameplay update
+
+   RemoveGameplayUpdate(update)
+     Stops a update from being run. 
+	 This may take effect at the start of the next frame, so if timing is important, 
+	   have the update cancel itself
+
+   Similar functions for wait update
+
+   AddGameplayWaitUpdate(update)
+     Adds a function that will be called every gameplay update and wait update
+
+	 Many functions will want to be called during both updates.
+	 Simply adding to both may create soft memory leaks.
+	 This function will take care of that
+     
+ - Projectile Functionality
+   Created a new tower script that utilizes projectiles instead of laser.
+   The projectiles will follow the creep, and if the creep is destroy, go to its last location
+
+ - Creep slow functionality
+   Lets the creeps movement speed be modified
+
+I also imported an ObjectPool script for efficiency

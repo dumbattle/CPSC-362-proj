@@ -38,6 +38,10 @@ public class MapManager : MonoBehaviour
         return (relativeX, relativeY);
     }
 
+    public Vector2Int MapSize() {
+        return new Vector2Int(tilemap.size.x, tilemap.size.y);
+    }
+
     // returns tile asset type of fieldTile
     public Tile GetFieldTile() {
         return fieldTile;

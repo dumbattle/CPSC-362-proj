@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using UnityEngine;
+
 
 
 public class SampleTower : TowerBehaviour
@@ -10,13 +10,13 @@ public class SampleTower : TowerBehaviour
      [Min(.001f)]
      public float coolDown;
      private float cooldownTimer;
-     [Range(.1f, 3f)]
-     
-     public float LaserLife=1;
-     public LineRenderer line;
-     public float range = 2f;                // the shooting range of the towers
+    public float range = 2f;                // the shooting range of the towers
 
-     [Min(1)] public int damageDone = 1;
+    public LineRenderer line;
+    [Range(.1f, 3f)]
+    public float LaserLife = 1;
+
+    [Min(1)] public int damageDone = 1;
      // curently unused variable; included as a precaution in case there is a need for 
      // rotations in the future
 

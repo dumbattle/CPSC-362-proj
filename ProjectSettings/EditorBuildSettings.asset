@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Iteration2/Iter2.unity
     guid: 6ebd027ec597fe840ae759f55d13228a
   - enabled: 1
-    path: Assets/Scenes/Test/LearnToPlay/LearnToPlayScene.unity
+    path: Assets/Scenes/LearnToPlay/LearnToPlayScene.unity
     guid: 1b90d477377aa1a4492caafaa3e1ed62
   m_configObjects: {}

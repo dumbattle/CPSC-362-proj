@@ -62,12 +62,6 @@ public class TestUI : MonoBehaviour
         // get current mouse position
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-
-        //if (TestUIManager.pausedReceived)
-        //{ 
-        //    print("Pause input received");
-        //}
-
         if (Input.GetMouseButtonDown(0) && !buttonClicked) {
             clickReceived = true;
         }

@@ -1,0 +1,4 @@
+Austin provided a TowerManagerTest script to test the TowerManager with. 
+I worked on trying to get the TowerManager to work with the test script by myself at first. 
+Alejandro joined me after a little while. Even with both of us we were having difficulties, 
+so Cody joined us briefly. All 3 of us were unsuccessful so we asked Austin for some guidance.

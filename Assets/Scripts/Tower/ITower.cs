@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 
-public interface ITower
-{
+public interface ITower {
     Vector2Int mapIndex { get; }
     int cost { get; }
-    void Init(Vector2Int name);
+    void Init(Vector2Int index, TowerBehaviour src);
 
     void GameplayUpdate();
 
-     void WaitUpdate();
+    void WaitUpdate();
 }
 
-// To add functionality, it must be done in both ITower and TowerBehaviour

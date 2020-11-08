@@ -1,0 +1,53 @@
+﻿WAVE SPAWNER DOCUMENTATION
+
+Developers: 
+ - Austin
+
+
+WaveSpanwer : Monobehaviour
+  - This class is the base class for all wave spawners.
+  - Wave spawers handles the spawning of waves
+
+
+  ********************************   Public Members   ********************************
+  Init(creep manager)
+    - In order to spawn the waves, the creep manager is need, sine the CM is what spawn creeps
+    - CM could be set in the inspector, but would require an additional step that might be forgotten
+    - Must be called
+
+  SetWave(wave num)
+    - Call this function to set the current wave.
+    - 0-based indexing ie. first wave => 0
+    - failing to call this will result in nothing spawning
+
+  SpawnUpdate()
+    - Update function that should be called during gameplay
+    - If SetWave is not called, this will do nothing
+   
+  spawningDone
+    - Return true if all creeps have been spawned for this wave
+    - Useful for:
+        - Not ending wave prematurely
+        - Stop calling SpawnUpdate for efficiency
+
+  ********************************   Abstract Members   ********************************
+  maxWave
+    - returns the last wave that can be spawned
+    - use to check for end of game
+    - dependent on implementation
+
+  GetWaveContents(wave num)
+    - returns the creeps that will be spawned during the wave
+
+
+WaveContents
+    Base class for contents of a wave
+
+    ********************************   Public Members   ********************************
+    Next
+        - returns the next creep to be spawn and the time it should be spawned after the previous spawn
+           eg. A time of 1 means wait 1 second after the previous creep is spawned to spawn this one
+    Reset
+        - Clear all progress
+        - Calling Next() after this should return the first creep
+        - Can also be used to compute randomly generated waves
