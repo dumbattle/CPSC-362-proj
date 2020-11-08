@@ -46,7 +46,7 @@ public class SlowProjectileTower : ProjectileTower {
     }
 
     string EffectString() {
-        return $"{GetHashCode()}_{slow}_{slowTime}_COUNT";
+        return $"{src.GetHashCode()}_{slow}_{slowTime}_COUNT";
     }
 
 
