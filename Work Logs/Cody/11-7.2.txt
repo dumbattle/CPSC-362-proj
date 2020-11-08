@@ -1,0 +1,1 @@
+Added sprites and animations for Ghost and Brute Creeps
