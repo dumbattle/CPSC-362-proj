@@ -31,7 +31,7 @@ public abstract class UIManager : MonoBehaviour
 
     // clear user input
     protected static void Clear() {
-        towerReceived = false;
+        towerPurchaseReceived = false;
         clickReceived = false;
         playReceived = false;
         pausedReceived = false;
@@ -41,7 +41,7 @@ public abstract class UIManager : MonoBehaviour
     // the Register class is an organizational tool used for signalling input data
     protected static class Register {
         public static void Tower(TowerBehaviour tower) {
-            towerReceived = true;
+            towerPurchaseReceived = true;
             towerPurchased = tower;
         }
 
