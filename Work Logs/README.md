@@ -1,3 +1,9 @@
+
+__***UPDATE***__
+All work logs will be kept in a single file.
+This wwas requested by the professor.
+
+
 This folder contains logs for all the work every one has done outside of class.
 Each person gets there own folder, and will not touch anyone elses folder.
 

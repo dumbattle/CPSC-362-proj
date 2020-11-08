@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3513808476025795816}
   - component: {fileID: 3513808476025795815}
-  - component: {fileID: 3513808476025795814}
   - component: {fileID: 3513808476025795813}
+  - component: {fileID: 3448604514423388353}
   m_Layer: 0
   m_Name: Tower1.1
   m_TagString: Untagged
@@ -83,25 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3513808476025795814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3513808476025795817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7610b53006fc8b4daec0b845b0caf14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creepyBar: {fileID: 0}
-  line: {fileID: 3513808476025795813}
-  target: {fileID: 1258855969551775072, guid: b5a06987e8ff6bd4abe603f5a9987b4d, type: 3}
-  range: 2
-  enemyTag: Enemy
-  damageDone: 20
-  partToRotate: {fileID: 0}
 --- !u!120 &3513808476025795813
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -199,3 +180,23 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &3448604514423388353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3513808476025795817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8fc7ce538a607489056938022618fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 0
+  creepyBar: {fileID: 0}
+  line: {fileID: 3513808476025795813}
+  target: {fileID: 45876600812971357, guid: f99978b035b189b44b1af5a6a724963b, type: 3}
+  range: 2
+  enemyTag: Enemy
+  damageDone: 1
+  partToRotate: {fileID: 0}

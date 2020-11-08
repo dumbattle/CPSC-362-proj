@@ -88,6 +88,14 @@ public class TowerManager : MonoBehaviour
         }
     }
 
+     public void WaitUpdate()
+     {
+          foreach (var t in AllTowers())
+          {
+               t.WaitUpdate();
+          }
+     }
+
     public void RemoveTower(int x, int y)
     {
         if (TileOccupied(x, y))
@@ -99,4 +107,6 @@ public class TowerManager : MonoBehaviour
             throw new ActionFailedException("TowerManager::RemoveTower - Tile unoccupied at (" + x + ", " + y + ")"); // Nothing was on the tile
         }
     }
+
+
 }

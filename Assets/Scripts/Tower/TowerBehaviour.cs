@@ -9,7 +9,7 @@ public abstract class TowerBehaviour : MonoBehaviour, ITower
     int ITower.cost => cost;
 
     public abstract void GameplayUpdate();
-
+    public abstract void WaitUpdate();
     public virtual void Init(Vector2Int index) { mapIndex = index; }
 }
 

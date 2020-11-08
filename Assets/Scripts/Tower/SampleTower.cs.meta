@@ -3,7 +3,12 @@ guid: 0b8fc7ce538a607489056938022618fa
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - creepyBar: {instanceID: 0}
+  - line: {instanceID: 0}
+  - target: {fileID: 1258855969551775072, guid: b5a06987e8ff6bd4abe603f5a9987b4d,
+      type: 3}
+  - partToRotate: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

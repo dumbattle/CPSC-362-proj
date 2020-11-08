@@ -1,0 +1,13 @@
+Additions:
+	Audio game objects in MainMenu and Game scenes
+		- Contains audio source and script 
+	
+	Audio Manager Script
+		- Script for persistent audio through scenes (mainly for mainMenu and LearnTOPlay transistions)
+
+	FadeAudioSource Script
+		- Unused
+		- Meant to fade the audio in for the game scene (couldn't get this to work)
+
+	Audio folder under Assets
+		- Four audio clips in this f older used by game objects
