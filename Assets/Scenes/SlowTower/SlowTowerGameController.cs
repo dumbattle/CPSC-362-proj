@@ -39,6 +39,7 @@ using UnityEngine.UI;
     private void Update() {
         gameState = gameState() ?? gameState;
         displayWave();
+        TouchUIManager.CustomUpdate();
         UIManager.CustomUpdate();
     }
 
