@@ -509,7 +509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274297355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14, y: 1, z: 0}
+  m_LocalPosition: {x: 13.91, y: 0.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2058984337}
@@ -4531,7 +4531,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 89dae1fe50bb95546aece8f865efbc3e, type: 3}
 --- !u!1839735485 &1723150876 stripped
 Tilemap:
-  m_CorrespondingSourceObject: {fileID: 6416660510377198218, guid: 89dae1fe50bb95546aece8f865efbc3e,
+  m_CorrespondingSourceObject: {fileID: 4036436548175943817, guid: 89dae1fe50bb95546aece8f865efbc3e,
     type: 3}
   m_PrefabInstance: {fileID: 1723150875}
   m_PrefabAsset: {fileID: 0}
