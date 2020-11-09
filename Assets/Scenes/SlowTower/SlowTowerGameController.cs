@@ -18,6 +18,7 @@ using UnityEngine.UI;
     [Space]
     public Text winText;
     public Text loseText;
+    public Text waveDisplay;
 
     GameState gameState;
     int currentWave = 0;
@@ -37,6 +38,7 @@ using UnityEngine.UI;
 
     private void Update() {
         gameState = gameState() ?? gameState;
+        displayWave();
         UIManager.CustomUpdate();
     }
 
@@ -51,6 +53,12 @@ using UnityEngine.UI;
     void WaitUpdate() {
         tm.WaitUpdate();
         GlobalGameplayUpdate.WaitUpdate(); // this was added
+    }
+
+    public void displayWave()
+    {
+        int waveNumber = 1 + currentWave;
+        waveDisplay.text = waveNumber.ToString();
     }
 
 
