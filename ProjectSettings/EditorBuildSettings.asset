@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Iteration1/Menu.unity
+    path: Assets/Scenes/Main Menu/Menu.unity
     guid: f8e8b28177d26a84bac4bb4d66a0fa2b
   - enabled: 0
     path: Assets/Scenes/Iteration2/Iter2.unity
     guid: 6ebd027ec597fe840ae759f55d13228a
   - enabled: 1
+    path: Assets/Scenes/Iteration3/Iteration3.unity
+    guid: 80753921b24bad74c9f7efdd7138ab8e
+  - enabled: 0
     path: Assets/Scenes/Tower Dev/TowerDevScene.unity
     guid: 84279895a6ccb5e419ea6293ed10d8f8
   - enabled: 1
