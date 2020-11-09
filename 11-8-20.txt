@@ -1,0 +1,5 @@
+11-8-20
+Alejandro Harrison
+
+-Still working on finding new sprites and tilemaps for game
+-Working on path tilemap
