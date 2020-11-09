@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Obsolete("TestUI is obsolete. Use UIManager or its derived classes instead.")]
 public class TestUI : MonoBehaviour
 {
     //find another way to make this private
@@ -36,6 +38,7 @@ public class TestUI : MonoBehaviour
     public static bool towerReceived { get; private set; }
     // signals if user has clicked
     public static bool clickReceived { get; private set; }
+
 
     void Awake() {
         _main = this;
@@ -82,6 +85,7 @@ public class TestUI : MonoBehaviour
 
     protected void ShowPausedUI()
     {
+        playPauseText.text = "PLAY";
         PlayPause_Pause();
         PlayButton.gameObject.SetActive(true);
         PauseButton.gameObject.SetActive(false);
@@ -90,6 +94,7 @@ public class TestUI : MonoBehaviour
 
     protected void ShowPlayUI()
     {
+        playPauseText.text = "PAUSE";
         PlayPause_Play();
         PauseButton.gameObject.SetActive(true);
         PlayButton.gameObject.SetActive(false);

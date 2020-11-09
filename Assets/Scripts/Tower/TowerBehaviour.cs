@@ -13,12 +13,9 @@ public abstract class TowerBehaviour : MonoBehaviour, ITower
     public abstract void WaitUpdate();
     public virtual void Init(Vector2Int index, TowerBehaviour src) { mapIndex = index; this.src = src; }
 
-    // inline or call this whenever a creep is targeted
-    protected void FaceTarget(CreepBehaviour cb)
+    void ITower.DestroyTower()
     {
-        var dir = cb.transform.position - transform.position;
-        // set forward axis to point to creep
-        transform.up = dir;
+        Destroy(gameObject);
     }
 }
 

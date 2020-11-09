@@ -8,5 +8,7 @@ public interface ITower {
     void GameplayUpdate();
 
     void WaitUpdate();
+
+    void DestroyTower();
 }
 

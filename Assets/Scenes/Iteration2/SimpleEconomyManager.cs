@@ -47,5 +47,6 @@ public class SimpleEconomyManager : MonoBehaviour {
         money += amnt;
 
         OnMoneyChanged?.Invoke(money - amnt, money);
+
     }
 }

@@ -31,7 +31,7 @@ public class SlowProjectileTower : ProjectileTower {
 
     IEnumerator SlowTimer(CreepBehaviour cb, float amnt) {
         float timer = slowTime;
-        FaceTarget(cb);
+
         while (timer > 0) {
             timer -= Time.deltaTime;
             yield return null;
@@ -46,7 +46,7 @@ public class SlowProjectileTower : ProjectileTower {
     }
 
     string EffectString() {
-        return $"{src.GetHashCode()}_{slow}_{slowTime}_COUNT";
+        return $"{GetHashCode()}_{slow}_{slowTime}_COUNT";
     }
 
 

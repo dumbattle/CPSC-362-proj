@@ -42,6 +42,14 @@ public class MapManager : MonoBehaviour
         return new Vector2Int(tilemap.size.x, tilemap.size.y);
     }
 
+
+    public bool ValidTowerTile(int x, int y)
+    {
+        var t = tilemap.GetTile<Tile>(new Vector3Int(x + tilemap.cellBounds.xMin, y + tilemap.cellBounds.yMin, 0));
+    
+        return t != pathTile;
+    }
+
     // returns tile asset type of fieldTile
     public Tile GetFieldTile() {
         return fieldTile;

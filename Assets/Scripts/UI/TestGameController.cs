@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-    public partial class SlowTowerGameController : MonoBehaviour{
+public class TestGameController : MonoBehaviour{
     delegate GameState GameState();
-
-    
 
     public MapManager mm;
     public WaveSpawner ws;
@@ -13,7 +10,6 @@ using UnityEngine.UI;
     public TowerManager tm;
     public SimpleEconomyManager em;
     public GameObject tileHighlight;
-    public TowerUIManager tui;
 
     [Space]
     public Text winText;
@@ -29,7 +25,6 @@ using UnityEngine.UI;
         em.Init(100, 100);
     }
 
-    
     private void Awake() {
         gameState = SceneStartState;
     }
@@ -37,24 +32,15 @@ using UnityEngine.UI;
 
     private void Update() {
         gameState = gameState() ?? gameState;
-        UIManager.CustomUpdate();
+        TouchUIManager.CustomUpdate();
+        UIManager.CustomUpdate(); // check UIManager Line 78
     }
 
 
     void GameplayUpdate() {
         cm.GameplayUpdate();
         tm.GameplayUpdate();
-        GlobalGameplayUpdate.GameplayUpdate(); // this was added
     }
-
-    //refactored
-    void WaitUpdate() {
-        tm.WaitUpdate();
-        GlobalGameplayUpdate.WaitUpdate(); // this was added
-    }
-
-
-    // GAME STATES ARE SPLIT INTO MULTIPLE FILES 
 
     GameState SceneStartState() {
         winText.gameObject.SetActive(false);
@@ -62,6 +48,48 @@ using UnityEngine.UI;
 
         PlayPauseUIManager.SetPauseState();
         return WavePrepState; 
+    }
+
+    GameState WavePrepState() {
+        tm.WaitUpdate();
+        if (UIManager.towerPurchaseReceived) {
+            return TowerPurchaseSubState;
+        }
+        if (UIManager.playReceived) {
+            PlayPauseUIManager.SetPlayState();
+            return WaveStartState;
+        }
+
+        return null;
+
+        GameState TowerPurchaseSubState() {
+              tm.WaitUpdate();
+            var (x, y) = mm.GetTilePosition(UIManager.mousePosition);
+           
+            if (tm.TileInRange(x, y) && !tm.TileOccupied(x, y) && mm.GetTile(UIManager.mousePosition) != mm.GetPathTile()) {
+                tileHighlight.SetActive(true);
+                tileHighlight.transform.position = new Vector3(x, y, 0);
+                
+                if (UIManager.clickReceived && em.TrySpend(UIManager.towerPurchased.cost)) {
+                    var tower = tm.CreateTower(UIManager.towerPurchased, x, y);
+                    tileHighlight.SetActive(false);
+                    return WavePrepState;
+                }
+            }
+            else {
+                tileHighlight.SetActive(false);
+                if (UIManager.clickReceived) {
+                    return WavePrepState;
+                }
+            }
+
+            if (UIManager.playReceived) {
+                tileHighlight.SetActive(false);
+                return WaveStartState;
+            }
+
+            return null;
+        }
     }
 
     GameState WaveStartState() {
@@ -137,7 +165,7 @@ using UnityEngine.UI;
     }
 
     GameState GameEndState() {
-        WaitUpdate();
+        tm.WaitUpdate();
         // do nothing :)
         return null;
     }

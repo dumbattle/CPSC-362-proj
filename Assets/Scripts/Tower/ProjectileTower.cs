@@ -76,7 +76,7 @@ public abstract class ProjectileTower : TowerBehaviour {
             }
 
             proj.transform.position += dir.normalized * Time.deltaTime * projectileSpeed;
-            proj.transform.up = dir;
+
             yield return null;
         }
 
