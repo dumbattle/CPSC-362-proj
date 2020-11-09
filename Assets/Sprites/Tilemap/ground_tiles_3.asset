@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: highlight
+  m_Name: ground_tiles_3
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -8922166342787202985, guid: dc539071319e2a848a4b12317a5a34ed,
+  m_Sprite: {fileID: 5129788722007358300, guid: dc539071319e2a848a4b12317a5a34ed,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
