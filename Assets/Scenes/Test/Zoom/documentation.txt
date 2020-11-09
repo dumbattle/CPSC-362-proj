@@ -1,0 +1,10 @@
+duplicated from Iteration2 scene
+
+- old 'TestUI' script replaced with new UIManager classes 'TowerUIManager' and 'PlayPauseUIManager'
+  - functionally the same as Iteration2
+- added 'TouchUIManager' script
+  - on PC, pan screen by clicking and dragging. Zoom by using the scroll wheel
+  - on mobile, pan screen by touching and dragging. Zoom by pinching
+  - currently, there's a bug where when you select a Tower button and try to pan after,
+    a tower is placed
+    - ideally, the user can pan without placing a tower

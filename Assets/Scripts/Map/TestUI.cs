@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Obsolete("TestUI is obsolete. Use UIManager or its derived classes instead.")]
 public class TestUI : MonoBehaviour
 {
     //find another way to make this private
