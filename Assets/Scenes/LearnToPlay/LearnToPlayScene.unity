@@ -435,7 +435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
+  m_AnchoredPosition: {x: 21, y: -12}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106814465
@@ -596,7 +596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 253, y: -27.43}
+  m_AnchoredPosition: {x: 253, y: -0.0000019073}
   m_SizeDelta: {x: 432.33557, y: 422.4272}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385476464
@@ -1217,8 +1217,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 44722411}
   m_HandleRect: {fileID: 44722410}
   m_Direction: 2
-  m_Value: 0.99998283
-  m_Size: 0.22385263
+  m_Value: 1
+  m_Size: 0.22385259
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1294,8 +1294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -732.3}
-  m_SizeDelta: {x: 0, y: 1464.6501}
+  m_AnchoredPosition: {x: -10.516, y: -732.3251}
+  m_SizeDelta: {x: -21.032532, y: 1464.6501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1992128396
 MonoBehaviour:
@@ -1316,15 +1316,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Howdy!  This is place holder text for out Tower Defense Learn How to Play
-    scene.  In this scene, players will be given a quick rundown of the game.\n\nI'm
-    making some more paragraphs to show how the scrolling will work if we need it. 
-    If the scrolling is unecessary, it can be removed easily.  \n\nTime for more
-    paragraphs!\n\nThere once was a man from Peru\nWho dreamed of eating his shoe\nHow
-    this rhyme went, I only once knew\nAnd I may have forgotten this one too-\nHickory
-    dickory dock\nThe mouse ran up the clock\nThe clock struck twelve\nThe mouse
-    ran down\nHickory dickory dock\n\n:D\n\nWhen we decide what text to put here,
-    we'll edit this master peice.\n"
+  m_text: "How long can you survive?\n\nBefore you start defending, place down towers.\n\nTo
+    purchase a tower, click on an empty tile.\n\nTo sell or upgrade, click on a tower
+    that is already placed.\n\nIf you think you are ready, press \nplay to start
+    defending!\n\nGoodluck!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1353,8 +1348,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 23
+  m_fontSizeBase: 23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1394,12 +1389,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1992128396}
-    characterCount: 645
+    characterCount: 253
     spriteCount: 0
-    spaceCount: 131
-    wordCount: 121
+    spaceCount: 50
+    wordCount: 45
     linkCount: 0
-    lineCount: 38
+    lineCount: 15
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
