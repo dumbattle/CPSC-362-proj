@@ -24,12 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Tower Dev/TowerDevScene.unity
     guid: 84279895a6ccb5e419ea6293ed10d8f8
   - enabled: 1
-    path: Assets/Scenes/Iteration3/Iteration3_map1.unity
-    guid: 7e277e6bd97e9044f8dc4af44dd78195
+    path: Assets/Scenes/Iteration3/map1.unity
+    guid: fe84d25aa22a6d64bb4f1e1d0d5bbc77
   - enabled: 1
-    path: Assets/Scenes/Iteration3/Iteration3_map2.unity
-    guid: 442f172685a70674fbb89d2ce69ebdac
+    path: Assets/Scenes/Iteration3/map2.unity
+    guid: 14425b42021104f498deeaa4bf6de12c
   - enabled: 1
-    path: Assets/Scenes/Iteration3/Iteration3_map3.unity
-    guid: ffa92482e90d70c429217d38c62fe407
+    path: Assets/Scenes/Iteration3/map3.unity
+    guid: a98db93f00f759d4db6fe8c77214cac4
   m_configObjects: {}
