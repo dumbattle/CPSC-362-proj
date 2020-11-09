@@ -10,14 +10,14 @@ Each iteration will be in its own branch
   - UI
 - Creeps
   - Sprites
-  - Special effects
+  - Special effects. Suggestions:
     - Passive Health regen
     - Spawn Creeps on Death
     - Movement speed modification
   - Random waves - Maybe
 - Towers 
   - Sprites
-  - New Types
+  - New Types. Suggestions:
     - Splash
     - Slow
   - Projectiles - maybe
@@ -38,6 +38,7 @@ Each iteration will be in its own branch
 
 ## Important Folders
 ### Work Logs
+ __OBSLETE__
 Contains a brief description of the work each member has done.
 
 ### Class Meetings
@@ -52,5 +53,9 @@ Other folders are used by Unity3D.
 We will likely not be opening these files at all.
   
  ## LINKS
+ - Global Scope
+   - https://docs.google.com/document/d/1HEtpih35UYRHMDWS0bYohscLYdZw9X2uXL7DZjVWBo0/edit?usp=sharing
+ - Individual Contributions
+   - https://docs.google.com/document/d/1zWxkH3BIcUR8q56eACtEO4s9zq3pXx23GSGU0DaI2mQ/edit?usp=sharing
  - Trello
    - https://trello.com/b/HWrV0k1E/kanban-template
