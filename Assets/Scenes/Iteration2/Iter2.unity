@@ -850,6 +850,32 @@ PrefabInstance:
       propertyPath: coolDown
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3513808476025795813, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_MotionVectors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513808476025795815, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8098cad13b1e2b543ae2e39f84473dce,
+        type: 3}
+    - target: {fileID: 3513808476025795815, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.75294125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513808476025795815, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.75294125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513808476025795815, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.75294125
+      objectReference: {fileID: 0}
     - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -904,6 +930,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3513808476025795817, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -1192,12 +1233,12 @@ PrefabInstance:
     - target: {fileID: 3513808476025795815, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.020617485
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3513808476025795815, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3513808476025795815, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -1209,6 +1250,12 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 91f2ccb503e81c74485acee13f6c9d89, type: 2}
+    - target: {fileID: 3513808476025795815, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 02017e12e6e7bdb4ca41a64b2268aa26,
+        type: 3}
     - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1263,6 +1310,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3513808476025795817, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
