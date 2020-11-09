@@ -8,14 +8,24 @@ public class TowerUIManager : UIManager
     private static TowerUIManager _main;
 
     // button for each type of tower
-    public Button tower1Button;
-    public Button tower2Button;
+    public  Button tower1Button;
+    public  Button tower2Button;
+    public Button tower3Button;
+
+    public Button sellTower;
+    public Button upgradeTower;
+    public Button cancelTowerBuild;
+
+    public GameObject TowerPurchasePanel;
 
     // tower objects for each type of tower                
     [SerializeField]
     private TowerBehaviour tower1 = null;
-     [SerializeField]
-    private TowerBehaviour tower2 = null; 
+    [SerializeField]
+    private TowerBehaviour tower2 = null;
+    [SerializeField]
+    private TowerBehaviour tower3 = null;
+
 
     void Awake() {
         _main = this;
@@ -24,8 +34,13 @@ public class TowerUIManager : UIManager
     void Start() {
         // when the user clicks any tower button, that tower type is registered
         //   as the current tower type selected
+
         tower1Button.onClick.AddListener(() => Register.Tower(tower1));
         tower2Button.onClick.AddListener(() => Register.Tower(tower2));
+        cancelTowerBuild.onClick.AddListener(() => Register.Cancel());
+        sellTower.onClick.AddListener(() => Register.Sell());
+        tower3Button.onClick.AddListener(() => Register.Tower(tower3));
+
     }
 
     /*
@@ -37,19 +52,78 @@ public class TowerUIManager : UIManager
     */
 
     private void ShowTowerPanelUI() {
-        // implement
+       
+        tower1Button.gameObject.SetActive(true);
+        tower2Button.gameObject.SetActive(true);
+        tower3Button.gameObject.SetActive(true);
+        TowerPurchasePanel.gameObject.SetActive(true);
+
+    }
+
+    private void HideTowerPanelUI()
+    {
+        //print("hide tower panel");
+        tower1Button.gameObject.SetActive(false);
+        tower2Button.gameObject.SetActive(false);
+        tower3Button.gameObject.SetActive(false);
+        TowerPurchasePanel.gameObject.SetActive(false);
+
     }
 
     private void ShowUpgradesPanelUI() {
-        // implement
+        sellTower.gameObject.SetActive(true);
+        upgradeTower.gameObject.SetActive(true);
     }
 
-    public static void SetTowerPanelState() {
-        _main.ShowTowerPanelUI();
+    private void HideUpgradesPanelUI()
+    {
+        sellTower.gameObject.SetActive(false);
+        upgradeTower.gameObject.SetActive(false);
     }
 
-    public static void SetUpgradesPanelState() {
-        _main.ShowUpgradesPanelUI();
+    private void ShowCancelBuild()
+    {
+        cancelTowerBuild.gameObject.SetActive(true);
+    }
+
+    private void HideCancelBuild()
+    {
+        cancelTowerBuild.gameObject.SetActive(false);
+    }
+
+    public static void SetTowerPanelState(bool active) {
+        if (active)
+        {
+            _main.ShowTowerPanelUI();
+        }
+        else
+        {
+            _main.HideTowerPanelUI();
+        }
+    }
+
+    public static void SetUpgradesPanelState(bool active) {
+
+        if (active)
+        {
+            _main.ShowUpgradesPanelUI();
+        }
+        else
+        {
+            _main.HideUpgradesPanelUI();
+        }
+    }
+
+    public static void SetCancelBuildState(bool active)
+    {
+        if (active)
+        {
+            _main.ShowCancelBuild();
+        }
+        else
+        {
+            _main.HideCancelBuild();
+        }
     }
 
 }

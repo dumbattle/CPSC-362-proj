@@ -14,6 +14,12 @@ public abstract class UIManager : MonoBehaviour
     public static bool playReceived { get; protected set; }
     public static bool pausedReceived { get; protected set; }
 
+    public static bool setTower1Received { get; protected set; }
+    public static bool setTower2Received { get; protected set; }
+
+    public static bool cancelTowerBuild { get; protected set; }
+    public static bool sellReceived { get; protected set; }
+
     protected static bool buttonClicked = false;
 
     public static TowerBehaviour towerPurchased { get; private set; }
@@ -36,7 +42,11 @@ public abstract class UIManager : MonoBehaviour
         playReceived = false;
         pausedReceived = false;
         buttonClicked = false;
+        cancelTowerBuild = false;
+        sellReceived = false;
     }
+
+
 
     // the Register class is an organizational tool used for signalling input data
     protected static class Register {
@@ -52,6 +62,16 @@ public abstract class UIManager : MonoBehaviour
         public static void Pause()
         {
             pausedReceived = true;
+        }
+
+        public static void Cancel()
+        {
+            cancelTowerBuild = true;
+        }
+
+        public static void Sell()
+        {
+            sellReceived = true;
         }
     }
 }

@@ -2,8 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SlowTowerGameController : MonoBehaviour{
+    public partial class SlowTowerGameController : MonoBehaviour{
     delegate GameState GameState();
+
+    
 
     public MapManager mm;
     public WaveSpawner ws;
@@ -11,9 +13,9 @@ public class SlowTowerGameController : MonoBehaviour{
     public TowerManager tm;
     public SimpleEconomyManager em;
     public GameObject tileHighlight;
+    public TowerUIManager tui;
 
     [Space]
-    public RectTransform SummaryPanel;
     public Text winText;
     public Text loseText;
 
@@ -35,7 +37,7 @@ public class SlowTowerGameController : MonoBehaviour{
 
     private void Update() {
         gameState = gameState() ?? gameState;
-        TestUI._main.CustomUpdate();
+        UIManager.CustomUpdate();
     }
 
 
@@ -51,57 +53,15 @@ public class SlowTowerGameController : MonoBehaviour{
         GlobalGameplayUpdate.WaitUpdate(); // this was added
     }
 
+
+    // GAME STATES ARE SPLIT INTO MULTIPLE FILES 
+
     GameState SceneStartState() {
         winText.gameObject.SetActive(false);
         loseText.gameObject.SetActive(false);
-        SummaryPanel.gameObject.SetActive(false);
 
-        TestUI.SetPauseState();
+        PlayPauseUIManager.SetPauseState();
         return WavePrepState; 
-    }
-
-    GameState WavePrepState() {
-        WaitUpdate();
-        if (TestUI.towerReceived) {
-            return TowerPurchaseSubState;
-        }
-        if (TestUI.playReceived) {
-            TestUI.SetPlayState();
-            return WaveStartState;
-        }
-
-        return null;
-
-        GameState TowerPurchaseSubState() {
-              WaitUpdate();
-              // replaced `var (x, y) = TestUIManager.tilePosition`
-            var (x, y) = mm.GetTilePosition(TestUI.mousePosition);
-           
-            // added condition `mm.GetTile(TestUI.mousePosition) != mm.GetPathTile()`
-            if (tm.TileInRange(x, y) && !tm.TileOccupied(x, y) && mm.GetTile(TestUI.mousePosition) != mm.GetPathTile()) {
-                tileHighlight.SetActive(true);
-                tileHighlight.transform.position = new Vector3(x, y, 0);
-                
-                if (TestUI.clickReceived && em.TrySpend(TestUI.towerSelected.cost)) {
-                    var tower = tm.CreateTower(TestUI.towerSelected, x, y);
-                    tileHighlight.SetActive(false);
-                    return WavePrepState;
-                }
-            }
-            else {
-                tileHighlight.SetActive(false);
-                if (TestUI.clickReceived) {
-                    return WavePrepState;
-                }
-            }
-
-            if (TestUI.playReceived) {
-                tileHighlight.SetActive(false);
-                return WaveStartState;
-            }
-
-            return null;
-        }
     }
 
     GameState WaveStartState() {
@@ -109,21 +69,16 @@ public class SlowTowerGameController : MonoBehaviour{
         return WaveSpawnState;
     }
 
-
-
-
-
     GameState WaveSpawnState() {
         ws.SpawnUpdate();
         GameplayUpdate();
 
         if (em.health <= 0) {
-            SummaryPanel.gameObject.SetActive(true);
             loseText.gameObject.SetActive(true);
             return GameEndState;
         }
-        if (TestUI.pausedReceived) {
-            TestUI.SetPauseState();
+        if (UIManager.pausedReceived) {
+            PlayPauseUIManager.SetPauseState();
             return WaveSpawnPauseState;
         }
 
@@ -135,41 +90,36 @@ public class SlowTowerGameController : MonoBehaviour{
 
 
     GameState WaveSpawnPauseState() {
-        if (TestUI.playReceived) {
-            TestUI.SetPlayState();
+        if (UIManager.playReceived) {
+            PlayPauseUIManager.SetPlayState();
             return WaveSpawnState;
         }
 
         return null;
     }
 
-
-
-
-
     GameState PlayState() {
         GameplayUpdate();
         if (em.health <= 0) {
-            SummaryPanel.gameObject.SetActive(true);
             loseText.gameObject.SetActive(true);
             return GameEndState;
         }
 
-        if (TestUI.pausedReceived) {
-            TestUI.SetPauseState();
+        if (UIManager.pausedReceived) {
+            PlayPauseUIManager.SetPauseState();
             return PausedState;
         }
 
         if (cm.creepCount == 0) {
-            TestUI.SetPlayState();
+            PlayPauseUIManager.SetPlayState();
             return WaveEndState;
         }
         return null;
     }
 
     GameState PausedState() {
-        if (TestUI.playReceived) {
-            TestUI.SetPlayState();
+        if (UIManager.playReceived) {
+            PlayPauseUIManager.SetPlayState();
             return PlayState;
         }
         return null;
@@ -177,10 +127,9 @@ public class SlowTowerGameController : MonoBehaviour{
 
     GameState WaveEndState() {
         currentWave++;
-        TestUI.SetPauseState();
+        PlayPauseUIManager.SetPauseState();
 
         if (currentWave > ws.MaxWave) {
-            SummaryPanel.gameObject.SetActive(true);
             winText.gameObject.SetActive(true);
             return GameEndState;
         }

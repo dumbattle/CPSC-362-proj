@@ -9,7 +9,7 @@ public class PlayPauseUIManager : UIManager
 
     public Button PlayButton;
     public Button PauseButton;
-    public Text playPauseText;
+    //public Text playPauseText;
 
     void Awake() {
         _main = this;
@@ -26,7 +26,7 @@ public class PlayPauseUIManager : UIManager
 
     protected void ShowPausedUI()
     {
-        playPauseText.text = "PLAY";
+        //playPauseText.text = "PLAY";
         PlayPause_Pause();
         PlayButton.gameObject.SetActive(true);
         PauseButton.gameObject.SetActive(false);
@@ -35,7 +35,7 @@ public class PlayPauseUIManager : UIManager
 
     protected void ShowPlayUI()
     {
-        playPauseText.text = "PAUSE";
+        //playPauseText.text = "PAUSE";
         PlayPause_Play();
         PauseButton.gameObject.SetActive(true);
         PlayButton.gameObject.SetActive(false);
