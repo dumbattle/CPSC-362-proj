@@ -57,5 +57,7 @@ We will likely not be opening these files at all.
    - https://docs.google.com/document/d/1HEtpih35UYRHMDWS0bYohscLYdZw9X2uXL7DZjVWBo0/edit?usp=sharing
  - Individual Contributions
    - https://docs.google.com/document/d/1zWxkH3BIcUR8q56eACtEO4s9zq3pXx23GSGU0DaI2mQ/edit?usp=sharing
+ - Playtests feedback
+   - https://docs.google.com/document/d/1ZcCCFNdJ9kXsTVaJg2jBFOskqH6nX29lRX3buvtwOI8/edit?usp=sharing
  - Trello
    - https://trello.com/b/HWrV0k1E/kanban-template
