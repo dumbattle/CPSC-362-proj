@@ -1,0 +1,9 @@
+MapMenu scene is structured similarly to MainMenu scene
+- uses MapMenu script at Assets/Scripts/UI/
+  - MapMenu script is hard coded to a certain build order. Change if needed
+
+Map2Scene and Map3Scene are duplicated from Iteration3 scene
+- Grid GameObject is a prefab found at Assets/Sprites/Maps/
+  - Grid prefab contains 3 maps: map1, map2, map3
+- make sure the correct map is activated in the Grid object
+- make sure MapManager in Hierarchy has correct map attached

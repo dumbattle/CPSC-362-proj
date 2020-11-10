@@ -71,6 +71,6 @@ public class DamageStep {
     }
 
     public void DamageDealt(int amnt) {
-        OnPreprocessDMG?.Invoke(amnt);
+        OnProcessDealtDMG?.Invoke(amnt);
     }
 }

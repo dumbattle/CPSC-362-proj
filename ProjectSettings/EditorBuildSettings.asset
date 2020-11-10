@@ -6,15 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Iteration1/Menu.unity
+    path: Assets/Scenes/Main Menu/Menu.unity
     guid: f8e8b28177d26a84bac4bb4d66a0fa2b
   - enabled: 0
     path: Assets/Scenes/Iteration2/Iter2.unity
     guid: 6ebd027ec597fe840ae759f55d13228a
   - enabled: 1
-    path: Assets/Scenes/Tower Dev/TowerDevScene.unity
-    guid: 84279895a6ccb5e419ea6293ed10d8f8
+    path: Assets/Scenes/MapSelection/MapMenu.unity
+    guid: da65ffd95280aba4d992ce2d824d0179
   - enabled: 1
     path: Assets/Scenes/LearnToPlay/LearnToPlayScene.unity
     guid: 1b90d477377aa1a4492caafaa3e1ed62
+  - enabled: 0
+    path: Assets/Scenes/Iteration3/Iteration3.unity
+    guid: 80753921b24bad74c9f7efdd7138ab8e
+  - enabled: 0
+    path: Assets/Scenes/Tower Dev/TowerDevScene.unity
+    guid: 84279895a6ccb5e419ea6293ed10d8f8
+  - enabled: 1
+    path: Assets/Scenes/Iteration3/map1.unity
+    guid: fe84d25aa22a6d64bb4f1e1d0d5bbc77
+  - enabled: 1
+    path: Assets/Scenes/Iteration3/map2.unity
+    guid: 14425b42021104f498deeaa4bf6de12c
+  - enabled: 1
+    path: Assets/Scenes/Iteration3/map3.unity
+    guid: a98db93f00f759d4db6fe8c77214cac4
   m_configObjects: {}
