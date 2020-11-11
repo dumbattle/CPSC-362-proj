@@ -6,20 +6,17 @@ using UnityEngine;
 
 
 public class SampleTower : TowerBehaviour {
+    public Targeting targeting;
     [Min(.001f)]
     public float coolDown;
     private float cooldownTimer;
-    public float range = 2f;                // the shooting range of the towers
+    public float range = 2f;              
 
     public LineRenderer line;
     [Range(.1f, 3f)]
     public float LaserLife = 1;
 
     [Min(1)] public int damageDone = 1;
-    // curently unused variable; included as a precaution in case there is a need for 
-    // rotations in the future
-
-    // Start is called before the first frame update
 
 
 
@@ -29,42 +26,26 @@ public class SampleTower : TowerBehaviour {
         if (cooldownTimer > 0) {
             return;
         }
-        // Finds GameObjects that have been tagged as enemies and stores them
-        // var creeps = creepManager.AllCreeps();
-        var enemies = CreepManager.main.AllCreeps();
-
-        float shortestDistance = Mathf.Infinity;
-        CreepBehaviour nearestEnemy = null;                     // the closest enemy is null by default
-
-
-        // searches through all enemies to find the nearest one
-        foreach (var enemy in enemies) {
-            if (enemy.health.current <= 0) {
-                continue;
-            }
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-
-            if (distanceToEnemy < shortestDistance) {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
-            }
-        }
+        var target = targeting.GetTarget(transform.position, range);            
 
         // If the closest enemy is in range, that enemy becomes the target
-        if (nearestEnemy != null && shortestDistance <= range) {
-            FaceTarget(nearestEnemy);
+        if (target != null ) {
+            FaceTarget(target);
             cooldownTimer = coolDown;
-            // the line renderer is enabled when a target is detected within range
-            line = GetComponent<LineRenderer>();
-            line.enabled = true;
-            line.SetPosition(0, transform.position);
-            line.SetPosition(1, nearestEnemy.transform.position);
-            var creepyBar = nearestEnemy.GetComponent<CreepHealth>();
-            creepyBar.damage(damageDone);
-            // prints "Targeting Enemy" to the console
-            StartLaser();
+            FireLaser(target);
         }
 
+    }
+
+    private void FireLaser(CreepBehaviour target) {
+        // the line renderer is enabled when a target is detected within range
+        line = GetComponent<LineRenderer>();
+        line.enabled = true;
+        line.SetPosition(0, transform.position);
+        line.SetPosition(1, target.transform.position);
+        var creepyBar = target.GetComponent<CreepHealth>();
+        creepyBar.damage(damageDone);
+        StartLaser();
     }
 
     public override void WaitUpdate() {

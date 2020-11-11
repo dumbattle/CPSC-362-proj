@@ -4,6 +4,9 @@ using UnityEngine;
 public abstract class CreepMovement : MonoBehaviour {
     public event Action OnReachedEnd;
 
+    public float distanceToEnd { get; protected set; }
+    public float distanceTraveled { get; protected set; }
+
     public virtual void Init() { }
     public abstract void GameplayUpdate();
 
