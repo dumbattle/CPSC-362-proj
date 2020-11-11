@@ -6,13 +6,19 @@ public class PathManager : MonoBehaviour {
     }
     static PathManager _main;
 
+
+    
+
     public CreepPath[] paths;
+    int i = 0;
 
     private void Awake() {
         _main = this;
     }
 
     public CreepPath RandomPath() {
-        return paths[Random.Range(0, paths.Length)];
+        i++;
+        i %= paths.Length;
+        return paths[i];
     }
 }
