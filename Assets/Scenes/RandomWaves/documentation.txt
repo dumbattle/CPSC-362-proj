@@ -1,0 +1,16 @@
+
+Random Waves
+
+Each wave, groups of enemies are sent
+
+The number of groups increases per wave.
+
+Each group consists of a singe type of creep, spaced evenly.
+	The amount and spacing are set in the inspector.
+	Amount and spacing increase per wave
+
+Each group can be set to only appear after a set wave.
+	Set in inspector
+
+CreepHPScaleWaveComponent
+	Each wave, the creeps health will be increased according to current wave
