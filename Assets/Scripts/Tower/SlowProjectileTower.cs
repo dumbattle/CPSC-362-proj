@@ -12,7 +12,7 @@ public class SlowProjectileTower : ProjectileTower {
     [Min(1)]
     public int maxStack = 1;
 
-    public override void Effect(CreepBehaviour cb) {
+    public override void Effect(CreepBehaviour cb, Vector2 lastPos) {
         if (cb == null) {
             return;
         }
@@ -31,7 +31,6 @@ public class SlowProjectileTower : ProjectileTower {
 
     IEnumerator SlowTimer(CreepBehaviour cb, float amnt) {
         float timer = slowTime;
-        FaceTarget(cb);
         while (timer > 0) {
             timer -= Time.deltaTime;
             yield return null;

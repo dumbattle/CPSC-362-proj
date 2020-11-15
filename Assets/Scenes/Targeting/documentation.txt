@@ -1,0 +1,81 @@
+﻿Contributors:
+	Austin
+
+Scene duplicated from map2
+
+Changes:
+ - New Pathing system
+ - Tower targeting
+ - Modified some creeps and towers locally for testing and debugging. Does not affect other scenes.
+
+
+Pathing:
+	I created a new pathing system.
+	Instead of following waypoints, the creeps use a list of tiles and follow the list
+		Advantages:
+			Tiles positions are perfectly aligned to grid and easier to place
+			Can have multiple paths
+			Creep can track precisely how far along the path it has traveled and how much further it has left to go.
+				Good for tower targeting
+		Disadvantages
+			Currently does not allow a path to cross it self
+				Can be fixed, but will require some amount of work
+			Limited to tile spots. IE no diagonals
+
+	Editor:
+		The path can be seen in the editor as a series of arrows, pointing along the direction the creeps will move in.
+		The start and end tiles will be outlined and can be dragged to edit the shape of the path
+		Alternatively, you can select the start or end tower and use arrow keys or WASD to move the tile
+		Overlapping the paths will erase any loops that it would create
+
+
+	To Use:
+		1. Grid required in scene. Should already exist from tilemap
+		2. Add PathManager component to a GameObject
+
+		3. Create empty GameObject and add CreepPath component
+		4. Set the desired color for the path. This will not show up in game, but will be helpful for viewing in the inspector
+		5. Default path will start at (0, 0) and end at (0, 1). A 2 tile path
+		6. Move either the start or end tile to its correct location
+			- You can drag the ends of the path
+			- Or you can select one end and use arrow keys or WASD
+		7. Move the other tile over the it in order to clear the path
+		8. Use the other end to trace the desired path
+		9. Add the CreepPath to the PathManager
+
+		10. Repeat steps 3-9 for each desired path. You must place each path on a seperate GameObject
+		11. For each creep, replace the old movement scripts with the CreepPathasedMovements script
+
+
+	Related Scripts:
+		GizmoDrawers:
+			A static utility class that draws the CreepPath in the editer.
+			Gave this a non-specific name so this class can be reused
+		CreepPathDrawer:
+			An editor script that handles the modification of a CreepPath from the editor
+			Not perfect, but functional
+		CreepPathBasedMovement:
+			A creep Movement script that utilizes the new CreepPath
+
+Tower Targeting
+	4 targeting options:
+		First
+		Last
+		Closest
+		Random
+
+	Set in inspector.
+	Currectly user has no way of controlling this. This will have to be added in.
+
+	Scripts:
+	Assets/Scripts/Tower
+
+	All scripts kept in file: Targeting.cs
+		Targeting:
+			An enum used for Unity serialization
+
+		TargetingUtility:
+			Static class that houses the targeting functions
+			Also contains an extension that allows these functions to be called from the Targeting enum
+
+
