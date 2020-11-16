@@ -9,11 +9,24 @@ public class CreepHealth : MonoBehaviour {
     public int current { get; private set; }
     public event Action OnHealthChange;
     public DamageStep damageStep;
+
+
     public void Init() {
         max = current = startingHealth;
         damageStep = DamageStep.Get();
     }
 
+    public void SetMaxHP(int amnt, bool scaleCurrent) {
+        if (scaleCurrent) {
+            float ratio = 1f * current / max;
+            max = amnt;
+            current = (int)(max * ratio);
+        }
+        else {
+            max = amnt;
+            current = current > max ? max : current;
+        }
+    }
 
     public void damage(int amount) {
         var dmg = damageStep.ProcessDMG(amount);
@@ -71,6 +84,6 @@ public class DamageStep {
     }
 
     public void DamageDealt(int amnt) {
-        OnPreprocessDMG?.Invoke(amnt);
+        OnProcessDealtDMG?.Invoke(amnt);
     }
 }

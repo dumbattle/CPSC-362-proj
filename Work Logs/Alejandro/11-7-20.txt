@@ -1,0 +1,6 @@
+11-7-20
+Alejandro Harrison
+
+-Worked on finding new sprites and tilemaps for game
+-Found a desert looking tilemap for the game
+-Working on finding others

@@ -18,12 +18,14 @@ public class SimpleCannonTower : ProjectileTower {
     public float visualLifetime = 1;
 
 
-    public override void Effect(CreepBehaviour cb) {
-        if (cb == null) {
-            return;
+    public override void Effect(CreepBehaviour cb, Vector2 lastPos) {
+        Vector3 center;
+        if (cb != null) {
+            center = cb.transform.position;
         }
-        FaceTarget(cb);
-        var center = cb.transform.position;
+        else {
+            center = lastPos; 
+        }
 
         foreach (var c in CreepManager.main.AllCreeps()) {
             var d = (c.transform.position - center).magnitude;
@@ -38,15 +40,15 @@ public class SimpleCannonTower : ProjectileTower {
             }
         }
 
-        GlobalGameplayUpdate.AddGameplayWaitUpdate(XplosionAnim(cb)); // remove slow after some time
+        GlobalGameplayUpdate.AddGameplayWaitUpdate(XplosionAnim(center)); // remove slow after some time
     }
 
-    IEnumerator XplosionAnim(CreepBehaviour cb) {
+    IEnumerator XplosionAnim(Vector3 pos) {
         float timer = 0;
         var obj = Instantiate(explosionObj);
         obj.gameObject.SetActive(true);
 
-        obj.transform.position = cb.transform.position;
+        obj.transform.position = pos;
         obj.transform.localScale = new Vector3(0, 0, 1);
         //FaceTarget(cb);
         while (timer < visualLifetime) {

@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+
+#pragma warning disable 612, 618 
+// supress obsolete warning
+
 public class MMGameController : MonoBehaviour{
     delegate GameState GameState();
 
@@ -190,3 +194,4 @@ public class MMGameController : MonoBehaviour{
         };
     }
 }
+#pragma warning restore 612, 618

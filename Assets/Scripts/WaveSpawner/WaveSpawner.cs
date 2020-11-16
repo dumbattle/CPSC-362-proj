@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 public abstract class WaveSpawner : MonoBehaviour {
+    public static int currentWave { get; private set; }
     CreepManager creepManager;
 
     IEnumerator spawnLoop;
@@ -11,6 +12,7 @@ public abstract class WaveSpawner : MonoBehaviour {
     public bool spawningDone => _done;
    
     public void SetWave(int waveNum) {
+        currentWave = waveNum;
         _done = false;
         spawnLoop = SpawnWave(GetWaveContents(waveNum));
     }

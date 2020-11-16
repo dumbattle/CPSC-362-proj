@@ -2,6 +2,7 @@
 using UnityEngine;
 
 public abstract class ProjectileTower : TowerBehaviour {
+    public Targeting targeting;
     public GameObject projectile;
     [Min(.01f)]
     public float projectileSpeed = 1;
@@ -18,30 +19,13 @@ public abstract class ProjectileTower : TowerBehaviour {
             return;
         }
 
-        CreepBehaviour target = GetTarget();
+        CreepBehaviour target = targeting.GetTarget(transform.position, range);
 
         if (target != null) {
             cooldownTimer = coolDown;
+                FaceTarget(target);
             FireProjectile(target);
         }
-    }
-
-    private CreepBehaviour GetTarget() {
-        var enemies = CreepManager.main.AllCreeps();
-
-        float shortestDistance = Mathf.Infinity;
-        CreepBehaviour nearestEnemy = null;
-
-        foreach (var enemy in enemies) {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-
-            if (distanceToEnemy <= range && distanceToEnemy < shortestDistance) {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
-            }
-        }
-
-        return nearestEnemy;
     }
 
     private void FireProjectile(CreepBehaviour target) {
@@ -67,9 +51,7 @@ public abstract class ProjectileTower : TowerBehaviour {
 
             // reached target
             if (dir.sqrMagnitude < .01f) {
-                if (target != null) { // target has not been destroyed
-                    Effect(target);
-                }
+                Effect(target, pos);
 
                 Destroy(proj);
                 yield break;
@@ -90,7 +72,7 @@ public abstract class ProjectileTower : TowerBehaviour {
     }
 
     // what happens when the projectile makes contact
-    public abstract void Effect(CreepBehaviour cb);
+    public abstract void Effect(CreepBehaviour cb, Vector2 lastPos);
 
 
     public override void WaitUpdate() { }
