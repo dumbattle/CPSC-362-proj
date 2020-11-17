@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: 1651032623288323008
     second: creep_path_7
+  - first:
+      213: -6524391892941424949
+    second: creep_path_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,9 +124,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 20
-        y: 332
+        y: 334
         width: 90
-        height: 90
+        height: 88
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,7 +147,7 @@ TextureImporter:
         x: 208
         y: 532
         width: 90
-        height: 83
+        height: 84
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +186,10 @@ TextureImporter:
       name: creep_path_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 525
+        x: 15
+        y: 532
         width: 90
-        height: 90
+        height: 84
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,7 +229,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 114
-        y: 332
+        y: 334
         width: 90
         height: 88
       alignment: 0
@@ -238,6 +241,27 @@ TextureImporter:
       bones: []
       spriteID: 0cb8eaf5c65a9e610800000000000000
       internalID: 1651032623288323008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: creep_path_10
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 532
+        width: 90
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6b9cd1424b475a0800000000000000
+      internalID: -6524391892941424949
       vertices: []
       indices: 
       edges: []
