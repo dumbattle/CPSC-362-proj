@@ -177,7 +177,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 02017e12e6e7bdb4ca41a64b2268aa26,
+      objectReference: {fileID: 21300000, guid: 6201303d90e79ca4caccfe3f54be91a2,
         type: 3}
     - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -288,11 +288,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2c44d7d33bb94429ca8325d226e234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 5
   projectile: {fileID: 937483505}
-  projectileSpeed: 9
+  projectileSpeed: 12
   coolDown: 0.1
-  range: 5
+  range: 7
   damage: 1
   slow: 0.86
   slowTime: 1
@@ -1635,7 +1635,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8098cad13b1e2b543ae2e39f84473dce,
+      objectReference: {fileID: 21300000, guid: cff337d146e4120408df7eef63bc500f,
         type: 3}
     - target: {fileID: 3513808476025795815, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -1761,12 +1761,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd284390186a08e4180ab23cfcfb57a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 15
+  cost: 20
   projectile: {fileID: 1207442533}
-  projectileSpeed: 15
+  projectileSpeed: 25
   coolDown: 1.33
-  range: 7
-  damage: 5
+  range: 9
+  damage: 10
   radius: 3
   damageScaleAtMaxRadius: 0
   explosionObj: {fileID: 184012351}
@@ -3889,7 +3889,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8098cad13b1e2b543ae2e39f84473dce,
+      objectReference: {fileID: 21300000, guid: 0ec615461e1246247ba002e0d6481cd3,
         type: 3}
     - target: {fileID: 3513808476025795815, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -4015,12 +4015,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd284390186a08e4180ab23cfcfb57a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 15
+  cost: 10
   projectile: {fileID: 1207442533}
-  projectileSpeed: 15
+  projectileSpeed: 20
   coolDown: 1.33
-  range: 7
-  damage: 5
+  range: 8
+  damage: 7
   radius: 3
   damageScaleAtMaxRadius: 0
   explosionObj: {fileID: 184012351}
@@ -4772,12 +4772,12 @@ PrefabInstance:
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: damageDone
-      value: 45
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: cost
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -4787,12 +4787,12 @@ PrefabInstance:
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: coolDown
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: range
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3513808476025795813, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -4853,7 +4853,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 192a809b78e983e42bdd1510749dd92d,
+      objectReference: {fileID: 21300000, guid: b7f7cf2c729c0c9419b59aa3bec84c14,
         type: 3}
     - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -7451,7 +7451,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 02017e12e6e7bdb4ca41a64b2268aa26,
+      objectReference: {fileID: 21300000, guid: 80652500b80187d4abfbe2272079c24e,
         type: 3}
     - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -7562,11 +7562,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2c44d7d33bb94429ca8325d226e234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 15
   projectile: {fileID: 937483505}
-  projectileSpeed: 9
+  projectileSpeed: 15
   coolDown: 0.1
-  range: 5
+  range: 10
   damage: 1
   slow: 0.86
   slowTime: 1
@@ -7926,12 +7926,12 @@ PrefabInstance:
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: damageDone
-      value: 45
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: cost
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -7941,12 +7941,12 @@ PrefabInstance:
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: coolDown
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: range
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3513808476025795813, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -8007,7 +8007,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 192a809b78e983e42bdd1510749dd92d,
+      objectReference: {fileID: 21300000, guid: 4f046f0623ca8cb4ebb925323308c2a6,
         type: 3}
     - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
