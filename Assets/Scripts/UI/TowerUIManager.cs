@@ -40,7 +40,7 @@ public class TowerUIManager : UIManager
         cancelTowerBuild.onClick.AddListener(() => Register.Cancel());
         sellTower.onClick.AddListener(() => Register.Sell());
         tower3Button.onClick.AddListener(() => Register.Tower(tower3));
-
+        upgradeTower.onClick.AddListener(() => Register.Upgrade());
     }
 
     /*

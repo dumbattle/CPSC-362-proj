@@ -228,7 +228,7 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1107105584}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &184012351
 SpriteRenderer:
@@ -934,7 +934,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -67.266014, y: 0.4999771}
+  m_AnchoredPosition: {x: -67.26611, y: 0.4999771}
   m_SizeDelta: {x: 60.236725, y: 114.19946}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &370769322
@@ -1214,7 +1214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -276.8, y: -45.2}
+  m_AnchoredPosition: {x: -276.80005, y: -45.19995}
   m_SizeDelta: {x: 39.852737, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &435319034
@@ -3122,7 +3122,7 @@ PrefabInstance:
     - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3513808476025795816, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -3214,7 +3214,7 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1107105584}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &937483507
 SpriteRenderer:
@@ -4179,10 +4179,10 @@ Transform:
   m_Children:
   - {fileID: 916464296}
   - {fileID: 1060366344}
+  - {fileID: 924939386}
   - {fileID: 937483506}
   - {fileID: 184012350}
   - {fileID: 1207442534}
-  - {fileID: 924939386}
   m_Father: {fileID: 1341685772}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4450,7 +4450,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1107105584}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1207442535
 SpriteRenderer:
@@ -5868,7 +5868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -62.4, y: 162.6}
+  m_AnchoredPosition: {x: -62.399902, y: 162.59998}
   m_SizeDelta: {x: 154.45453, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684501257
