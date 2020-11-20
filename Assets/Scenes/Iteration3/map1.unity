@@ -789,6 +789,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 542d2d6ad5d59a043b8035246bd4b43e, type: 3}
+--- !u!114 &262404513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
+    type: 3}
+  m_PrefabInstance: {fileID: 1130850417}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8fc7ce538a607489056938022618fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &264868191
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,18 +3534,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 924939385}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &924939387 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
-    type: 3}
-  m_PrefabInstance: {fileID: 924939385}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b8fc7ce538a607489056938022618fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &937483505
 GameObject:
   m_ObjectHideFlags: 0
@@ -4761,7 +4761,7 @@ MonoBehaviour:
   TowerPurchasePanel: {fileID: 1101568582}
   tower1: {fileID: 916464298}
   tower2: {fileID: 1060366346}
-  tower3: {fileID: 924939387}
+  tower3: {fileID: 262404513}
 --- !u!1001 &1130850417
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -125,5 +125,4 @@ public class TowerUIManager : UIManager
             _main.HideCancelBuild();
         }
     }
-
 }

@@ -40,7 +40,6 @@ public class TowerManager : MonoBehaviour
             Vector2Int index;
             TowerBehaviour clone = null;                                                                        // Create null GameObject for reference to cloned object
             clone = Instantiate(src, new Vector3Int(x, y, 0), Quaternion.identity);                             // Create tower object
-            clone.transform.name = transform.name.Replace("TowerManager", "Tower1." + ++numOfTowers).Trim();    // Rename tower to Tower1.numOfTower
             clone.gameObject.SetActive(true);
             index = new Vector2Int(x, y);                                                                       // Set index for ITower.MapIndex get
             _towers[x, y] = clone;                                                                              
