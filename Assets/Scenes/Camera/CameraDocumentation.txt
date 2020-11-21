@@ -1,0 +1,23 @@
+Script: CameraSquarer
+	Script that sets a cameras viewport to view a set shape in the scene as opposed to the shape of the screen.
+	Must be attached to a gameobject that has a camera component
+
+	Fields:
+		camSize
+			How much should be seen
+			ie. => (5,5) means the camera will see a 5x5 area in the scene
+
+		screenPos
+			Because the shape of the camera is set in the inspector, it may not match the shape of the screen
+			As a result, the viewport will be smaller than the screen
+			This field sets the position of the viewport on the screen
+			(0,0) => bottom left
+
+		scale
+			The size of the view port.
+			1 => the view port will be as large as possibe while still being able to fit on screen.
+
+Scene:
+	Camera
+		Demo Scene
+		Because the map cam doesn't cover the whole screen, a second cam is needed
