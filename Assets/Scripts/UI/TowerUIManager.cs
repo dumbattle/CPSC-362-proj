@@ -8,7 +8,7 @@ public class TowerUIManager : UIManager
     private static TowerUIManager _main;
 
     // button for each type of tower
-    [Header("Panel Buttons")]
+    [Header("Tower Panel Buttons")]
     public Button tower1Button;
     public Button tower2Button;
     public Button tower3Button;
@@ -16,7 +16,7 @@ public class TowerUIManager : UIManager
     public Button sellTower;
     public Button upgradeTower;
     public Button cancelTowerBuild;
-    [Header("Panel Backdrop")]
+    [Header("Tower Panel Backdrop")]
     public GameObject TowerPurchasePanel;
 
     // tower objects for each type of tower   
@@ -27,13 +27,20 @@ public class TowerUIManager : UIManager
     private TowerBehaviour tower2 = null;
     [SerializeField]
     private TowerBehaviour tower3 = null;
-
+    [Header("Menu Panel Backdrop")]
+    public GameObject menuBackdrop;
+    [Header("Menu Panel Buttons")]
+    public Button menuButton;
+    public Button restartButton;
+    public Button mainMenuButton;
+    public Button menuCancel;
 
     void Awake() {
         _main = this;
     }
 
-    void Start() {
+    void Start()
+    {
         // when the user clicks any tower button, that tower type is registered
         //   as the current tower type selected
 
@@ -43,6 +50,10 @@ public class TowerUIManager : UIManager
         sellTower.onClick.AddListener(() => Register.Sell());
         tower3Button.onClick.AddListener(() => Register.Tower(tower3));
         upgradeTower.onClick.AddListener(() => Register.Upgrade());
+        menuButton.onClick.AddListener(() => Register.Menu());
+        restartButton.onClick.AddListener(() => Register.Restart());
+        mainMenuButton.onClick.AddListener(() => Register.MainMenu());
+        menuCancel.onClick.AddListener(() => Register.MenuCancel());
     }
 
     /*
@@ -69,7 +80,22 @@ public class TowerUIManager : UIManager
         tower2Button.gameObject.SetActive(false);
         tower3Button.gameObject.SetActive(false);
         TowerPurchasePanel.gameObject.SetActive(false);
+    }
 
+    private void ShowMenuPanelUI()
+    {
+        menuCancel.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
+        mainMenuButton.gameObject.SetActive(true);
+        menuBackdrop.gameObject.SetActive(true);
+    }
+
+    private void HideMenuPanelUI()
+    {
+        menuCancel.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
+        menuBackdrop.gameObject.SetActive(false);
     }
 
     private void ShowUpgradesPanelUI() {
@@ -125,6 +151,18 @@ public class TowerUIManager : UIManager
         else
         {
             _main.HideCancelBuild();
+        }
+    }
+
+    public static void SetMenuPanelState(bool active)
+    {
+        if (active)
+        {
+            _main.ShowMenuPanelUI();
+        }
+        else
+        {
+            _main.HideMenuPanelUI();
         }
     }
 }
