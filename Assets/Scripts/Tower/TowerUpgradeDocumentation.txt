@@ -1,0 +1,28 @@
+Assests used:
+	Scene: Map1
+		6 new game objects under GameManager/UIManager objects label Tower1.2, Tower 1.3, ... , Tower3.3 [ Tower(type).(level) ]
+		The TowerManager object now has 6 assignable TowerBehavior objects in the inspector due to changed in the TowerManager.cs 
+			These slots are for the upgraded tower objects
+
+	Scripts: TowerUIManager.cs
+			Added variable and listener for the upgrade button
+
+		 TowerManager.cs
+			Added UpgradeTower(x,y) function
+			Added public TowerBehavior attributes for upgrades
+
+		 ITower.cs
+			Added int type and int level attributes
+
+		 TowerBehavior.cs
+			Added int type and int level attributes and ITower gets
+
+	Current issues:
+		Line render error when trying to upgrade the laser tower
+		Sometimes have to click upgrade twice?
+		
+
+	Todo:
+		Attend to issues
+		Remove money when upgrading
+		Remove upgrade button when clicked object is level 3
