@@ -11,6 +11,16 @@ public class ActionFailedException : Exception
 
 public class TowerManager : MonoBehaviour
 {
+    [Header("Tower 1 Upgrade Objects")]
+    public TowerBehaviour Tower1_2_Upgrade;
+    public TowerBehaviour Tower1_3_Upgrade;
+    [Header("Tower 2 Upgrade Objects")]
+    public TowerBehaviour Tower2_2_Upgrade;
+    public TowerBehaviour Tower2_3_Upgrade;
+    [Header("Tower 3 Upgrade Objects")]
+    public TowerBehaviour Tower3_2_Upgrade;
+    public TowerBehaviour Tower3_3_Upgrade;
+   
     ITower[,] _towers;
     private int numOfTowers = 0;
 
@@ -95,17 +105,70 @@ public class TowerManager : MonoBehaviour
           }
      }
 
-    public void RemoveTower(int x, int y)
+    public bool RemoveTower(int x, int y)
     {
         if (TileOccupied(x, y))
         {
             _towers[x, y] = null;
+            return true;
         }
         else
         {
             throw new ActionFailedException("TowerManager::RemoveTower - Tile unoccupied at (" + x + ", " + y + ")"); // Nothing was on the tile
         }
+        return false;
     }
 
+    public void UpgradeTower(int x, int y)
+    {
+        var t = GetTower(x, y);
+
+        if (t.level != 3)
+        {
+            if (RemoveTower(x, y))
+            {
+                Debug.Log(t.type + " " + t.level);
+                switch (t.type)
+                {
+                    case 1:
+                        if (t.level == 1)
+                        {
+                            CreateTower(Tower1_2_Upgrade, x, y);
+                        }
+                        else if (t.level == 2)
+                        {
+                            CreateTower(Tower1_3_Upgrade, x, y);
+                        }
+                        break;
+
+                    case 2:
+                        if (t.level == 1)
+                        {
+                            CreateTower(Tower2_2_Upgrade, x, y);
+                        }
+                        else if (t.level == 2)
+                        {
+                            CreateTower(Tower2_3_Upgrade, x, y);
+                        }
+                        break;
+
+                    case 3:
+                        if (t.level == 1)
+                        {
+                            CreateTower(Tower3_2_Upgrade, x, y);
+                        }
+                        else if (t.level == 2)
+                        {
+                            CreateTower(Tower3_3_Upgrade, x, y);
+                        }
+                        break;
+
+                    default:
+                        throw new ActionFailedException("TowerManager::UpgradeTower(int, int) failed - (" + x + ", " + y + ")");
+                        break;
+                }
+            }
+        }
+    }
 
 }

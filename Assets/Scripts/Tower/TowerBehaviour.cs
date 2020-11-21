@@ -8,6 +8,10 @@ public abstract class TowerBehaviour : MonoBehaviour, ITower
     public Vector2Int mapIndex { get; private set; }
     public int cost;
     int ITower.cost => cost;
+    public int level;
+    int ITower.level => level;
+    public int type;
+    int ITower.type => type;
 
     public abstract void GameplayUpdate();
     public abstract void WaitUpdate();

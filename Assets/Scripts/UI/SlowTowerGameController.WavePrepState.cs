@@ -85,10 +85,9 @@ public partial class SlowTowerGameController : MonoBehaviour
                 if (UIManager.upgradeReceived)
                 {
                     var t = tm.GetTower(x, y);
-                    tm.RemoveTower(x, y);
-                    //Remove money
-                    //Find out what tower type and upgrade stage the tower is -- e.g. Tower1.1 -- Tower(type).(upgradeStage)
-                    //replace towerx.y with towerx.(y+1)
+                    //remove money
+                    tm.UpgradeTower(x, y);
+                    t.DestroyTower();
                     TowerUIManager.SetUpgradesPanelState(false);
                     TowerUIManager.SetCancelBuildState(false);
                     return WavePrepState;

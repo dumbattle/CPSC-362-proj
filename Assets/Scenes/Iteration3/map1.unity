@@ -289,6 +289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 5
+  level: 2
+  type: 2
   projectile: {fileID: 937483505}
   projectileSpeed: 12
   coolDown: 0.1
@@ -1774,6 +1776,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 20
+  level: 3
+  type: 1
   projectile: {fileID: 1207442533}
   projectileSpeed: 25
   coolDown: 1.33
@@ -3098,6 +3102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334577fe32b46524bb57a51a17748dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower1_2_Upgrade: {fileID: 1010538708}
+  Tower1_3_Upgrade: {fileID: 522081095}
+  Tower2_2_Upgrade: {fileID: 33030874}
+  Tower2_3_Upgrade: {fileID: 2016014304}
+  Tower3_2_Upgrade: {fileID: 1349777692}
+  Tower3_3_Upgrade: {fileID: 262404513}
 --- !u!1 &907775755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3342,6 +3352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 15
+  level: 1
+  type: 1
   projectile: {fileID: 1207442533}
   projectileSpeed: 15
   coolDown: 1.33
@@ -3383,6 +3395,16 @@ PrefabInstance:
         type: 3}
       propertyPath: range
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: type
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3513808476025795813, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -4016,6 +4038,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 10
+  level: 2
+  type: 1
   projectile: {fileID: 1207442533}
   projectileSpeed: 20
   coolDown: 1.33
@@ -4508,6 +4532,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 10
+  level: 1
+  type: 2
   projectile: {fileID: 937483505}
   projectileSpeed: 9
   coolDown: 0.1
@@ -4761,7 +4787,7 @@ MonoBehaviour:
   TowerPurchasePanel: {fileID: 1101568582}
   tower1: {fileID: 916464298}
   tower2: {fileID: 1060366346}
-  tower3: {fileID: 262404513}
+  tower3: {fileID: 1307937200}
 --- !u!1001 &1130850417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4787,12 +4813,22 @@ PrefabInstance:
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: coolDown
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: range
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: type
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3513808476025795813, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
@@ -5290,6 +5326,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 190.85, y: 7.9}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1307937200 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
+    type: 3}
+  m_PrefabInstance: {fileID: 924939385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8fc7ce538a607489056938022618fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1325850333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5552,6 +5600,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1349777692 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
+    type: 3}
+  m_PrefabInstance: {fileID: 2096175610}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8fc7ce538a607489056938022618fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1368845089
 GameObject:
   m_ObjectHideFlags: 0
@@ -7563,6 +7623,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 15
+  level: 3
+  type: 2
   projectile: {fileID: 937483505}
   projectileSpeed: 15
   coolDown: 0.1
@@ -7941,12 +8003,22 @@ PrefabInstance:
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: coolDown
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: range
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: type
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3513808476025795813, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
