@@ -5,6 +5,7 @@ public interface ITower {
     int type { get; }
     int cost { get; }
     int level { get; }
+
     void Init(Vector2Int index, TowerBehaviour src);
 
     void GameplayUpdate();
@@ -12,5 +13,7 @@ public interface ITower {
     void WaitUpdate();
 
     void DestroyTower();
+
+    ITower UpgradeTower(int x, int y);
 }
 

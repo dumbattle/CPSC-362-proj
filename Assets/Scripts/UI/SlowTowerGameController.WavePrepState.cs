@@ -84,13 +84,20 @@ public partial class SlowTowerGameController : MonoBehaviour
 
                 if (UIManager.upgradeReceived)
                 {
-                    var t = tm.GetTower(x, y);
-                    //remove money
-                    tm.UpgradeTower(x, y);
-                    t.DestroyTower();
-                    TowerUIManager.SetUpgradesPanelState(false);
-                    TowerUIManager.SetCancelBuildState(false);
-                    return WavePrepState;
+                    var tower = tm.GetTower(x, y);
+                    var upgrade = tower.UpgradeTower(x, y);
+
+                    if (upgrade != null)
+                    {
+                        tower.DestroyTower();
+
+                        TowerUIManager.SetTowerPanelState(false);
+                        TowerUIManager.SetUpgradesPanelState(false);
+                        TowerUIManager.SetCancelBuildState(false);
+
+                        tileHighlight.SetActive(false);
+                        return WavePrepState;
+                    }
                 }
 
                 var b = handleClick();
