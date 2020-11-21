@@ -57,14 +57,14 @@ public class SimpleCannonTower : ProjectileTower {
             var s = timer / visualLifetime;
 
 
-            obj.transform.localScale = new Vector3(s * radius, s * radius, 1);
+            obj.transform.localScale = new Vector3(s * radius * 2, s * radius * 2, 1);
             if (fade) {
                 obj.color = obj.color.SetAlpha(1 - s);
             }
             yield return null;
         }
+        Destroy(obj);
 
         obj.gameObject.SetActive(false);
-        Destroy(obj);
     }
 }
