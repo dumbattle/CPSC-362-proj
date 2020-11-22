@@ -40,7 +40,7 @@ public class SimpleCannonTower : ProjectileTower {
             }
         }
 
-        GlobalGameplayUpdate.AddGameplayWaitUpdate(XplosionAnim(center)); // remove slow after some time
+        GlobalGameplayUpdate.AddGameplayWaitUpdate(XplosionAnim(center)); 
     }
 
     IEnumerator XplosionAnim(Vector3 pos) {
@@ -50,7 +50,7 @@ public class SimpleCannonTower : ProjectileTower {
 
         obj.transform.position = pos;
         obj.transform.localScale = new Vector3(0, 0, 1);
-        //FaceTarget(cb);
+
         while (timer < visualLifetime) {
             timer += Time.deltaTime;
 
@@ -63,8 +63,8 @@ public class SimpleCannonTower : ProjectileTower {
             }
             yield return null;
         }
-        Destroy(obj);
 
+        Destroy(obj.gameObject);
         obj.gameObject.SetActive(false);
     }
 }

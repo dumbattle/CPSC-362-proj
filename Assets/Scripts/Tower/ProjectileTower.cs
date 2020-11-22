@@ -50,7 +50,7 @@ public abstract class ProjectileTower : TowerBehaviour {
             var dir = GetTarget() - proj.transform.position;
 
             // reached target
-            if (dir.sqrMagnitude < .01f) {
+            if (dir.sqrMagnitude < (projectileSpeed * Time.deltaTime) * (projectileSpeed * Time.deltaTime)) {
                 Effect(target, pos);
 
                 Destroy(proj);
