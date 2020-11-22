@@ -1,49 +1,25 @@
 fileFormatVersion: 2
-guid: dc539071319e2a848a4b12317a5a34ed
+guid: f0cec937178a4444699f987112f8f1c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9205980483787862885
-    second: grass1
+      213: 2747995687696895399
+    second: g2gR
   - first:
-      213: -2836822536050358539
-    second: ground1
+      213: 5058310657449861422
+    second: g2gT
   - first:
-      213: -8922166342787202985
-    second: highlight
+      213: 2126742160990614329
+    second: g2gB
   - first:
-      213: 5129788722007358300
-    second: background_BR
+      213: -2702991823962110256
+    second: g2gL
   - first:
-      213: 3622270379842419072
-    second: Skull_tile_3
+      213: 8127112739059082221
+    second: g2gTB
   - first:
-      213: -3746973639202915424
-    second: skull_3
-  - first:
-      213: 5121035691876610764
-    second: ground_tiles_6
-  - first:
-      213: -4064334710206878796
-    second: skull_4
-  - first:
-      213: 4504564902173814553
-    second: sand_1
-  - first:
-      213: -2990161598630248016
-    second: crater_1
-  - first:
-      213: 8944389078582149052
-    second: sand_dune
-  - first:
-      213: -113492593319396201
-    second: ground_tiles_11
-  - first:
-      213: -3480940403168450246
-    second: background_BR
-  - first:
-      213: -3480940403168450246
-    second: ground_tiles_3
+      213: 8437750442679300216
+    second: g2gLR
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -73,12 +49,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -87,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,19 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,7 +106,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -153,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grass1
+      name: g2gR
       rect:
         serializedVersion: 2
-        x: 32
-        y: 573
-        width: 64
-        height: 64
+        x: 83
+        y: 98
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9c45ae7689cd3080800000000000000
-      internalID: -9205980483787862885
+      spriteID: 7ad8a79b487d22620800000000000000
+      internalID: 2747995687696895399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ground1
+      name: g2gT
       rect:
         serializedVersion: 2
-        x: 32
-        y: 349
-        width: 64
-        height: 64
+        x: 102
+        y: 98
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f645effee491a8d0800000000000000
-      internalID: -2836822536050358539
+      spriteID: e212fdc2ebab23640800000000000000
+      internalID: 5058310657449861422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: highlight
+      name: g2gB
       rect:
         serializedVersion: 2
-        x: 32
-        y: 221
-        width: 64
-        height: 64
+        x: 83
+        y: 79
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 750093f9bf81e2480800000000000000
-      internalID: -8922166342787202985
+      spriteID: 93331ba3ab4b38d10800000000000000
+      internalID: 2126742160990614329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skull_tile_3
+      name: g2gL
       rect:
         serializedVersion: 2
-        x: 320
-        y: 125
-        width: 64
-        height: 64
+        x: 102
+        y: 79
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0893de608b3e44230800000000000000
-      internalID: 3622270379842419072
+      spriteID: 0d604f5d14b0d7ad0800000000000000
+      internalID: -2702991823962110256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skull_3
+      name: g2gTB
       rect:
         serializedVersion: 2
-        x: 256
+        x: 83
         y: 61
-        width: 64
-        height: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,41 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0abbe84d353100cc0800000000000000
-      internalID: -3746973639202915424
+      spriteID: de32b251afd49c070800000000000000
+      internalID: 8127112739059082221
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ground_tiles_6
+      name: g2gLR
       rect:
         serializedVersion: 2
-        x: 256
-        y: 125
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc2f66054d2911740800000000000000
-      internalID: 5121035691876610764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skull_4
-      rect:
-        serializedVersion: 2
-        x: 320
+        x: 102
         y: 61
-        width: 64
-        height: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,71 +248,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bb24d56d159897c0800000000000000
-      internalID: -4064334710206878796
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sand_1
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 29
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91f23cd89ed638e30800000000000000
-      internalID: 4504564902173814553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: crater_1
-      rect:
-        serializedVersion: 2
-        x: 421
-        y: 100
-        width: 88
-        height: 84
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b141ac5edfc086d0800000000000000
-      internalID: -2990161598630248016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sand_dune
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 55
-        width: 96
-        height: 102
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6862745}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbfb5c14a7ad02c70800000000000000
-      internalID: 8944389078582149052
+      spriteID: 8707b4f8259e81570800000000000000
+      internalID: 8437750442679300216
       vertices: []
       indices: 
       edges: []
@@ -365,7 +257,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ee4881bd5716f64488c329292ab9397e
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
