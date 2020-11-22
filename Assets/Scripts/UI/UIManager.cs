@@ -21,6 +21,7 @@ public abstract class UIManager : MonoBehaviour
     public static bool cancelTowerBuild { get; protected set; }
     public static bool cancelTowerBuy { get; protected set; }
     public static bool sellReceived { get; protected set; }
+    public static bool upgradeReceived { get; protected set; }
 
     public static bool GoldCheckReceived { get; protected set; }
 
@@ -48,11 +49,15 @@ public abstract class UIManager : MonoBehaviour
         buttonClicked = false;
         cancelTowerBuild = false;
         sellReceived = false;
+
         TowerButtonClicked = false;
         cancelTowerBuy = false;
         towerPurchaseReceived = false;
         WaveStartReceived = false;
-        GoldCheckReceived = false;
+        GoldCheckReceived = false; // refactor this 
+
+        upgradeReceived = false;
+
     }
 
     // the Register class is an organizational tool used for signalling input data
@@ -101,5 +106,9 @@ public abstract class UIManager : MonoBehaviour
             GoldCheckReceived = true;
         }
 
+        public static void Upgrade()
+        {
+            upgradeReceived = true;
+        }
     }
 }
