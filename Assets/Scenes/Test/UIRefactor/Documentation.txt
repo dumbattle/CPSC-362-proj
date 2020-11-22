@@ -1,0 +1,25 @@
+How to add the new highlight system:
+
+- create an EmptyObject under GameController in the hierarchy (I named it "HighlightPooler")
+  - attach Assets/Scripts/UI/HighlightPooler.cs to it
+    - under GameController, there should be a "TileSelectedHighlight" object (I renamed it to "TileHighlight")
+      - drag the highlight image (Assets/Sprites/UI/Highlights/yellow_highlight.png) the "Sprite" field
+      - deactivate the "TileHighlight" object
+      - add the "TileHighlight" object to the "Pooled Highlight" field in the HighlightPooler script
+
+
+the UIRefactorGC script adds the following the SlowTowerGameController:
+- in Start(), the line: 
+	HighlightPooler._main.poolSize = mm.MapSize().x * mm.MapSize().y;
+- ShowTileHighlights()
+- HideTileHighlights()
+
+
+the TestDrag.cs script can be ignored
+
+
+Also note:
+- in MapManager, the following can be removed (I didn't push the deletions to avoid merge conflicts):
+  - private Tile fieldTile
+  - private Tile highlightTile
+  - public Tile GetFieldTile()

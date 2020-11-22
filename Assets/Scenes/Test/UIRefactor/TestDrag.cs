@@ -6,7 +6,8 @@ using UnityEngine.EventSystems;
 public class TestDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
     TowerBehaviour tower;
-    
+    public TowerManager tm;
+    public MapManager mm;
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +22,19 @@ public class TestDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     }
 
     public void OnBeginDrag(PointerEventData data) {
-        Debug.Log("Starting drag.");
         tower = Instantiate(UIManager.towerPurchased, UIManager.mousePosition, Quaternion.identity);
         tower.gameObject.SetActive(true);
     }
 
     public void OnDrag(PointerEventData data) {
-        Debug.Log("Dragging");
         
         //transform.Translate(0, 0, Time.deltaTime);
         tower.transform.position = UIManager.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData data) {
-        Debug.Log("Ending drag.");
+        var (x, y) = mm.GetTilePosition(UIManager.mousePosition);
+        tm.CreateTower(UIManager.towerPurchased, x, y);
+        Destroy(tower.gameObject);
     }
 }

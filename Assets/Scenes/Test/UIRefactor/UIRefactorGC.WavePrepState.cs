@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public partial class UIRefactorGC : MonoBehaviour
 {
     GameState WavePrepState()
@@ -129,7 +128,6 @@ public partial class UIRefactorGC : MonoBehaviour
                     if (em.TrySpend(UIManager.towerPurchased.cost))
                     {
                         var tower = tm.CreateTower(UIManager.towerPurchased, x, y);
-                        TowerUIManager.SetTowerPanelState(false);
                         TowerUIManager.SetCancelBuildState(false);
 
                         tileHighlight.SetActive(false);

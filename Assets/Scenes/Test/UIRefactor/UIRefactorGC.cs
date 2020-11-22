@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Tilemaps;
 
     public partial class UIRefactorGC : MonoBehaviour{
     delegate GameState GameState();
@@ -27,9 +28,47 @@ using UnityEngine.UI;
         tileHighlight.SetActive(false);
         ws.Init(cm);
         em.Init(100, 100);
+
+        HighlightPooler._main.poolSize = mm.MapSize().x * mm.MapSize().y;
     }
 
-    
+    private void ShowTileHighlights() {
+        // check to see if the pool of highlights exist; otherwise, create one
+        if (!HighlightPooler._main.poolCreated) {
+            HighlightPooler._main.CreatePool();
+        }
+
+        // this nested function is used for the outer method to activate a 
+        // new highlight every time it's called
+        void HighlightTile(int x, int y) {
+            GameObject highlight = HighlightPooler._main.GetPooledHighlight();
+            highlight.transform.position = new Vector3(x, y, 0);
+            highlight.SetActive(true);
+        }
+
+        // get the map size to set the upper limits
+        Vector2Int mapSize = mm.MapSize();
+        
+        // loop through every tile position in the tilemap
+        for (int x = 0; x < mapSize.x; x++) {
+            for (int y = 0; y < mapSize.y; y++) {
+                // the TileInRange condition shouldn't be necessary but 
+                // TowerManager still has a hardcoded size
+                if (tm.TileInRange(x, y)) {
+                    // check to see if the tile is valid, then activate a highlight
+                    // over that position
+                    if (mm.ValidTowerTile(x, y) && !tm.TileOccupied(x, y)) {
+                        HighlightTile(x, y);
+                    }
+                }
+            }
+        }
+    }
+
+    private void HideTileHighlights() {
+        HighlightPooler._main.DeactivateHighlights();
+    }
+
     private void Awake() {
         gameState = SceneStartState;
     }
