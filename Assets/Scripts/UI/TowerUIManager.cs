@@ -8,17 +8,19 @@ public class TowerUIManager : UIManager
     private static TowerUIManager _main;
 
     // button for each type of tower
-    public  Button tower1Button;
-    public  Button tower2Button;
+    [Header("Panel Buttons")]
+    public Button tower1Button;
+    public Button tower2Button;
     public Button tower3Button;
-
+    [Header("Tower Options Panel")]
     public Button sellTower;
     public Button upgradeTower;
     public Button cancelTowerBuild;
-
+    [Header("Panel Backdrop")]
     public GameObject TowerPurchasePanel;
 
-    // tower objects for each type of tower                
+    // tower objects for each type of tower   
+    [Header("Starting Towers")]
     [SerializeField]
     private TowerBehaviour tower1 = null;
     [SerializeField]
@@ -40,7 +42,7 @@ public class TowerUIManager : UIManager
         cancelTowerBuild.onClick.AddListener(() => Register.Cancel());
         sellTower.onClick.AddListener(() => Register.Sell());
         tower3Button.onClick.AddListener(() => Register.Tower(tower3));
-
+        upgradeTower.onClick.AddListener(() => Register.Upgrade());
     }
 
     /*
@@ -125,5 +127,4 @@ public class TowerUIManager : UIManager
             _main.HideCancelBuild();
         }
     }
-
 }

@@ -19,6 +19,7 @@ public abstract class UIManager : MonoBehaviour
 
     public static bool cancelTowerBuild { get; protected set; }
     public static bool sellReceived { get; protected set; }
+    public static bool upgradeReceived { get; protected set; }
 
     protected static bool buttonClicked = false;
 
@@ -44,6 +45,7 @@ public abstract class UIManager : MonoBehaviour
         buttonClicked = false;
         cancelTowerBuild = false;
         sellReceived = false;
+        upgradeReceived = false;
     }
 
 
@@ -72,6 +74,11 @@ public abstract class UIManager : MonoBehaviour
         public static void Sell()
         {
             sellReceived = true;
+        }
+
+        public static void Upgrade()
+        {
+            upgradeReceived = true;
         }
     }
 }
