@@ -36,7 +36,14 @@ using UnityEngine.UI;
     }
 
 
-    private void Update() {
+    private void Update() { 
+        if (InGameMenu.open)
+        {
+            TouchUIManager.CustomUpdate();
+            UIManager.CustomUpdate();
+            return; // exxentially pauses the game
+        }
+        // existing below
         gameState = gameState() ?? gameState;
         displayWave();
         TouchUIManager.CustomUpdate();

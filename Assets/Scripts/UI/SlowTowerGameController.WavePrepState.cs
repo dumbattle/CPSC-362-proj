@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-
 
 public partial class SlowTowerGameController : MonoBehaviour
 {
@@ -22,32 +20,12 @@ public partial class SlowTowerGameController : MonoBehaviour
             TowerUIManager.SetTowerPanelState(false);
             TowerUIManager.SetUpgradesPanelState(false);
             TowerUIManager.SetCancelBuildState(false);
-
         }
 
         if (UIManager.playReceived)
         {
             PlayPauseUIManager.SetPlayState();
-        }
-
-        if (UIManager.menuReceived)
-        {
-            TowerUIManager.SetMenuPanelState(true);
-        }
-
-        if (UIManager.menuCancel)
-        {
-            TowerUIManager.SetMenuPanelState(false);
-        }
-
-        if(UIManager.restart)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
-        if (UIManager.mainMenu)
-        {
-            SceneManager.LoadScene(0);
+            return WaveStartState;
         }
 
         return null;

@@ -51,10 +51,6 @@ public abstract class UIManager : MonoBehaviour
         cancelTowerBuild = false;
         sellReceived = false;
         upgradeReceived = false;
-        menuReceived = false;
-        mainMenu = false;
-        restart = false;
-        menuCancel = false;
     }
 
 
@@ -88,26 +84,6 @@ public abstract class UIManager : MonoBehaviour
         public static void Upgrade()
         {
             upgradeReceived = true;
-        }
-
-        public static void Menu()
-        {
-            menuReceived = true;
-        }
-
-        public static void MainMenu()
-        {
-            mainMenu = true;
-        }
-
-        public static void Restart()
-        {
-            restart = true;
-        }
-
-        public static void MenuCancel()
-        {
-            menuCancel = true;
         }
     }
 }
