@@ -1200,16 +1200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 925016456}
   em: {fileID: 1955696477}
-  Tower1_2_Upgrade: {fileID: 1728570132}
-  Tower1_3_Upgrade: {fileID: 1769144744}
-  Tower2_2_Upgrade: {fileID: 1989464531}
-  Tower2_3_Upgrade: {fileID: 345164856}
-  Tower3_2_Upgrade: {fileID: 2096465541}
-  Tower3_3_Upgrade: {fileID: 368607615}
   upgrade: {fileID: 0}
   cost: 15
-  level: 3
-  type: 2
   projectile: {fileID: 1060223136}
   projectileSpeed: 15
   coolDown: 0.1
@@ -3399,16 +3391,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 925016456}
   em: {fileID: 1955696477}
-  Tower1_2_Upgrade: {fileID: 1728570132}
-  Tower1_3_Upgrade: {fileID: 1769144744}
-  Tower2_2_Upgrade: {fileID: 1989464531}
-  Tower2_3_Upgrade: {fileID: 345164856}
-  Tower3_2_Upgrade: {fileID: 2096465541}
-  Tower3_3_Upgrade: {fileID: 368607615}
   upgrade: {fileID: 1989464531}
   cost: 10
-  level: 1
-  type: 2
   projectile: {fileID: 1060223136}
   projectileSpeed: 9
   coolDown: 0.1
@@ -6754,16 +6738,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 925016456}
   em: {fileID: 1955696477}
-  Tower1_2_Upgrade: {fileID: 1728570132}
-  Tower1_3_Upgrade: {fileID: 1769144744}
-  Tower2_2_Upgrade: {fileID: 1989464531}
-  Tower2_3_Upgrade: {fileID: 345164856}
-  Tower3_2_Upgrade: {fileID: 2096465541}
-  Tower3_3_Upgrade: {fileID: 368607615}
   upgrade: {fileID: 1728570132}
   cost: 15
-  level: 1
-  type: 1
   projectile: {fileID: 497809942}
   projectileSpeed: 15
   coolDown: 1.33
@@ -6938,16 +6914,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 925016456}
   em: {fileID: 1955696477}
-  Tower1_2_Upgrade: {fileID: 1728570132}
-  Tower1_3_Upgrade: {fileID: 1769144744}
-  Tower2_2_Upgrade: {fileID: 1989464531}
-  Tower2_3_Upgrade: {fileID: 345164856}
-  Tower3_2_Upgrade: {fileID: 2096465541}
-  Tower3_3_Upgrade: {fileID: 368607615}
   upgrade: {fileID: 1769144744}
   cost: 10
-  level: 2
-  type: 1
   projectile: {fileID: 497809942}
   projectileSpeed: 20
   coolDown: 1.33
@@ -7122,16 +7090,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 925016456}
   em: {fileID: 1955696477}
-  Tower1_2_Upgrade: {fileID: 1728570132}
-  Tower1_3_Upgrade: {fileID: 1769144744}
-  Tower2_2_Upgrade: {fileID: 1989464531}
-  Tower2_3_Upgrade: {fileID: 345164856}
-  Tower3_2_Upgrade: {fileID: 2096465541}
-  Tower3_3_Upgrade: {fileID: 368607615}
   upgrade: {fileID: 0}
   cost: 20
-  level: 3
-  type: 1
   projectile: {fileID: 497809942}
   projectileSpeed: 25
   coolDown: 1.33
@@ -7999,16 +7959,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 925016456}
   em: {fileID: 1955696477}
-  Tower1_2_Upgrade: {fileID: 1728570132}
-  Tower1_3_Upgrade: {fileID: 1769144744}
-  Tower2_2_Upgrade: {fileID: 1989464531}
-  Tower2_3_Upgrade: {fileID: 345164856}
-  Tower3_2_Upgrade: {fileID: 2096465541}
-  Tower3_3_Upgrade: {fileID: 368607615}
   upgrade: {fileID: 345164856}
   cost: 5
-  level: 2
-  type: 2
   projectile: {fileID: 1060223136}
   projectileSpeed: 12
   coolDown: 0.1
