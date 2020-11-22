@@ -13,20 +13,25 @@ public abstract class UIManager : MonoBehaviour
     public static bool clickReceived { get; protected set; }
     public static bool playReceived { get; protected set; }
     public static bool pausedReceived { get; protected set; }
+    public static bool WaveStartReceived { get; protected set; }
 
     public static bool setTower1Received { get; protected set; }
     public static bool setTower2Received { get; protected set; }
 
     public static bool cancelTowerBuild { get; protected set; }
+    public static bool cancelTowerBuy { get; protected set; }
     public static bool sellReceived { get; protected set; }
 
+    public static bool GoldCheckReceived { get; protected set; }
+
     protected static bool buttonClicked = false;
+    public static bool TowerButtonClicked = false;
 
     public static TowerBehaviour towerPurchased { get; private set; }
 
     public static void CustomUpdate() {
         Clear();
-        
+
         // get current mouse position
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -37,22 +42,29 @@ public abstract class UIManager : MonoBehaviour
 
     // clear user input
     protected static void Clear() {
-        towerPurchaseReceived = false;
         clickReceived = false;
         playReceived = false;
         pausedReceived = false;
         buttonClicked = false;
         cancelTowerBuild = false;
         sellReceived = false;
+        TowerButtonClicked = false;
+        cancelTowerBuy = false;
+        towerPurchaseReceived = false;
+        WaveStartReceived = false;
+        GoldCheckReceived = false;
     }
-
-
 
     // the Register class is an organizational tool used for signalling input data
     protected static class Register {
         public static void Tower(TowerBehaviour tower) {
-            towerPurchaseReceived = true;
+            TowerButtonClicked = true;
             towerPurchased = tower;
+        }
+
+        public static void WaveStart()
+        {
+            WaveStartReceived = true;
         }
 
         public static void Play()
@@ -69,9 +81,25 @@ public abstract class UIManager : MonoBehaviour
             cancelTowerBuild = true;
         }
 
+        public static void CancelBuy()
+        {
+            cancelTowerBuy = true;
+        }
+
         public static void Sell()
         {
             sellReceived = true;
         }
+
+        public static void Buy()
+        {
+            towerPurchaseReceived = true;
+        }
+
+        public static void GoldCheckConfirm()
+        {
+            GoldCheckReceived = true;
+        }
+
     }
 }

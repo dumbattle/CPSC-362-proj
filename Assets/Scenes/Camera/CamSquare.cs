@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteAlways]
-public class CameraSquarer : MonoBehaviour
+public class CamSquare : MonoBehaviour
 {
     public Vector2 camSize;
     public Vector2 screenPos;
