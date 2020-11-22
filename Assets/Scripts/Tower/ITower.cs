@@ -2,9 +2,7 @@
 
 public interface ITower {
     Vector2Int mapIndex { get; }
-    int type { get; }
     int cost { get; }
-    int level { get; }
 
     void Init(Vector2Int index, TowerBehaviour src);
 
@@ -14,6 +12,6 @@ public interface ITower {
 
     void DestroyTower();
 
-    ITower UpgradeTower(int x, int y);
+    TowerBehaviour upgrade { get; }
 }
 
