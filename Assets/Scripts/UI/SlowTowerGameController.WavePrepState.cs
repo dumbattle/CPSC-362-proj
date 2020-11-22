@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public partial class SlowTowerGameController : MonoBehaviour
 {
     GameState WavePrepState()
@@ -21,7 +20,6 @@ public partial class SlowTowerGameController : MonoBehaviour
             TowerUIManager.SetTowerPanelState(false);
             TowerUIManager.SetUpgradesPanelState(false);
             TowerUIManager.SetCancelBuildState(false);
-
         }
 
         if (UIManager.playReceived)
@@ -29,8 +27,6 @@ public partial class SlowTowerGameController : MonoBehaviour
             PlayPauseUIManager.SetPlayState();
             return WaveStartState;
         }
-
-
 
         return null;
 
@@ -80,6 +76,24 @@ public partial class SlowTowerGameController : MonoBehaviour
                     TowerUIManager.SetUpgradesPanelState(false);
                     TowerUIManager.SetCancelBuildState(false);
                     return WavePrepState;
+                }
+
+                if (UIManager.upgradeReceived)
+                {
+                    var tower = tm.GetTower(x, y);
+                    var upgrade = tower.UpgradeTower(x, y);
+
+                    if (upgrade != null)
+                    {
+                        tower.DestroyTower();
+
+                        TowerUIManager.SetTowerPanelState(false);
+                        TowerUIManager.SetUpgradesPanelState(false);
+                        TowerUIManager.SetCancelBuildState(false);
+
+                        tileHighlight.SetActive(false);
+                        return WavePrepState;
+                    }
                 }
 
                 var b = handleClick();

@@ -11,7 +11,7 @@ public class ActionFailedException : Exception
 
 public class TowerManager : MonoBehaviour
 {
-    ITower[,] _towers;
+     ITower[,] _towers;
     private int numOfTowers = 0;
 
     void Awake()
@@ -40,7 +40,6 @@ public class TowerManager : MonoBehaviour
             Vector2Int index;
             TowerBehaviour clone = null;                                                                        // Create null GameObject for reference to cloned object
             clone = Instantiate(src, new Vector3Int(x, y, 0), Quaternion.identity);                             // Create tower object
-            clone.transform.name = transform.name.Replace("TowerManager", "Tower1." + ++numOfTowers).Trim();    // Rename tower to Tower1.numOfTower
             clone.gameObject.SetActive(true);
             index = new Vector2Int(x, y);                                                                       // Set index for ITower.MapIndex get
             _towers[x, y] = clone;                                                                              
@@ -96,17 +95,18 @@ public class TowerManager : MonoBehaviour
           }
      }
 
-    public void RemoveTower(int x, int y)
+    public bool RemoveTower(int x, int y)
     {
         if (TileOccupied(x, y))
         {
             _towers[x, y] = null;
+            return true;
         }
         else
         {
-            throw new ActionFailedException("TowerManager::RemoveTower - Tile unoccupied at (" + x + ", " + y + ")"); // Nothing was on the tile
+            return false;
+            //throw new ActionFailedException("TowerManager::RemoveTower - Tile unoccupied at (" + x + ", " + y + ")"); // Nothing was on the tile
         }
     }
-
 
 }
