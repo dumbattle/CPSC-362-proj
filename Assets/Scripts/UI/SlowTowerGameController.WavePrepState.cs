@@ -153,7 +153,7 @@ public partial class SlowTowerGameController : MonoBehaviour
                 }
 
 
-                if (UIManager.towerPurchaseReceived)
+                if (UIManager.TowerButtonClicked)
                 {
                     if (em.TrySpend(UIManager.towerPurchased.cost))
                     {

@@ -49,6 +49,7 @@ public class TowerUIManagerRefactor : UIManager
         tower2Button.onClick.AddListener(() => Register.Tower(tower2));
         cancelTowerBuild.onClick.AddListener(() => Register.Cancel());
         sellTower.onClick.AddListener(() => Register.Sell());
+        upgradeTower.onClick.AddListener(() => Register.Upgrade());
         tower3Button.onClick.AddListener(() => Register.Tower(tower3));
         BuyTower.onClick.AddListener(() => Register.Buy());
         CancelBuy.onClick.AddListener(() => Register.CancelBuy());
@@ -212,5 +213,7 @@ public class TowerUIManagerRefactor : UIManager
             _main.HidePathIndicator();
         }
     }
+
+
 
 }

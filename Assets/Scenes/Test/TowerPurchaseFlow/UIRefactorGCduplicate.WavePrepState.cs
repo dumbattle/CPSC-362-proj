@@ -76,14 +76,6 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
                         tileHighlight.SetActive(false);
                         return TowerSelectedState(x, y);
                     }
-                    else
-                    {
-                        tileHighlight.SetActive(true);
-                        tileHighlight.transform.position = new Vector3(x, y, 0);
-                        TowerUIManagerRefactor.SetBuyInstructions(true);
-
-                        return TowerPlacementSubstate(UIManager.towerPurchased);
-                    }
                 }
             }
 
@@ -109,7 +101,30 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
                     return WavePrepState;
                 }
 
-                var b = handleClick();
+                if (UIManager.cancelTowerBuild)
+                {
+                    TowerUIManagerRefactor.SetUpgradesPanelState(false);
+
+
+                    return WavePrepState;
+                }
+
+                if (UIManager.upgradeReceived)
+                {
+                    //get tower
+                    var tower = tm.GetTower(x, y);
+                    //get tower upgrade
+                    var upgrade = tower.upgrade;
+                    //check cost
+                    if (upgrade != null && em.TrySpend(upgrade.cost))
+                    {
+                        tm.RemoveTower(x, y);
+                        tower.DestroyTower();
+                        //create upgraded tower
+                        tm.CreateTower(upgrade, x, y);
+                    }
+                }
+                    var b = handleClick();
                 if (b != null)
                 {
                     return b;
