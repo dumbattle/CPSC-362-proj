@@ -13,7 +13,7 @@ TextureImporter:
     second: highlight
   - first:
       213: 5129788722007358300
-    second: ground_tiles_3
+    second: background_BR
   - first:
       213: 3622270379842419072
     second: Skull_tile_3
@@ -35,6 +35,15 @@ TextureImporter:
   - first:
       213: 8944389078582149052
     second: sand_dune
+  - first:
+      213: -113492593319396201
+    second: ground_tiles_11
+  - first:
+      213: -3480940403168450246
+    second: background_BR
+  - first:
+      213: -3480940403168450246
+    second: ground_tiles_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -128,6 +137,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -190,27 +211,6 @@ TextureImporter:
       bones: []
       spriteID: 750093f9bf81e2480800000000000000
       internalID: -8922166342787202985
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ground_tiles_3
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 198
-        width: 228
-        height: 309
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5bbd04f9aba03740800000000000000
-      internalID: 5129788722007358300
       vertices: []
       indices: 
       edges: []

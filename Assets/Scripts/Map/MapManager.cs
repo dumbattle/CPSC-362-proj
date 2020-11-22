@@ -38,6 +38,11 @@ public class MapManager : MonoBehaviour
         return (relativeX, relativeY);
     }
 
+    public Vector2 GetWorldPosition(int x,int y)
+    {
+        return tilemap.CellToWorld(new Vector3Int(x,y,0));
+    }
+
     public Vector2Int MapSize() {
         return new Vector2Int(tilemap.size.x, tilemap.size.y);
     }
@@ -46,9 +51,10 @@ public class MapManager : MonoBehaviour
     public bool ValidTowerTile(int x, int y)
     {
         var t = tilemap.GetTile<Tile>(new Vector3Int(x + tilemap.cellBounds.xMin, y + tilemap.cellBounds.yMin, 0));
-    
+        
         return t != pathTile;
     }
+
 
     // returns tile asset type of fieldTile
     public Tile GetFieldTile() {

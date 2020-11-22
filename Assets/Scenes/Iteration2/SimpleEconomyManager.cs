@@ -38,6 +38,23 @@ public class SimpleEconomyManager : MonoBehaviour {
         OnMoneyChanged?.Invoke(money + amnt, money);
         return true;
     }
+
+    public bool EconCheck(int amnt)
+    {
+        if (money < amnt)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    public void TowerBuyConfirmed(int amnt)
+    {
+        money -= amnt;
+
+        OnMoneyChanged?.Invoke(money + amnt, money);
+    }
+
     public void DamagePlayer(int amnt) {
         health -= amnt;
 

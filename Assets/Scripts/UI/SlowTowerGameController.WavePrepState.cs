@@ -80,20 +80,32 @@ public partial class SlowTowerGameController : MonoBehaviour
 
                 if (UIManager.upgradeReceived)
                 {
+                    //get tower
                     var tower = tm.GetTower(x, y);
-                    var upgrade = tower.UpgradeTower(x, y);
-
-                    if (upgrade != null)
+                    //get tower upgrade
+                    var upgrade = tower.upgrade;
+                    //check cost
+                    if(upgrade != null && em.TrySpend(upgrade.cost))
                     {
+                        tm.RemoveTower(x, y);
                         tower.DestroyTower();
-
-                        TowerUIManager.SetTowerPanelState(false);
-                        TowerUIManager.SetUpgradesPanelState(false);
-                        TowerUIManager.SetCancelBuildState(false);
-
-                        tileHighlight.SetActive(false);
-                        return WavePrepState;
+                        //create upgraded tower
+                        tm.CreateTower(upgrade, x, y);
                     }
+
+                    //var upgrade = tower.UpgradeTower(x, y);
+
+                    //if (upgrade != null)
+                    //{
+                    //    tower.DestroyTower();
+
+                    //    TowerUIManager.SetTowerPanelState(false);
+                    //    TowerUIManager.SetUpgradesPanelState(false);
+                    //    TowerUIManager.SetCancelBuildState(false);
+
+                    //    tileHighlight.SetActive(false);
+                    //    return WavePrepState;
+                    //}
                 }
 
                 var b = handleClick();
@@ -137,7 +149,7 @@ public partial class SlowTowerGameController : MonoBehaviour
                 }
 
 
-                if (UIManager.towerPurchaseReceived)
+                if (UIManager.TowerButtonClicked)
                 {
                     if (em.TrySpend(UIManager.towerPurchased.cost))
                     {

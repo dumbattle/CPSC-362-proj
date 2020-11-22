@@ -9,7 +9,10 @@ public class PlayPauseUIManager : UIManager
 
     public Button PlayButton;
     public Button PauseButton;
+    public Button WaveStartButton;
     //public Text playPauseText;
+
+    public GameObject WinLosePanel;
 
     void Awake() {
         _main = this;
@@ -19,6 +22,7 @@ public class PlayPauseUIManager : UIManager
     void Start() {
         PlayButton.onClick.AddListener(() => Register.Play());
         PauseButton.onClick.AddListener(() => Register.Pause());
+        WaveStartButton.onClick.AddListener(() => Register.WaveStart());
 
         PlayButton.onClick.AddListener(() => buttonClicked = true);
         PauseButton.onClick.AddListener(() => buttonClicked = true);
@@ -42,6 +46,38 @@ public class PlayPauseUIManager : UIManager
 
     }   
 
+    protected void ShowStartWave()
+    {
+        WaveStartButton.gameObject.SetActive(true);
+    }
+
+    protected void HideStartWave()
+    {
+        WaveStartButton.gameObject.SetActive(false);
+    }
+
+    protected void ShowWinLosePanel()
+    {
+        WinLosePanel.gameObject.SetActive(true);
+    }
+
+    protected void HideWinLosePanel()
+    {
+        WinLosePanel.gameObject.SetActive(false);
+    }
+
+    public static void SetWinLosePanel(bool active)
+    {
+        if (active)
+        {
+            _main.ShowWinLosePanel();
+        }
+        else
+            _main.HideWinLosePanel();
+
+    }
+
+
     public static void SetPlayState()
     {
         _main.ShowPlayUI();
@@ -50,6 +86,18 @@ public class PlayPauseUIManager : UIManager
     public static void SetPauseState()
     {
         _main.ShowPausedUI();
+    }
+
+    public static void SetStartWave(bool active)
+    {
+        if (active)
+        {
+            _main.ShowStartWave();
+        }
+        else
+        {
+            _main.HideStartWave();
+        }
     }
 
     void PlayPause_Pause()

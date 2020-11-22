@@ -125,7 +125,6 @@ public class TouchUIManager : UIManager {
         else if (cameraBottomLeftPosition.x < cameraLeftLimit) {
             moveDistance.x = cameraLeftLimit - cameraBottomLeftPosition.x;
         }
-
         camera.transform.position += moveDistance;
     }
 }
