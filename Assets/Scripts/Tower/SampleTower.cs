@@ -17,7 +17,7 @@ public class SampleTower : TowerBehaviour {
     public float LaserLife = 1;
 
     [Min(1)] public int damageDone = 1;
-
+    public Sound contactSound;
 
 
     public override void GameplayUpdate() {
@@ -46,6 +46,7 @@ public class SampleTower : TowerBehaviour {
         var creepyBar = target.GetComponent<CreepHealth>();
         creepyBar.damage(damageDone);
         StartLaser();
+        LazerTowerSoundManager.Play(contactSound);
     }
 
     public override void WaitUpdate() {

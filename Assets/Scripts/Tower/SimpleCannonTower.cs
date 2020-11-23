@@ -16,7 +16,7 @@ public class SimpleCannonTower : ProjectileTower {
     public bool fade = true;
     [Min(0)]
     public float visualLifetime = 1;
-
+    public Sound contactSound;
 
     public override void Effect(CreepBehaviour cb, Vector2 lastPos) {
         Vector3 center;
@@ -40,7 +40,8 @@ public class SimpleCannonTower : ProjectileTower {
             }
         }
 
-        GlobalGameplayUpdate.AddGameplayWaitUpdate(XplosionAnim(center)); 
+        GlobalGameplayUpdate.AddGameplayWaitUpdate(XplosionAnim(center));
+        CannonTowerSoundManager.Play(contactSound);
     }
 
     IEnumerator XplosionAnim(Vector3 pos) {
