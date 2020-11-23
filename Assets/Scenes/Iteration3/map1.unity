@@ -288,9 +288,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2c44d7d33bb94429ca8325d226e234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tm: {fileID: 0}
+  em: {fileID: 0}
+  upgrade: {fileID: 2016014304}
   cost: 5
-  level: 2
-  type: 2
+  targeting: 0
   projectile: {fileID: 937483505}
   projectileSpeed: 12
   coolDown: 0.1
@@ -1005,7 +1007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 96.6, y: -0.3204}
+  m_AnchoredPosition: {x: 96.6, y: -0.32040405}
   m_SizeDelta: {x: 125.051056, y: 50.23355}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &339828131
@@ -1775,9 +1777,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd284390186a08e4180ab23cfcfb57a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tm: {fileID: 0}
+  em: {fileID: 0}
+  upgrade: {fileID: 0}
   cost: 20
-  level: 3
-  type: 1
+  targeting: 0
   projectile: {fileID: 1207442533}
   projectileSpeed: 25
   coolDown: 1.33
@@ -2998,11 +3002,11 @@ RectTransform:
   m_Father: {fileID: 1697706384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 73.3, y: -351.3}
-  m_SizeDelta: {x: 55.90844, y: 50.875786}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -308.5, y: -0.0014343262}
+  m_SizeDelta: {x: 55.908447, y: 50.875793}
+  m_Pivot: {x: 1, y: 0}
 --- !u!95 &846828757
 Animator:
   serializedVersion: 3
@@ -3102,12 +3106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334577fe32b46524bb57a51a17748dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tower1_2_Upgrade: {fileID: 1010538708}
-  Tower1_3_Upgrade: {fileID: 522081095}
-  Tower2_2_Upgrade: {fileID: 33030874}
-  Tower2_3_Upgrade: {fileID: 2016014304}
-  Tower3_2_Upgrade: {fileID: 1349777692}
-  Tower3_3_Upgrade: {fileID: 262404513}
 --- !u!1 &907775755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3351,6 +3349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd284390186a08e4180ab23cfcfb57a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tm: {fileID: 0}
+  em: {fileID: 0}
+  upgrade: {fileID: 1010538708}
   cost: 15
   targeting: 0
   projectile: {fileID: 1207442533}
@@ -3405,6 +3406,11 @@ PrefabInstance:
       propertyPath: type
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: upgrade
+      value: 
+      objectReference: {fileID: 1349777692}
     - target: {fileID: 3513808476025795813, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
@@ -4036,9 +4042,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd284390186a08e4180ab23cfcfb57a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tm: {fileID: 0}
+  em: {fileID: 0}
+  upgrade: {fileID: 522081095}
   cost: 10
-  level: 2
-  type: 1
+  targeting: 0
   projectile: {fileID: 1207442533}
   projectileSpeed: 20
   coolDown: 1.33
@@ -4082,11 +4090,11 @@ RectTransform:
   m_Father: {fileID: 1697706384}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 237.8, y: -354.7}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -105.6, y: 0}
   m_SizeDelta: {x: 60.642212, y: 50.87436}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1024518868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4530,6 +4538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2c44d7d33bb94429ca8325d226e234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tm: {fileID: 0}
+  em: {fileID: 0}
+  upgrade: {fileID: 33030874}
   cost: 10
   targeting: 0
   projectile: {fileID: 937483505}
@@ -11334,7 +11345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81.8, y: -3.7}
+  m_AnchoredPosition: {x: 81.8, y: -3.7000122}
   m_SizeDelta: {x: 101.448425, y: 50.23355}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1747289109
@@ -11934,9 +11945,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2c44d7d33bb94429ca8325d226e234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tm: {fileID: 0}
+  em: {fileID: 0}
+  upgrade: {fileID: 0}
   cost: 15
-  level: 3
-  type: 2
+  targeting: 0
   projectile: {fileID: 937483505}
   projectileSpeed: 15
   coolDown: 0.1
@@ -12332,6 +12345,11 @@ PrefabInstance:
       propertyPath: type
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3448604514423388353, guid: 2d9dbadc1152c064c94d685dc6acd658,
+        type: 3}
+      propertyPath: upgrade
+      value: 
+      objectReference: {fileID: 262404513}
     - target: {fileID: 3513808476025795813, guid: 2d9dbadc1152c064c94d685dc6acd658,
         type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r

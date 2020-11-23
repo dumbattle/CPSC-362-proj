@@ -32,6 +32,9 @@ public static class TargetingUtility {
         CreepBehaviour result = null;
 
         foreach (var enemy in enemies) {
+            if (enemy.health.current < 0) {
+                continue;
+            }
             float distanceToEnemy = Vector3.Distance(position, enemy.transform.position);
             if (distanceToEnemy <= radius && enemy.movement.distanceToEnd < dte) {
                 dte = enemy.movement.distanceToEnd;
@@ -48,6 +51,9 @@ public static class TargetingUtility {
         CreepBehaviour result = null;
 
         foreach (var enemy in enemies) {
+            if (enemy.health.current < 0) {
+                continue;
+            }
             float distanceToEnemy = Vector3.Distance(position, enemy.transform.position);
 
             if (distanceToEnemy <= radius) {
@@ -68,6 +74,9 @@ public static class TargetingUtility {
         CreepBehaviour result = null;
 
         foreach (var enemy in enemies) {
+            if (enemy.health.current < 0) {
+                continue;
+            }
             float distanceToEnemy = Vector3.Distance(position, enemy.transform.position);
 
             if (distanceToEnemy <= radius && distanceToEnemy < shortestDistance) {
@@ -85,6 +94,9 @@ public static class TargetingUtility {
         CreepBehaviour result = null;
 
         foreach (var enemy in enemies) {
+            if (enemy.health.current < 0) {
+                continue;
+            }
             float distanceToEnemy = Vector3.Distance(position, enemy.transform.position);
 
             if (distanceToEnemy <= radius && enemy.movement.distanceToEnd > dte) {

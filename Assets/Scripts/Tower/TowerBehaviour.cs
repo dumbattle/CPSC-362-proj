@@ -29,4 +29,3 @@ public abstract class TowerBehaviour : MonoBehaviour, ITower {
         Destroy(gameObject);
     }
 }
-// To add functionality, it must be done in both ITower and TowerBehaviour

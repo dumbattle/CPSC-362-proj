@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3513808476025795817}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: 158.47733, y: 323.13635, z: 127.91406}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 99
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.8117647, g: 0.7294118, b: 0.5254902, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4f046f0623ca8cb4ebb925323308c2a6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4ef5a88f6adbe244b94e5c50e812df7a, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,7 +127,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.13
+    widthMultiplier: 0.335056
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -145,8 +145,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0.6229658, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0, g: 1, b: 0.9903989, a: 1}
+      key1: {r: 0.007145405, g: 0, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -192,11 +192,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8fc7ce538a607489056938022618fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
-  creepyBar: {fileID: 0}
+  tm: {fileID: 0}
+  em: {fileID: 0}
+  upgrade: {fileID: 3448604514423388353}
+  cost: 20
+  targeting: 0
+  coolDown: 4
+  range: 7
   line: {fileID: 3513808476025795813}
-  target: {fileID: 45876600812971357, guid: f99978b035b189b44b1af5a6a724963b, type: 3}
-  range: 2
-  enemyTag: Enemy
-  damageDone: 1
-  partToRotate: {fileID: 0}
+  LaserLife: 0.1
+  damageDone: 75
