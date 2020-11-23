@@ -84,8 +84,8 @@ We will likely not be opening these files at all.
     - Push your changes to the current remote branch
   - git checkout <branch_name>
     - Switch your local branch
-  - git checout -b <branch_name>
-    - Switch your local branch to <Branch_name> or make a new branch with the same name if one does not exist
+  - git checkout -b <branch_name>
+    - Switch your local branch to <branch_name> or make a new branch with the same name if one does not exist
     - You must also run 'git push --set-upstream origin <branch_name>' to push to this new branch
   - git push origin --delete <branch_name>
     - Delete remote branch <branch_name>
