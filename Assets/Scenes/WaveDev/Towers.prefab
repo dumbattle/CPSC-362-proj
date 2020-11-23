@@ -479,7 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 0}
   em: {fileID: 0}
-  upgrade: {fileID: 8982177424578081420}
+  upgrade: {fileID: 0}
   cost: 20
   targeting: 0
   coolDown: 4
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 0}
   em: {fileID: 0}
-  upgrade: {fileID: 8982177424718989560}
+  upgrade: {fileID: 8982177423984238000}
   cost: 20
   targeting: 0
   coolDown: 4
@@ -1313,7 +1313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 0}
   em: {fileID: 0}
-  upgrade: {fileID: 8982177423984238000}
+  upgrade: {fileID: 8982177424578081420}
   cost: 20
   targeting: 0
   coolDown: 4
