@@ -11,6 +11,7 @@ public class SlowProjectileTower : ProjectileTower {
     public float slowTime = 1;
     [Min(1)]
     public int maxStack = 1;
+    public Sound contactSound;
 
     public override void Effect(CreepBehaviour cb, Vector2 lastPos) {
         if (cb == null) {
@@ -27,6 +28,7 @@ public class SlowProjectileTower : ProjectileTower {
         }
 
         GlobalGameplayUpdate.AddGameplayWaitUpdate(SlowTimer(cb, slow)); // remove slow after some time
+        TowerSoundManager.Play(contactSound);
     }
 
     IEnumerator SlowTimer(CreepBehaviour cb, float amnt) {

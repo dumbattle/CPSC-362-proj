@@ -480,13 +480,19 @@ MonoBehaviour:
   tm: {fileID: 0}
   em: {fileID: 0}
   upgrade: {fileID: 0}
-  cost: 20
+  cost: 100
   targeting: 0
   coolDown: 4
-  range: 7
+  range: 11
   line: {fileID: 7187590518644670120}
-  LaserLife: 0.1
-  damageDone: 75
+  LaserLife: 0.3
+  damageDone: 400
+  contactSound:
+    name: 
+    clip: {fileID: 8300000, guid: 5dbd241a48e8c4c488977a3903d10b86, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1 &7187590518867579361
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,6 +600,12 @@ MonoBehaviour:
   slow: 0.1
   slowTime: 0
   maxStack: 5
+  contactSound:
+    name: 
+    clip: {fileID: 8300000, guid: be62e1bb41847964c85a5f8e6189314d, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1 &7187590518896766956
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +713,12 @@ MonoBehaviour:
   slow: 0.1
   slowTime: 0
   maxStack: 5
+  contactSound:
+    name: 
+    clip: {fileID: 8300000, guid: be62e1bb41847964c85a5f8e6189314d, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1 &7187590518912555182
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +826,12 @@ MonoBehaviour:
   slow: 0.1
   slowTime: 0
   maxStack: 5
+  contactSound:
+    name: 
+    clip: {fileID: 8300000, guid: be62e1bb41847964c85a5f8e6189314d, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1 &7187590519045555408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,6 +1034,12 @@ MonoBehaviour:
   line: {fileID: 7187590519045555420}
   LaserLife: 0.1
   damageDone: 75
+  contactSound:
+    name: 
+    clip: {fileID: 8300000, guid: 5dbd241a48e8c4c488977a3903d10b86, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1 &7187590519053898254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1149,12 @@ MonoBehaviour:
   explosionObj: {fileID: 6015961721313528447}
   fade: 1
   visualLifetime: 0.3
+  contactSound:
+    name: 
+    clip: {fileID: 8300000, guid: aed272e27849bcd4e90adb1c33a719a1, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1 &7187590519090352536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,13 +1350,19 @@ MonoBehaviour:
   tm: {fileID: 0}
   em: {fileID: 0}
   upgrade: {fileID: 8982177424578081420}
-  cost: 20
+  cost: 40
   targeting: 0
   coolDown: 4
-  range: 7
+  range: 9
   line: {fileID: 7187590519090352532}
-  LaserLife: 0.1
-  damageDone: 75
+  LaserLife: 0.2
+  damageDone: 200
+  contactSound:
+    name: 
+    clip: {fileID: 8300000, guid: 5dbd241a48e8c4c488977a3903d10b86, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1 &7187590519411310759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,6 +1472,12 @@ MonoBehaviour:
   explosionObj: {fileID: 6015961721313528447}
   fade: 1
   visualLifetime: 0.3
+  contactSound:
+    name: 
+    clip: {fileID: 8300000, guid: aed272e27849bcd4e90adb1c33a719a1, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1 &7187590519443252319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,3 +1587,9 @@ MonoBehaviour:
   explosionObj: {fileID: 6015961721313528447}
   fade: 1
   visualLifetime: 0.3
+  contactSound:
+    name: 
+    clip: {fileID: 8300000, guid: aed272e27849bcd4e90adb1c33a719a1, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
