@@ -4,35 +4,21 @@ Each iteration will be in its own branch
 ## Goals
 - Playtest
 - Sound
-  - Background music
   - Towers
   - Creeps
-  - UI
 - Creeps
-  - Sprites
-  - Special effects. Suggestions:
-    - Passive Health regen
-    - Spawn Creeps on Death
-    - Movement speed modification
-  - Random waves - Maybe
+  - Balance (No need for perfect balance, just enough to be playable)
+  - Random waves
 - Towers 
-  - Sprites
-  - New Types. Suggestions:
-    - Splash
-    - Slow
-  - Projectiles - maybe
+  - Upgrades
+  - Balance (No need for perfect balance, just enough to be playable)
 - UI
-  - Refactor for Mobile
-  - Improve tower purchasing
-  - Display stage information
-  - Zoom/Drag screen
-  - Sprites
+  - Redesign according to feedback
+  - Improve look
  
 - Other 
-  - Build for Android
   - Playtest
-  - Organize notes
-    - Include Global scope
+  - Make map look better
   
  
 
