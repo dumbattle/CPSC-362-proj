@@ -4,7 +4,8 @@ using UnityEngine.UI;
 public class SimpleEconomyManager : MonoBehaviour {
     public int money { get; private set; }
     public int health { get; private set; }
-
+    public int startMoney = 100;
+    public int startHealth = 100;
     public Text moneyText;
     public Text healthText;
 
@@ -19,8 +20,8 @@ public class SimpleEconomyManager : MonoBehaviour {
 
 
     public void Init(int money, int health) {
-        this.money = money;
-        this.health = health;
+        this.money = startMoney;
+        this.health = startHealth;
         OnMoneyChanged += (_, x) => moneyText.text = x.ToString();
         OnHealthChanged += (_, x) => healthText.text = x.ToString();
 

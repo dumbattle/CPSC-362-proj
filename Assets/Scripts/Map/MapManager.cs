@@ -51,7 +51,6 @@ public class MapManager : MonoBehaviour
     public bool ValidTowerTile(int x, int y)
     {
         var t = tilemap.GetTile<Tile>(new Vector3Int(x + tilemap.cellBounds.xMin, y + tilemap.cellBounds.yMin, 0));
-        
         return t != pathTile;
     }
 

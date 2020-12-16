@@ -25,11 +25,8 @@ public static class GizmoDrawers {
     }
 
 
-    [DrawGizmo(GizmoType.Selected | GizmoType.NonSelected)]
+    [DrawGizmo(GizmoType.Selected)]
     public static void DrawGizmo(CreepPath cp, GizmoType type) {
-        if ((type & GizmoType.Selected) == 0) {
-            return;
-        } 
         if (cp.grid == null) {
             return;
         }
