@@ -45,6 +45,7 @@ public class TouchUIManager : UIManager {
     }
 
     public static new void CustomUpdate() {
+        return; //fix for screen flicker
         Zoom();
         Pan();
         
