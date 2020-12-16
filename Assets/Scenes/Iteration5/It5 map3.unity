@@ -8582,46 +8582,136 @@ PrefabInstance:
       propertyPath: UpgradeDescription
       value: 'COST: 45 | DAMAGE: ++ | BLAST RADIUS: ++'
       objectReference: {fileID: 0}
+    - target: {fileID: 6015961720840732345, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: tm
+      value: 
+      objectReference: {fileID: 862818101}
+    - target: {fileID: 6015961720840732345, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: em
+      value: 
+      objectReference: {fileID: 1068501824}
     - target: {fileID: 6015961721142317885, guid: 60e54a7eadee20a4fba7d49d733b61d3,
         type: 3}
       propertyPath: UpgradeDescription
       value: MAX UPGRADES REACHED
       objectReference: {fileID: 0}
+    - target: {fileID: 6015961721142317885, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: tm
+      value: 
+      objectReference: {fileID: 862818101}
+    - target: {fileID: 6015961721142317885, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: em
+      value: 
+      objectReference: {fileID: 1068501824}
     - target: {fileID: 6015961722025989600, guid: 60e54a7eadee20a4fba7d49d733b61d3,
         type: 3}
       propertyPath: UpgradeDescription
       value: 'COST: 40 | SPEED: ++ | RANGE: ++| '
       objectReference: {fileID: 0}
+    - target: {fileID: 6015961722025989600, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: tm
+      value: 
+      objectReference: {fileID: 862818101}
+    - target: {fileID: 6015961722025989600, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: em
+      value: 
+      objectReference: {fileID: 1068501824}
     - target: {fileID: 6015961722047278154, guid: 60e54a7eadee20a4fba7d49d733b61d3,
         type: 3}
       propertyPath: UpgradeDescription
       value: 'COST: 20 | SPEED: + | RANGE: +'
       objectReference: {fileID: 0}
+    - target: {fileID: 6015961722047278154, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: tm
+      value: 
+      objectReference: {fileID: 862818101}
+    - target: {fileID: 6015961722047278154, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: em
+      value: 
+      objectReference: {fileID: 1068501824}
     - target: {fileID: 6015961722109907360, guid: 60e54a7eadee20a4fba7d49d733b61d3,
         type: 3}
       propertyPath: UpgradeDescription
       value: MAX UPGRADES REACHED
       objectReference: {fileID: 0}
+    - target: {fileID: 6015961722109907360, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: tm
+      value: 
+      objectReference: {fileID: 862818101}
+    - target: {fileID: 6015961722109907360, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: em
+      value: 
+      objectReference: {fileID: 1068501824}
     - target: {fileID: 6015961722188883690, guid: 60e54a7eadee20a4fba7d49d733b61d3,
         type: 3}
       propertyPath: UpgradeDescription
       value: 'COST: 30 | DAMAGE : + | BLAST RADIUS: ++'
       objectReference: {fileID: 0}
+    - target: {fileID: 6015961722188883690, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: tm
+      value: 
+      objectReference: {fileID: 862818101}
+    - target: {fileID: 6015961722188883690, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: em
+      value: 
+      objectReference: {fileID: 1068501824}
     - target: {fileID: 8982177423984238000, guid: 60e54a7eadee20a4fba7d49d733b61d3,
         type: 3}
       propertyPath: UpgradeDescription
       value: 'COST: 100 | DAMAGE: ++ | RANGE: ++'
       objectReference: {fileID: 0}
+    - target: {fileID: 8982177423984238000, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: tm
+      value: 
+      objectReference: {fileID: 862818101}
+    - target: {fileID: 8982177423984238000, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: em
+      value: 
+      objectReference: {fileID: 1068501824}
     - target: {fileID: 8982177424578081420, guid: 60e54a7eadee20a4fba7d49d733b61d3,
         type: 3}
       propertyPath: UpgradeDescription
       value: MAX UPGRADES REACHED
       objectReference: {fileID: 0}
+    - target: {fileID: 8982177424578081420, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: tm
+      value: 
+      objectReference: {fileID: 862818101}
+    - target: {fileID: 8982177424578081420, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: em
+      value: 
+      objectReference: {fileID: 1068501824}
     - target: {fileID: 8982177424718989560, guid: 60e54a7eadee20a4fba7d49d733b61d3,
         type: 3}
       propertyPath: UpgradeDescription
       value: 'COST: 40 | DAMAGE: + | RANGE: +'
       objectReference: {fileID: 0}
+    - target: {fileID: 8982177424718989560, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: tm
+      value: 
+      objectReference: {fileID: 862818101}
+    - target: {fileID: 8982177424718989560, guid: 60e54a7eadee20a4fba7d49d733b61d3,
+        type: 3}
+      propertyPath: em
+      value: 
+      objectReference: {fileID: 1068501824}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60e54a7eadee20a4fba7d49d733b61d3, type: 3}
 --- !u!1 &1747289107
@@ -8658,8 +8748,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 67.6, y: -5.1}
-  m_SizeDelta: {x: 54.301163, y: 50.23355}
+  m_AnchoredPosition: {x: 59.32, y: -5.1}
+  m_SizeDelta: {x: 78.86366, y: 50.23355}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1747289109
 MonoBehaviour:
@@ -8687,7 +8777,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 287
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

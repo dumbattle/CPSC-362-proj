@@ -90,9 +90,9 @@ using UnityEngine.UI;
     }
 
     void GameplayUpdate() {
-        cm.GameplayUpdate();
-        tm.GameplayUpdate();
-        GlobalGameplayUpdate.GameplayUpdate(); // this was added
+            cm.GameplayUpdate();
+            tm.GameplayUpdate();
+            GlobalGameplayUpdate.GameplayUpdate(); // this was added
     }
 
     //refactored

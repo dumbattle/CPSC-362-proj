@@ -49,6 +49,8 @@ public class CreepManager : MonoBehaviour
             creepList.Remove(c);
         }
 
+        creepToRemove.Clear();
+
         foreach (var t in creepList) {
             if (t == null) {
                 continue;
@@ -59,6 +61,8 @@ public class CreepManager : MonoBehaviour
         foreach (var c in creepToRemove) {
             creepList.Remove(c);
         }
+
+        creepToRemove.Clear();
     }
 }
 
