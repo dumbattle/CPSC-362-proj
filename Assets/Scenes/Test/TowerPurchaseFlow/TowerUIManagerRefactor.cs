@@ -22,9 +22,16 @@ public class TowerUIManagerRefactor : UIManager
     public GameObject TowerInfoOptions;
     public GameObject TowerBuyInstruction;
     public GameObject GoldCheck;
-    
+    public GameObject BuyIndicator;
+    public GameObject TowerCost1;
+    public GameObject TowerCost2;
+    public GameObject TowerCost3;
+    public GameObject UpgradeInfo;
+
 
     public GameObject PathIndicator;
+
+    public Text UpgradeText;
 
     // tower objects for each type of tower                
     [SerializeField]
@@ -85,16 +92,16 @@ public class TowerUIManagerRefactor : UIManager
         BuyTower.gameObject.SetActive(false);
     }
 
-    private void ShowUpgradesPanelUI()
+    private void ShowUpgradesPanelUI(ITower T)
     {
         TowerInfoOptions.gameObject.SetActive(true);
         TowerInfoPanel.gameObject.SetActive(true);
         sellTower.gameObject.SetActive(true);
         cancelTowerBuild.gameObject.SetActive(true);
         upgradeTower.gameObject.SetActive(true);
-        tower1Button.gameObject.SetActive(false);
-        tower2Button.gameObject.SetActive(false);
-        tower3Button.gameObject.SetActive(false);
+        UpgradeInfo.gameObject.SetActive(true);
+        UpgradeText.text = T.GetUpgradeDescription();
+
     }
 
     private void HideUpgradesPanelUI()
@@ -103,9 +110,8 @@ public class TowerUIManagerRefactor : UIManager
         TowerInfoPanel.gameObject.SetActive(false);
         sellTower.gameObject.SetActive(false);
         cancelTowerBuild.gameObject.SetActive(false);
-        tower1Button.gameObject.SetActive(true);
-        tower2Button.gameObject.SetActive(true);
-        tower3Button.gameObject.SetActive(true);
+        UpgradeInfo.gameObject.SetActive(false);
+
     }
 
     private void ShowCancelBuy()
@@ -130,6 +136,18 @@ public class TowerUIManagerRefactor : UIManager
 
     }
 
+    private void ShowBuyIndicator()
+    {
+        BuyIndicator.gameObject.SetActive(true);
+
+    }
+
+    private void HideBuyIndicator()
+    {
+        BuyIndicator.gameObject.SetActive(false);
+
+    }
+
     private void ShowGoldCheck()
     {
         GoldCheck.gameObject.SetActive(true);
@@ -141,6 +159,32 @@ public class TowerUIManagerRefactor : UIManager
         GoldCheck.gameObject.SetActive(false);
 
     }
+
+    private void ShowTowerCost()
+    {
+        TowerCost1.gameObject.SetActive(true);
+        TowerCost2.gameObject.SetActive(true);
+        TowerCost3.gameObject.SetActive(true);
+    }
+    private void HideTowerCost()
+    {
+        TowerCost1.gameObject.SetActive(false);
+        TowerCost2.gameObject.SetActive(false);
+        TowerCost3.gameObject.SetActive(false);
+    }
+
+    public static void SetTowerCost(bool active)
+    {
+        if (active)
+        {
+            _main.ShowTowerCost();
+        }
+        else
+        {
+            _main.HideTowerCost();
+        }
+    }
+
 
     public static void SetGoldCheck(bool active)
     {
@@ -162,6 +206,18 @@ public class TowerUIManagerRefactor : UIManager
         else
         {
             _main.HideBuyInstructions();
+        }
+    }
+
+    public static void SetBuyIndicator(bool active)
+    {
+        if (active)
+        {
+            _main.ShowBuyIndicator();
+        }
+        else
+        {
+            _main.HideBuyIndicator();
         }
     }
 
@@ -189,12 +245,12 @@ public class TowerUIManagerRefactor : UIManager
         }
     }
 
-    public static void SetUpgradesPanelState(bool active)
+    public static void SetUpgradesPanelState(bool active, ITower T)
     {
 
         if (active)
         {
-            _main.ShowUpgradesPanelUI();
+            _main.ShowUpgradesPanelUI(T);
         }
         else
         {

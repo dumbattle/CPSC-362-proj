@@ -6,6 +6,7 @@ public abstract class TowerBehaviour : MonoBehaviour, ITower {
     protected TowerBehaviour src;
     public TowerManager tm;
     public SimpleEconomyManager em;
+    public string UpgradeDescription;
 
     public Vector2Int mapIndex { get; private set; }
 
@@ -28,5 +29,12 @@ public abstract class TowerBehaviour : MonoBehaviour, ITower {
     void ITower.DestroyTower() {
         Destroy(gameObject);
     }
+
+    public string GetUpgradeDescription()
+    {
+        return UpgradeDescription;
+    }
+
+
 }
 // To add functionality, it must be done in both ITower and TowerBehaviour
