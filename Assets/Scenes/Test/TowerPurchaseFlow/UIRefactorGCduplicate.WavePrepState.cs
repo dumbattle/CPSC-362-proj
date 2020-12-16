@@ -11,6 +11,7 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
 
 
         TowerUIManagerRefactor.SetPathIndicator(true); // shows path indicator starting at prep phase and ends when wave starts
+        TowerUIManagerRefactor.SetTowerCost(true);
 
         var h = handleClick();
         if(h != null)
@@ -21,6 +22,8 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
         if (UIManager.WaveStartReceived)
         {
             PlayPauseUIManager.SetStartWave(false);
+            TowerUIManagerRefactor.SetTowerCost(false);
+
             PlayPauseUIManager.SetPlayState();
             return WaveStartState;
         }
@@ -38,6 +41,9 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
                 {
                     TowerUIManagerRefactor.SetBuyInstructions(true);
                     TowerUIManagerRefactor.SetBuyCancelButton(true);
+                    TowerUIManagerRefactor.SetUpgradesPanelState(false, null);
+                    TowerUIManagerRefactor.SetTowerCost(false);
+
                     ShowTileHighlights();
 
                     return TowerPlacementSubstate(UIManager.towerPurchased);
@@ -73,7 +79,10 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
 
                     if (tm.TileOccupied(x, y))
                     {
-                        TowerUIManagerRefactor.SetUpgradesPanelState(true);
+                        TowerUIManagerRefactor.SetTowerCost(false);
+                        TowerUIManagerRefactor.SetUpgradesPanelState(true, tm.GetTower(x,y));
+
+
                         HideTileHighlights();
                         return TowerSelectedState(x, y);
                     }
@@ -100,7 +109,7 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
                     em.AddMoney((int)(t.cost * .75f));
                     tm.RemoveTower(x, y);
                     t.DestroyTower();
-                    TowerUIManagerRefactor.SetUpgradesPanelState(false);
+                    TowerUIManagerRefactor.SetUpgradesPanelState(false, null);
                     tileHighlight.SetActive(true);
 
                     return WavePrepState;
@@ -108,7 +117,7 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
 
                 if (UIManager.cancelTowerBuild)
                 {
-                    TowerUIManagerRefactor.SetUpgradesPanelState(false);
+                    TowerUIManagerRefactor.SetUpgradesPanelState(false, null);
                     tileHighlight.SetActive(false);
 
 
@@ -117,6 +126,8 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
 
                 if (UIManager.upgradeReceived)
                 {
+                    TowerUIManagerRefactor.SetUpgradesPanelState(false, null);
+
                     //get tower
                     var tower = tm.GetTower(x, y);
                     //get tower upgrade
@@ -128,6 +139,25 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
                         tower.DestroyTower();
                         //create upgraded tower
                         tm.CreateTower(upgrade, x, y);
+                    }
+                    else
+                    {
+                        TowerUIManagerRefactor.SetGoldCheck(true);
+
+                        IEnumerator FadeTimer()
+                        {
+
+                            float timer = 0;
+                            while (timer < 2.0f)
+                            {
+                                timer += Time.deltaTime;
+                                yield return null;
+                            }
+                            TowerUIManagerRefactor.SetGoldCheck(false);
+                        }
+
+                        GlobalGameplayUpdate.AddGameplayWaitUpdate(FadeTimer());
+                        return WavePrepState;
                     }
                 }
                     var b = handleClick();
@@ -157,6 +187,8 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
 
                     TowerUIManagerRefactor.SetBuyCancelButton(false);
                     TowerUIManagerRefactor.SetBuyInstructions(false);
+                    TowerUIManagerRefactor.SetTowerCost(true);
+
 
                     return WavePrepState;
                 }
@@ -171,6 +203,8 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
                     {
                         TowerUIManagerRefactor.SetBuyButton(true);
                         TowerUIManagerRefactor.SetBuyInstructions(false);
+                        TowerUIManagerRefactor.SetBuyIndicator(true);
+
                         HideTileHighlights();
                         tileHighlight.SetActive(true);
                         tileHighlight.transform.position = new Vector3(a, b);
@@ -201,6 +235,8 @@ public partial class UIRefactorGCduplicate : MonoBehaviour
                 {
                     TowerUIManagerRefactor.SetBuyButton(false);
                     TowerUIManagerRefactor.SetBuyCancelButton(false);
+                    TowerUIManagerRefactor.SetBuyIndicator(false);
+
                     em.TowerBuyConfirmed(UIManager.towerPurchased.cost);
                     var tower = tm.CreateTower(UIManager.towerPurchased, x, y);
                     tileHighlight.SetActive(false);

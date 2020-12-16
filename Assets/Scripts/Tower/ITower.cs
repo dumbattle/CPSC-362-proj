@@ -12,6 +12,8 @@ public interface ITower {
 
     void DestroyTower();
 
+    string GetUpgradeDescription();
+
     TowerBehaviour upgrade { get; }
 }
 
